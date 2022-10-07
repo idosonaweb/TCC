@@ -25,6 +25,7 @@
             $dados = [
                 'nome' => $nome,
                 'email' => $email,
+                'telefone' => $telefone,
                 'senha' => crypt($senha, $salt)
             ];
 
@@ -38,7 +39,8 @@
 
             $dados = [
                 'nome' => $nome,
-                'email' => $email
+                'email' => $email,
+                'telefone' => $telefone
             ];
 
             $criterio = [
@@ -52,12 +54,11 @@
         case 'login':
             $criterio = [
                 ['email', '=', $email],
-                ['AND', 'ativo', '=', 1]
             ];
 
             $retorno = buscar(
                 'usuario', 
-                ['id', 'nome', 'email', 'senha', 'adm'], 
+                ['id', 'nome', 'email', 'telefone', 'senha'], 
                 $criterio
             );
 
@@ -106,28 +107,6 @@
 
             exit;
 
-            break;
-
-        case 'adm':
-            
-            $id = (int)$id ;
-
-            $valor = (int)$valor ;
-
-            $dados = [
-                'adm' => $valor 
-            ];
-
-            $criterio = [
-                ['id', '=', $id]
-            ];
-
-            atualiza('usuario', $dados, $criterio);
-
-            header('Location:  ../usuarios.php');
-
-            exit;
-            
             break;
     }
 

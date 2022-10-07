@@ -26,7 +26,10 @@
 
                 <div class="col-md-12">
 
-                    <?php include 'includes/menu.php'; ?>
+                <br>
+                <a class="nav-link" href="index.php">Voltar para Home</a>
+                <br>
+             <h2> Cadastro de Usuário </h2>
 
                 </div>
 
@@ -52,7 +55,7 @@
 
                             $retorno = buscar (
                                 'usuario',
-                                ['id', 'nome', 'email'],
+                                ['id', 'nome', 'email','telefone'],
                                 $criterio
                             );
 
@@ -88,6 +91,16 @@
                             <input class="form-control" type="text" 
                                 require="required" id="email" name="email" 
                                 value="<?php echo $entidade['email'] ?? '' ?>">
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="email">Telefone</label>
+
+                            <input class="form-control" type="text" 
+                                require="required" id="telefone" name="telefone" 
+                                value="<?php echo $entidade['telefone'] ?? '' ?>">
 
                         </div>
 

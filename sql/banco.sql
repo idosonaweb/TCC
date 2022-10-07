@@ -1,18 +1,18 @@
-create database blog ;
+drop database tcc;
 
-use blog ;
+create database tcc ;
+
+use tcc ;
 
 CREATE TABLE usuario (
 
     id int NOT NULL AUTO_INCREMENT,
     nome varchar (50) NOT NULL,
     email varchar (255) NOT NULL,
+    telefone varchar (12) NOT NULL,
     senha varchar (60) NOT NULL,
     data_criacao datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    ativo tinyint NOT NULL DEFAULT '0',
-    adm tinyint NOT NULL DEFAULT '0',
     PRIMARY KEY (id)
-
 );
 
 CREATE TABLE post (
@@ -42,13 +42,3 @@ CREATE TABLE avaliacao (
 	CONSTRAINT fk_avaliacao_post FOREIGN KEY (post_id) REFERENCES post (id)
 
 );
-
-select * from usuario ;
-
-insert into usuario (nome, email, senha, ativo)
-values ('João Pedro', 'piva@gmail.com', 'piva012', 1);
-
-select * from post ;
-
-insert into post (titulo, texto, usuario_id)
-values ('Post Foda', 'Testando bla bla', 2);

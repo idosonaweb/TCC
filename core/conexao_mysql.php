@@ -4,9 +4,9 @@
     {
         $servidor = 'localhost' ;
 
-        $banco = 'blog' ;
+        $banco = 'tcc' ;
 
-        $port = 3307 ;
+        $port = 3306 ;
 
         $usuario = 'root' ;
 

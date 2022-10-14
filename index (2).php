@@ -18,17 +18,17 @@
 
         <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
 
-        <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link href="lib/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         
         <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
         
         <meta name="theme-color" content="#712cf9">
         
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="lib/css/style.css">
 
-        <link href="css/features.css" rel="stylesheet">
+        <link href="lib/css/features.css" rel="stylesheet">
 
-        <link href="css/carousel.css" rel="stylesheet">
+        <link href="lib/css/carousel.css" rel="stylesheet">
 
     </head>
 
@@ -259,7 +259,7 @@
 
     </main>
 
-    <script src="js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="lib/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
       
   </body>
 

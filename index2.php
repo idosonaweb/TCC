@@ -17,14 +17,12 @@
         <title>Purchase Manager</title>
 
         <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
-        
-        <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
-        
-        <meta name="theme-color" content="#712cf9">
 
-        <link href="lib/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link href="lib/css/bootstrap.min.css" rel="stylesheet" >
+            
+        <meta name="theme-color" content="#712cf9">
         
-        <link href="lib/css/style.css"  rel="stylesheet" >
+        <link rel="stylesheet" href="lib/css/style.css">
 
         <link href="lib/css/features.css" rel="stylesheet">
 
@@ -32,25 +30,28 @@
 
     </head>
 
+    <style>
+    
+        .col {
+        
+            height: 300px;
+}
+    
+    </style>
+  
   <body>
 
-  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    
-    <symbol id="geo-fill" viewBox="0 0 16 16">
-        
-        <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
-    
-    </symbol>
-  
-  </svg>
-    
+    <div style="min-height: 220px;">
+
+        <?php include 'includes/menu.php' ?>
+
+    </div>
+
 <header>
 
 <main>
 
   <div class="container marketing">
-
-    <hr id="Texto1" class="featurette-divider">
 
     <div class="row featurette">
       
@@ -122,23 +123,15 @@
         
                 <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/Breno.png');">
                     
-                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <div class="d-flex flex-column h-100 p-4 pb-3 text-white text-shadow-1">
             
-                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</h3>
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
             
                             <ul class="d-flex list-unstyled mt-auto">
-                        
-                                <li class="me-auto">
-                                
-                                    <img src="img/purchase.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                                
-                                </li>
                     
-                                <li class="d-flex align-items-center me-3">
-                            
-                                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                            
-                                    <small>Breno Campachi</small>
+                                <li class="d-flex align-items-center me-4">
+                                                        
+                                    <small>Breno Henrique Vieira Campachi</small>
                                 
                                 </li>
                                 
@@ -153,23 +146,15 @@
         
         <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/Ellen.png');">
           
-            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <div class="d-flex flex-column h-100 p-4 pb-3 text-white text-shadow-1">
                
-                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</h3>
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
                 
                 <ul class="d-flex list-unstyled mt-auto">
                         
-                    <li class="me-auto">
-                    
-                        <img src="img/purchase.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                    
-                    </li>
-                        
-                    <li class="d-flex align-items-center me-3">
-                            
-                        <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                            
-                        <small>Ellen Nataly</small>
+                    <li class="d-flex align-items-center me-4">
+                                                        
+                        <small>Ellen Nataly Timoteo de Queiroz</small>
                         
                     </li>
                         
@@ -182,56 +167,42 @@
     </div>
 
     <div class="col">
-            
+
         <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/Pedro.png');">
             
-            <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+            <div class="d-flex flex-column h-100 p-4 pb-3 text-white text-shadow-1">
 
-                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</h3>
-        
-                <ul class="d-flex list-unstyled mt-auto">
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3> 
                 
-                    <li class="me-auto">
-                    
-                        <img src="img/purchase.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                    </li>
-                            
-                    <li class="d-flex align-items-center me-4">
-                            
-                        <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                <ul class="d-flex list-unstyled mt-auto">
                                 
-                        <small>João Piva</small>
-                            
+                    <li class="d-flex align-items-center me-4">
+                                                                        
+                        <small>João Pedro Vieira Luz Piva</small>
+                                
                     </li>
+                
                 </ul>
             
             </div>
-                
+
         </div>
-            
+
     </div>
             
     <div class="col">
 
         <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/Pedro.png');">
             
-            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <div class="d-flex flex-column h-100 p-4 pb-3 text-white text-shadow-1">
 
-                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</h3> 
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3> 
                 
                 <ul class="d-flex list-unstyled mt-auto">
-                        
-                    <li class="me-auto">
-                                    
-                        <img src="img/purchase.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
                                 
-                    </li>
-                                
-                    <li class="d-flex align-items-center me-7">
-                                    
-                        <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                                    
-                        <small>Pedro Arrieiro</small>
+                    <li class="d-flex align-items-center me-4">
+                                                                        
+                        <small>Pedro Henrique Silva Arrieiro</small>
                                 
                     </li>
                 
@@ -259,7 +230,7 @@
 
     </main>
 
-    <script src="../TCC/lib/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
       
   </body>
 

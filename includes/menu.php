@@ -45,6 +45,8 @@
       
         </a>
 
+        <?php if (!isset($_SESSION['login'])) :  ?>
+
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 
             <li><a href="index2.php" class="nav-link text-dark px-3 ">Home</a></li>
@@ -60,30 +62,40 @@
         </ul>
 
         <div class="col-md-2 text-end">
+
+                <a href="login_formulario.php"><button type="button" class="btn btn-outline-primary me-2">Login</button></a>
         
-<!--fazer esses botões só aparecerem se o usuário não estiver logado-->
-
-            
-
-            <?php if (!isset($_SESSION['login'])) :  ?>
-
-            <a href="login_formulario.php"><button type="button" class="btn btn-outline-primary me-2">Login</button></a>
-        
-            <a href="usuario_formulario.php"><button type="button" class="btn btn-outline-primary me-2">Cadastrar-se</button></a>
+                <a href="usuario_formulario.php"><button type="button" class="btn btn-outline-primary me-2">Cadastrar-se</button></a>
             
             <?php endif ?>
             
 
             <?php if (isset($_SESSION['login'])) :  ?>
 
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+
+            <li><a href="index.php" class="nav-link text-dark px-3 ">Listas</a></li>
+            
+            <li><a href="#" class="nav-link text-dark px-3 ">Compras</a></li>
+        
+            <li><a href="#" class="nav-link text-dark px-3 ">Produtos</a></li>
+        
+            <li><a href="#" class="nav-link text-dark px-3 ">Mercados</a></li>
+        
+            <li><a href="#" class="nav-link text-dark px-3 ">Como Usar</a></li>
+        
+            </ul>
+
             <div class="card-body text-right">
 
               Seja Bem-vindo <?php echo $_SESSION['login']['usuario']['nome'] ?>!
 
               <a href="core/usuario_repositorio.php?acao=logout" 
-                class="btn btn-link btn-sm" role="button"> Sair </a>
+              class="btn btn-link btn-sm" role="button"> Sair </a>
+              <a href="altera_usuario.php" 
+              class="btn btn-link btn-sm" role="button"> Config Usuário </a>
 
-            </div>
+          </div>
 
 <?php endif ?>
 

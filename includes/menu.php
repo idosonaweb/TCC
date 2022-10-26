@@ -61,15 +61,11 @@
 
         <div class="col-md-2 text-end">
         
-<!--fazer esses botões só aparecerem se o usuário não estiver logado-->
-
-            
-
             <?php if (!isset($_SESSION['login'])) :  ?>
 
-            <a href="login_formulario.php"><button type="button" class="btn btn-outline-primary me-2">Login</button></a>
+                <a href="login_formulario.php"><button type="button" class="btn btn-outline-primary me-2">Login</button></a>
         
-            <a href="usuario_formulario.php"><button type="button" class="btn btn-outline-primary me-2">Cadastrar-se</button></a>
+                <a href="usuario_formulario.php"><button type="button" class="btn btn-outline-primary me-2">Cadastrar-se</button></a>
             
             <?php endif ?>
             
@@ -83,7 +79,7 @@
               <a href="core/usuario_repositorio.php?acao=logout" 
                 class="btn btn-link btn-sm" role="button"> Sair </a>
 
-            </div>
+          </div>
 
 <?php endif ?>
 

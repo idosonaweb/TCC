@@ -64,14 +64,9 @@
         <div class="col-md-2 text-end">
 
                 <a href="login_formulario.php"><button type="button" class="btn btn-outline-primary me-2">Login</button></a>
-        
-        <?php endif ?>
-
-            <?php if (!isset($_SESSION['login'])) :  ?>
-
-                <a href="login_formulario.php"><button type="button" class="btn btn-outline-primary me-2">Login</button></a>
                 <a href="usuario_formulario.php"><button type="button" class="btn btn-outline-primary me-2">Cadastrar-se</button></a>
-            
+        </div>
+        
             <?php endif ?>
             
 

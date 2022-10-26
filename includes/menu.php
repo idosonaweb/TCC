@@ -1,3 +1,9 @@
+<?php
+
+    session_start();
+
+?> 
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,14 +16,12 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
 
-<link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
-<link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-
+    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     
     <link rel="stylesheet" href="css/style.css">
 
     <link href="headers.css" rel="stylesheet">
+
   </head>
   <body>
 
@@ -31,11 +35,11 @@
   
   <div>
     
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between p-3 mb-4 border-bottom">
       
-        <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <a href="/" class="d-flex align-items-center col-md-2 mb-2 mb-md-0 text-dark text-decoration-none">
         
-            <img class=" col-md-2 me-2" width="40" height="45" role="img" src="img/manager.png" aria-label="Bootstrap">
+            <img class=" col-md-4 me-2" width="40" height="45" role="img" src="img/manager.png" aria-label="Bootstrap">
 
             <span class="fs-4">Purchase Manager</span>
       
@@ -43,7 +47,7 @@
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 
-            <li><a href="#" class="nav-link text-dark px-3 ">Home</a></li>
+            <li><a href="index2.php" class="nav-link text-dark px-3 ">Home</a></li>
             
             <li><a href="#" class="nav-link text-dark px-3 ">O que é</a></li>
         
@@ -55,12 +59,34 @@
         
         </ul>
 
-        <div class="col-md-3 text-end">
+        <div class="col-md-2 text-end">
         
-            <button type="button" class="btn btn-outline-primary me-2">Login</button>
+<!--fazer esses botões só aparecerem se o usuário não estiver logado-->
+
+            
+
+            <?php if (!isset($_SESSION['login'])) :  ?>
+
+            <a href="login_formulario.php"><button type="button" class="btn btn-outline-primary me-2">Login</button></a>
         
-            <button type="button" class="btn btn-outline-primary me-2">Cadastrar-se</button>
-      
+            <a href="usuario_formulario.php"><button type="button" class="btn btn-outline-primary me-2">Cadastrar-se</button></a>
+            
+            <?php endif ?>
+            
+
+            <?php if (isset($_SESSION['login'])) :  ?>
+
+            <div class="card-body text-right">
+
+              Seja Bem-vindo <?php echo $_SESSION['login']['usuario']['nome'] ?>!
+
+              <a href="core/usuario_repositorio.php?acao=logout" 
+                class="btn btn-link btn-sm" role="button"> Sair </a>
+
+            </div>
+
+<?php endif ?>
+
         </div>
     
     </header>

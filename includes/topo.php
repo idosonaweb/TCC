@@ -1,8 +1,4 @@
-<?php
 
-    session_start();
-
-?> 
 
 <div class="card">
 

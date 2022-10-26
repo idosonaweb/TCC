@@ -65,6 +65,9 @@
 
                 <a href="login_formulario.php"><button type="button" class="btn btn-outline-primary me-2">Login</button></a>
         
+            <?php if (!isset($_SESSION['login'])) :  ?>
+
+                <a href="login_formulario.php"><button type="button" class="btn btn-outline-primary me-2">Login</button></a>
                 <a href="usuario_formulario.php"><button type="button" class="btn btn-outline-primary me-2">Cadastrar-se</button></a>
             
             <?php endif ?>
@@ -97,7 +100,7 @@
 
           </div>
 
-<?php endif ?>
+          <?php endif ?>
 
         </div>
     

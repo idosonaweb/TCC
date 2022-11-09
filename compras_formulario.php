@@ -1,8 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
-<div style="min-height: 220px;">
+    <head>
 
-<?php include 'includes/menu.php' ?>
+        <title>Cadastro lista de compras</title>
 
-</div>
+        <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+
+    </head>
+
+    <body>
+        
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <?php include 'includes/topo.php'; ?>
+
+                </div>
+            
+            </div>
+
+            <div class="row" style="min-height: 500px;">
+
+                <div class="col-md-12">
+
+                <br>
+                <a class="nav-link" href="index.php">Voltar para Home</a>
+                <br>
+
+                </div>
+
+                <div class="col-md-10" style="padding-top: 50px ;">
+
+                    <?php 
+                    
+                        require_once 'includes/funcoes.php' ;
+
+                        require_once 'core/conexao_mysql.php' ;
+                    
+                        require_once 'core/sql.php' ;
+                    
+                        require_once 'core/mysql.php' ;
+
+                        foreach($_GET as $indice => $dado){
+                            $$INDICE = limparDados($dado);
+                        }
+
+                        if(!empty($id)){
+                            $id = (int)$id;
+
+                            $criterio = [
+                                ['id', '=', $id]
+                            ];
+
+                            $retorno = buscar(
+                                'post',
+                                ['*'],
+                                $criterio
+                            );
+
+                            $entidade = $retorno[0];
+                        }
+                    ?>
+
+                    <h2>Registro de Compra Realizada</h2>
+
+                    <br>
+                    <form method="compra" action="core/compras_repositorio.php">
+                        <input type="hidden" name="acao"
+                            value="<?php echo empty($id) ? 'insert' : 'update' ?>">
+                        <input type="hidden" name="id"
+                            value="<?php echo $entidade['id'] ?? '' ?>">
+                        <div class="form-group">
+                                <label for="titulo_compra">Título da Compra:</label>
+                                <input class="form-group" type="text"
+                                    require="require" id="titulo_compra" name="titulo_compra" rows="2"
+                                    value="<?php echo $entidade['titulo_compra'] ?? '' ?>">
+                        </div>
+                        <div class="form-group">
+                                <label for="descricao_compra">Descrição:</label>
+                                <textarea class="form-control" type="text"
+                                    require="require" id="descricao_compra" name="descricao_compra" rows="5">
+                                    <?php echo $entidade['descricao_compra'] ?? '' ?>
+                                </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="texto">Data de realização:</label>
+                            <?php 
+                                $data_compra = (!empty($entidade['data_compra']))?
+                                    explode(' ', $entidade['data_compra'])[0] : '';
+                            ?>
+                             <div class="row">
+                                <div class="col-md-3">  
+                                    <input class="form-control" type="date"
+                                        require="required"
+                                        id="data_compra"
+                                        name="data_compra"
+                                        value="<?php echo $data_compra ?>">
+                                </div>
+                        </div> 
+                        <div class="form-group">
+                                <label for="local_nome">Estabelecimento:</label>
+                                <textarea class="form-control" type="text"
+                                    require="require" id="local_nome" name="local_nome" >
+                                    <?php echo $entidade['local_nome'] ?? '' ?>
+                                </textarea>
+                        </div>
+                        <div class="form-group">
+                                <label for="valor_compra">Valor:</label>
+                                <textarea class="form-control" type="text"
+                                    require="require" id="valor_compra" name="valor_compra">
+                                    <?php echo $entidade['valor_compra'] ?? '' ?>
+                                </textarea>
+                        </div>
+                        <div><a>Foto da nota fiscal:</a></div>
+                        <div class="texto-right">  
+                            <button class="btn btn-success"
+                                    type="submit">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">  
+                <div class="col-md-12">
+                        <?php
+                            include 'includes/rodape.php';
+                        ?>
+                </div>
+            </div>
+        </div>
+        <script src="lib/bootstrap-4.2.1-dist/js/boostrap.min.js"></script>   
+    </body>
+</html>

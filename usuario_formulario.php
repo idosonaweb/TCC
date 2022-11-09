@@ -1,149 +1,77 @@
-<html>
-
-    <head>
-
-        <title>Usuário | Projeto para Web com PHP</title>
-
-        <link rel="stylesheet" href="lib/css/bootstrap.min.css">
-
-    </head>
-
-    <body>
-        
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-md-12">
-
-                    <?php include 'includes/topo.php'; ?>
-
-                </div>
-            
-            </div>
-
-            <div class="row" style="min-height: 500px;">
-
-                <div class="col-md-12">
-
-                <br>
-                <a class="nav-link" href="index.php">Voltar para Home</a>
-                <br>
-             <h2> Cadastro de Usuário </h2>
-
-                </div>
-
-                <div class="col-md-10" style="padding-top: 50px ;">
-
-                    <?php 
-                    
-                        require_once 'includes/funcoes.php' ;
-
-                        require_once 'core/conexao_mysql.php' ;
-                    
-                        require_once 'core/sql.php' ;
-                    
-                        require_once 'core/mysql.php' ;
-
-                        if (isset($_SESSION['login'])) 
-                        {
-                            $id = (int) $_SESSION['login']['usuario']['id'];
-
-                            $criterio = [
-                                ['id', '=', $id]
-                            ];
-
-                            $retorno = buscar (
-                                'usuario',
-                                ['id', 'nome', 'email','telefone'],
-                                $criterio
-                            );
-
-                            $entidade = $retorno[0];
-                        }
-
-                    ?>
-
-                    <h2>Usuário</h2>
-
-                    <form method="POST" action="core/usuario_repositorio.php">
-
-                        <input type="hidden" name="acao" 
-                                value="<?php echo empty($id) ? 'insert' : 'update' ?>">
-
-                        <input type="hidden" name="id" 
-                                value="<?php echo $entidade['id'] ?? '' ?>">
-
-                        <div class="form-group">
-
-                            <label for="nome">Nome</label>
-
-                            <input class="form-control" type="text" 
-                                require="required" id="nome" name="nome" 
-                                value="<?php echo $entidade['nome'] ?? '' ?>">
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label for="email">E-mail</label>
-
-                            <input class="form-control" type="text" 
-                                require="required" id="email" name="email" 
-                                value="<?php echo $entidade['email'] ?? '' ?>">
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label for="email">Telefone</label>
-
-                            <input class="form-control" type="text" 
-                                require="required" id="telefone" name="telefone" 
-                                value="<?php echo $entidade['telefone'] ?? '' ?>">
-
-                        </div>
-
-                        <?php if (!isset($_SESSION['login'])) : ?>
-
-                        <div class="form-group">
-
-                            <label for="senha">Senha</label>
-
-                            <input class="form-control" type="password" 
-                                require="required" id="senha" name="senha">
-
-                        </div>
-
-                        <?php endif; ?>
-
-                        <div class="text-right">
-
-                            <button class="btn btn-success" 
-                            type="submit">Salvar</button>
-
-                        </div>
-
-                    </form>
-                
-                </div>
-            
-            </div>
-            
-            <div class="row">
-
-                <div class="col-md-12">
-
-                    <?php include 'includes/rodape.php'; ?>
-
-                </div>
-                        
-            </div>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Purchase Manager</title>
+    <link rel="stylesheet" href="lib/css/tela_cadastro.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src="img/LOGO.png"> 
         </div>
+        <div class="form">
+            <form action="#">
+                <div class="container-titule-button">
+                        <h2 class="titule"> Cadastre-se       </h2> 
+                        <button id="button" type="submit" > Cadastrar  </button>
+                </div>
+                <br>
+                 <div class="input group">
+                     <div class="input-box">
+                         <label for="primeiro_nome"> Primeiro Nome </label>
+                         <input id="primeiro_nome" type="text" name="lastname" placeholder="Digite seu primeiro nome " required >
+                     </div>
 
-        <script src="lib/js/bootstrap.min.js"></script>
+                     <div class="input-box">
+                        <label for="sobrenome"> Sobrenome </label>
+                        <input id="sobrenome" type="text" name="lastname" placeholder="Digite seu sobrenome " required>
+                    </div>
 
-    </body>
+                    <div class="input-box">
+                        <label for="email"> E-mail </label>
+                        <input id="email" type="text" name="email" placeholder="Digite seu email " required>
+                    </div>
 
+                    <div class="input-box">
+                        <label for="celular"> Celular </label>
+                        <input id="celular" type="text" name="celular" placeholder="(XX) XXXXX-XXXX " required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="senha"> Senha </label>
+                        <input id="senha" type="text" name="pasword" placeholder="Digite sua senha " required>
+                    </div>
+                 </div>
+
+                 <div class="gender-inputs"> 
+                        <div class="gender-title"></div>
+                        <h5> Gêneros</h5>
+                 </div>
+
+                 <div class="gender-group">
+                    <input type="radio"  id="famele"  name="geneder">
+                    <label for="famele"> Feminino </label>
+                </div>
+
+                <div class="gender-group">
+                    <input type="radio"  id="male"  name="geneder">
+                    <label for="male"> Masculino </label>
+                </div>
+
+                <div class="gender-group">
+                    <input type="radio"  id="others"  name="geneder">
+                    <label for="others"> Outros </label>
+
+
+                <div class="gender-group">
+                    <input type="radio"  id="none"  name="geneder">
+                    <label for="none"> Prefiro não dizer </label>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
 </html>

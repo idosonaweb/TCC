@@ -84,7 +84,7 @@ body {
   font-size: 1em;
   z-index: 10;
 }
-.inputBox span {
+.inputBox label {
   position: absolute;
   left: 0;
   padding: 20px 0px 10px;
@@ -93,8 +93,8 @@ body {
   pointer-events: none;
   transition: 0.5s;
 }
-.inputBox input:valid ~ span,
-.inputBox input:focus ~ span {
+.inputBox input:valid ~ label,
+.inputBox input:focus ~ label {
   color: #FFF;
   transform: translateX(0px) translateY(-34px);
   font-size: 0.75em;
@@ -166,7 +166,7 @@ input[type="submit"]:hover {
    text-align: center;
 }
 
-.container-footer span {
+.container-footer label {
    font-size: 13px;
    color: #000;
    font-weight: 500;

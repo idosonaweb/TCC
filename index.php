@@ -115,7 +115,7 @@
 
     <div class="container px-3 py-5" id="custom-cards">
     
-        <h2 class="pb-2 border-bottom">Integrantes</h2>
+        <h2 class="pb-2 border-bottom">Criadores</h2>
 
         <div class="row row-cols-1 row-cols-lg-4 align-items-stretch g-5 py-5">
         
@@ -220,13 +220,11 @@
 
 </div>
 
-  <footer class="container">
-    
-    <p class="float-end"><a class="btn btn-primary btn-lg" href="#">Voltar ao topo</a></p>
-    
-    <p>&copy; 2022 Company, Inc. All rights reserved.</p>
-    
-  </footer>
+    <div style="min-height: 200px ;">
+
+        <?php include "includes/rodape.php" ?> 
+
+    </div>
 
     </main>
 

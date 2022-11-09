@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Inter+Tight:ital,wght@0,300;1,200&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:  border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #cf94ebda;
+}
+
+.container{
+    width: 90vh;
+    height: 80%;
+
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0.212) ;
+}
+.form-image{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffffd3;
+}
+
+.form-image{
+    width: 31rem;
+
+}
+
+.form{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 3rem;
+}
+
+.container-titule-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-titule-button {
+    display: flex;
+    align-items: center;
+}
+
+
+.titule {
+    font-size: 1.2rem;
+}
+
+
+
+#button {
+    border: none;
+    background-color: #bbb8f1;
+    padding:  10px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition:filter .4s;
+}
+
+#button:hover {
+    filter: brightness(1.1);
+
+}
+.container-input-button button:hover {
+    background-color: #716dc4f1;
+}
+
+.container-input-button button a{
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+}
+
+.form-header h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #a6a2e2;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+
+.input-box input{
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 1px 1px 6px #0000001c;
+}
+
+.input-box input:hover{
+    background-color: #eeeeee75;
+}
+
+.input-box label,
+.gender-title h6{
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+.input-box input::placeholder{
+    color: #000000be;
+}
+
+.gender-input{
+    display: flex;
+    align-items: center;
+}
+
+.gender-input input{
+    margin-right: 0.35rem;
+}
+
+.gender-input label{
+    font-size: 0.81rem;
+    font-weight: 600;
+    color: #000000c0;
+}

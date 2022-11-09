@@ -25,13 +25,15 @@
         case 'insert':
             
             $dados = [
-                'titulo'            => $titulo,
-                'texto'             => $texto,
-                'data_postagem'     => "$data_postagem  $hora_postagem",
+                'titulo_compra'            => $titulo_compra,
+                'descricao_compra'             => $descricao_compra,
+                'data_compra'     => $data_compra,
+                'local_nome'     => $local_nome,
+                'valor_compra'     => $valor_compra,
                 'usuario_id'        => $_SESSION['login']['usuario']['id']
             ];
 
-            insere('post', $dados);
+            insere('compra', $dados);
 
             break;
         
@@ -40,9 +42,11 @@
             
             $dados =
             [
-                'titulo'            => $titulo,
-                'texto'             => $texto,
-                'data_postagem'     => "$data_postagem $hora_postagem",
+                'titulo_compra'            => $titulo_compra,
+                'descricao_compra'             => $descricao_compra,
+                'data_compra'     => $data_compra,
+                'local_nome'     => $local_nome,
+                'valor_compra'     => $valor_compra,
                 'usuario_id'        => $_SESSION['login']['usuario']['id']
             ];
 
@@ -50,7 +54,7 @@
                 ['id', '=', $id]
             ];
 
-            atualiza('post', $dados, $criterio);
+            atualiza('compra', $dados, $criterio);
             
             break;
 

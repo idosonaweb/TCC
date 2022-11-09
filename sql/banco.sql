@@ -15,30 +15,48 @@ CREATE TABLE usuario (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE post (
-
-    id int NOT NULL AUTO_INCREMENT,
-    titulo varchar (255) NOT NULL,
-    texto text NOT NULL,
-    usuario_id int NOT NULL,
-    data_criacao datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    data_postagem datetime NOT NULL,
-    PRIMARY KEY (id),
-    KEY fk_post_usuario_idx (usuario_id),
-    CONSTRAINT fk_post_usuario FOREIGN KEY (usuario_id) REFERENCES usuario (id)
-
+create table mercado 
+(
+	id_mercado			int 			not null auto_increment,
+    nome_mercado		varchar(100) 	not null,
+    rua					varchar(50) 	not null,
+    bairro				varchar(50) 	not null,
+    cidade				varchar(50) 	not null,
+    estado				varchar(02) 	not null,
+    cep					varchar(10) 	not null,
+    foto_blob           blob,
+    foto_nome           varchar(100),
+    
+    primary key(id_mercado)
 );
 
-CREATE TABLE avaliacao (
+create table compra
+(
+	id_compra			int				not null auto_increment,
+    titulo_compra       varchar(100)    not null,
+	data_compra 		datetime 		NOT NULL,
+	descricao_compra	varchar(300) 	not null,
+	local_nome          varchar(100)    not null,
+	valor_compra 		varchar(30)			not null,
+	nota_fiscal_foto 	blob 			not null,
+    primary key(id_compra)
+);
 
-    id int NOT NULL AUTO_INCREMENT,
-    nota int NOT NULL,
-    comentario varchar(255) NOT NULL,
-    usuario_id int NOT NULL,
-    post_id int NOT NULL,
-    data_criacao datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (id),
-    CONSTRAINT fk_avaliacao_usuario FOREIGN KEY (usuario_id) REFERENCES usuario (id),
-	CONSTRAINT fk_avaliacao_post FOREIGN KEY (post_id) REFERENCES post (id)
+create table produto 
+(
+	data_inicial		date 			not null ,
+	data_final			date 			not null ,
+    valor 				double			not null,
+    quantidade   		int 			not null,
+    marca 				varchar(50)		not null,
+    primary key(data_inicial, data_final)
+);
 
+create table listas
+(
+	id_lista			int 			not null auto_increment,
+    nome_lista			varchar(100) 	not null,
+    data_criacao 		datetime 		NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    qtd_produtos   		int   			not null, -- será feito a partir de um script que contará a quantidade de produtos que a lista contém. 
+    primary key(id_lista)
 );

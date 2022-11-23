@@ -8,47 +8,118 @@
 </head>
 <body>
     <div class="container">
+        
         <div class="form-image">
-            <img src="img/LOGO.png"> 
+        
+            <img src="./img/LOGO.png"> 
+        
         </div>
+        
         <div class="form">
-            <form action="#">
+
+            <?php 
+                    
+                require_once 'includes/funcoes.php' ;
+
+                require_once 'core/conexao_mysql.php' ;
+                    
+                require_once 'core/sql.php' ;
+                    
+                require_once 'core/mysql.php' ;
+
+                if (isset($_SESSION['login'])) 
+                {
+                    $id = (int) $_SESSION['login']['mercado']['id_mercado'];
+
+                    $criterio = [
+                        ['id_mercado', '=', $id]
+                    ];
+
+                    $retorno = buscar (
+                        'mercado',
+                        ['id_mercado', 'nome', 'email'],
+                        $criterio
+                    );
+
+                        $entidade = $retorno[0];
+                    }
+
+            ?>
+            
+            <form method="POST" action="core/mercado_repositorio.php">
+
+                <input type="hidden" name="acao" 
+                        value="<?php echo empty($id) ? 'insert' : 'update' ?>">
+
+                <input type="hidden" name="id" 
+                        value="<?php echo $entidade['id_mercado'] ?? '' ?>">
+                
                 <div class="container-titule-button">
-                        <h2 class="titule">Cadastre-se</h2> 
-                        <button id="button" type="submit" > Cadastrar  </button>
+                
+                    <h2 class="titule">Cadastre-se</h2> 
+                    
+                    <button id="button" type="submit">Cadastrar</button>
+                
                 </div>
+                
                 <br>
-                 <div class="input group">
-                     <div class="input-box">
-                         <label for="nome_completo"> Nome Completo </label>
-                         <input id="nome_completo" type="text" name="nome_completo" placeholder="Digite seu primeiro nome " required >
-                     </div>
-
-                     <div class="input-box">
-                        <label for="cnpj"> CNPJ </label>
-                        <input id="cnpj" type="text" name="cnpj" placeholder="Digite seu CNPJ " required>
-                    </div>
-
-                     <div class="input-box">
-                        <label for="mercado"> Nome Mercado </label>
-                        <input id="mercado" type="text" name="mercado" placeholder="Digite seu sobrenome " required>
+                
+                <div class="input group">
+                     
+                    <div class="input-box">
+                    
+                        <label for="nome">Nome</label>
+                        
+                        <input class="form-control" type="text" placeholder="Digite o nome do mercado"
+                            require="required" id="nome" name="nome" 
+                            value="<?php echo $entidade['nome_mercado'] ?? '' ?>">                     
                     </div>
 
                     <div class="input-box">
-                        <label for="email"> E-mail </label>
-                        <input id="email" type="text" name="email" placeholder="Digite seu email " required>
+                    
+                        <label for="estado">Estado</label>
+                        
+                        <input class="form-control" type="text" placeholder="Digite seu estado"
+                                require="required" id="estado" name="estado" 
+                                value="<?php echo $entidade['estado'] ?? '' ?>">                    
                     </div>
 
                     <div class="input-box">
-                        <label for="celular"> Celular </label>
-                        <input id="celular" type="text" name="celular" placeholder="(XX) XXXXX-XXXX " required>
+                    
+                        <label for="cidade">Cidade</label>
+                        
+                        <input class="form-control" type="text" placeholder="Digite sua cidade"
+                                require="required" id="cidade" name="cidade" 
+                                value="<?php echo $entidade['cidade'] ?? '' ?>">                    
                     </div>
 
                     <div class="input-box">
-                        <label for="senha"> Senha </label>
-                        <input id="senha" type="text" name="pasword" placeholder="Digite sua senha " required>
+                        
+                        <label for="rua">Rua</label>
+                        
+                        <input class="form-control" type="text" placeholder="Digite sua rua"
+                                require="required" id="rua" name="rua" 
+                                value="<?php echo $entidade['rua'] ?? '' ?>">                    
                     </div>
-                 </div>
+
+                    <div class="input-box">
+                    
+                        <label for="bairro">Bairro</label>
+                        
+                        <input class="form-control" type="text" placeholder="Digite seu bairro"
+                                require="required" id="bairro" name="bairro" 
+                                value="<?php echo $entidade['bairro'] ?? '' ?>">                    
+                    </div>
+
+                    <div class="input-box">
+                    
+                        <label for="cnpj">CNPJ</label>
+                        
+                        <input class="form-control" type="text" placeholder="Digite seu cnpj"
+                                require="required" id="cnpj" name="cnpj" 
+                                value="<?php echo $entidade['cnpj'] ?? '' ?>">                    
+                    </div>
+                </div>
             </form>
         </div>
     </div>

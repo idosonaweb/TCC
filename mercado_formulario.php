@@ -76,24 +76,6 @@
                     </div>
 
                     <div class="input-box">
-                    
-                        <label for="estado">Estado</label>
-                        
-                        <input class="form-control" type="text" placeholder="Digite seu estado"
-                                require="required" id="estado" name="estado" 
-                                value="<?php echo $entidade['estado'] ?? '' ?>">                    
-                    </div>
-
-                    <div class="input-box">
-                    
-                        <label for="cidade">Cidade</label>
-                        
-                        <input class="form-control" type="text" placeholder="Digite sua cidade"
-                                require="required" id="cidade" name="cidade" 
-                                value="<?php echo $entidade['cidade'] ?? '' ?>">                    
-                    </div>
-
-                    <div class="input-box">
                         
                         <label for="rua">Rua</label>
                         
@@ -113,6 +95,26 @@
 
                     <div class="input-box">
                     
+                        <label for="cidade">Cidade</label>
+                        
+                        <input class="form-control" type="text" placeholder="Digite sua cidade"
+                                require="required" id="cidade" name="cidade" 
+                                value="<?php echo $entidade['cidade'] ?? '' ?>">                    
+                    </div>
+
+                    <div class="input-box">
+                    
+                        <label for="estado">Estado</label>
+                        
+                        <input class="form-control" type="text" placeholder="Digite seu estado"
+                                require="required" id="estado" name="estado" 
+                                value="<?php echo $entidade['estado'] ?? '' ?>">                    
+                    </div>
+
+                    <?php if (!isset($_SESSION['login'])) : ?>
+
+                    <div class="input-box">
+                    
                         <label for="cnpj">CNPJ</label>
                         
                         <input class="form-control" type="text" placeholder="Digite seu cnpj"
@@ -120,6 +122,9 @@
                                 value="<?php echo $entidade['cnpj'] ?? '' ?>">                    
                     </div>
                 </div>
+
+                <?php endif; ?>
+
             </form>
         </div>
     </div>

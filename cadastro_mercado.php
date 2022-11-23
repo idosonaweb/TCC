@@ -32,7 +32,7 @@
                 
                 <br>
                 
-                <h2> Cadastro de Usuário </h2>
+                <h2> Cadastro de Mercado </h2>
 
                 </div>
 
@@ -50,15 +50,15 @@
 
                         if (isset($_SESSION['login'])) 
                         {
-                            $id = (int) $_SESSION['login']['usuario']['id'];
+                            $id = (int) $_SESSION['login']['mercado']['id_mercado'];
 
                             $criterio = [
-                                ['id', '=', $id]
+                                ['id_mercado', '=', $id]
                             ];
 
                             $retorno = buscar (
-                                'usuario',
-                                ['id', 'nome', 'email','telefone'],
+                                'mercado',
+                                ['id_mercado', 'nome_mercado', 'rua','bairro', 'cidade', 'estado'],
                                 $criterio
                             );
 
@@ -67,56 +67,71 @@
 
                     ?>
 
-                    <h2>Usuário</h2>
+                    <h2>Mercado</h2>
 
-                    <form method="POST" action="core/usuario_repositorio.php">
+                    <form method="POST" action="core/mercado_repositorio.php">
 
                         <input type="hidden" name="acao" 
                                 value="<?php echo empty($id) ? 'insert' : 'update' ?>">
 
                         <input type="hidden" name="id" 
-                                value="<?php echo $entidade['id'] ?? '' ?>">
+                                value="<?php echo $entidade['id_mercado'] ?? '' ?>">
 
-                        <div class="form-group">
-
+                        <div class="input-box">
+                            
                             <label for="nome">Nome</label>
-
-                            <input class="form-control" type="text" 
+                            
+                            <input class="form-control" type="text" placeholder="Digite o nome do mercado"
                                 require="required" id="nome" name="nome" 
-                                value="<?php echo $entidade['nome'] ?? '' ?>">
-
+                                value="<?php echo $entidade['nome_mercado'] ?? '' ?>">                     
                         </div>
 
-                        <div class="form-group">
-
-                            <label for="email">E-mail</label>
-
-                            <input class="form-control" type="text" 
-                                require="required" id="email" name="email" 
-                                value="<?php echo $entidade['email'] ?? '' ?>">
-
+                        <div class="input-box">
+                            
+                            <label for="rua">Rua</label>
+                            
+                            <input class="form-control" type="text" placeholder="Digite sua rua"
+                                    require="required" id="rua" name="rua" 
+                                    value="<?php echo $entidade['rua'] ?? '' ?>">                    
                         </div>
 
-                        <div class="form-group">
+                        <div class="input-box">
+                        
+                            <label for="bairro">Bairro</label>
+                            
+                            <input class="form-control" type="text" placeholder="Digite seu bairro"
+                                    require="required" id="bairro" name="bairro" 
+                                    value="<?php echo $entidade['bairro'] ?? '' ?>">                    
+                        </div>
 
-                            <label for="email">Telefone</label>
+                        <div class="input-box">
+                        
+                            <label for="cidade">Cidade</label>
+                            
+                            <input class="form-control" type="text" placeholder="Digite sua cidade"
+                                    require="required" id="cidade" name="cidade" 
+                                    value="<?php echo $entidade['cidade'] ?? '' ?>">                    
+                        </div>
 
-                            <input class="form-control" type="text" 
-                                require="required" id="telefone" name="telefone" 
-                                value="<?php echo $entidade['telefone'] ?? '' ?>">
-
+                        <div class="input-box">
+                        
+                            <label for="estado">Estado</label>
+                            
+                            <input class="form-control" type="text" placeholder="Digite seu estado"
+                                    require="required" id="estado" name="estado" 
+                                    value="<?php echo $entidade['estado'] ?? '' ?>">                    
                         </div>
 
                         <?php if (!isset($_SESSION['login'])) : ?>
 
-                        <div class="form-group">
-
-                            <label for="senha">Senha</label>
-
-                            <input class="form-control" type="password" 
-                                require="required" id="senha" name="senha">
-
-                        </div>
+                            <div class="input-box">
+                    
+                                <label for="cnpj">CNPJ</label>
+                                
+                                <input class="form-control" type="text" placeholder="Digite seu cnpj"
+                                        require="required" id="cnpj" name="cnpj" 
+                                        value="<?php echo $entidade['cnpj'] ?? '' ?>">                    
+                            </div>
 
                         <?php endif; ?>
 

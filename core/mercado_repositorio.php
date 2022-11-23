@@ -23,13 +23,15 @@
     {
         case 'insert':
             $dados = [
-                'nome' => $nome,
-                'email' => $email,
-                'telefone' => $telefone,
-                'senha' => crypt($senha, $salt)
+                'nome_mercado' => $nome,
+                'rua' => $email,
+                'bairro' => $bairro,
+                'cidade' => $cidade,
+                'estado' => $estado,
+                'cnpj' => crypt($cnpj, $salt)
             ];
 
-            insere('usuario', $dados);
+            insere('mercado', $dados);
 
             break;
 
@@ -38,35 +40,37 @@
             $id = (int)$id ;
 
             $dados = [
-                'nome' => $nome,
-                'email' => $email,
-                'telefone' => $telefone
+                'nome_mercado' => $nome,
+                'rua' => $email,
+                'bairro' => $bairro,
+                'cidade' => $cidade,
+                'estado' => $estado,
             ];
 
             $criterio = [
-                ['id', '=', $id]
+                ['id_mercado', '=', $id]
             ];
 
-            atualiza('usuario', $dados, $criterio);
+            atualiza('mercado', $dados, $criterio);
 
             break;
 
         case 'login':
             $criterio = [
-                ['email', '=', $email],
+                ['cnpj', '=', $cnpj],
             ];
 
             $retorno = buscar(
-                'usuario', 
-                ['id', 'nome', 'email', 'telefone', 'senha'], 
+                'mercado', 
+                ['id_mercado', 'nome_mercado', 'rua', 'bairro', 'cidade', 'estado'], 
                 $criterio
             );
 
             if (count($retorno) > 0) 
             {
-                if (crypt($senha, $salt) == $retorno[0]['senha']) 
+                if (crypt($cnpj, $salt) == $retorno[0]['cnpj']) 
                 {
-                    $_SESSION['login']['usuario'] = $retorno[0] ;
+                    $_SESSION['login']['mercado'] = $retorno[0] ;
 
                     if (!empty($_SESSION['url_retorno']))
                     {
@@ -98,12 +102,12 @@
             ];
 
             $criterio = [
-                ['id', '=', $id]
+                ['id_mercado', '=', $id]
             ];
 
-            atualiza('usuario', $dados, $criterio);
+            atualiza('mercado', $dados, $criterio);
 
-            header('Location:  ../usuarios.php');
+            header('Location:  ../mercados.php');
 
             exit;
 

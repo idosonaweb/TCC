@@ -7,68 +7,131 @@
     <link rel="stylesheet" href="lib/css/tela_cadastro.css">
 </head>
 <body>
+
     <div class="container">
+
         <div class="form-image">
             <img src="img/LOGO.png"> 
         </div>
+        
         <div class="form">
-            <form action="#">
+
+            <?php 
+                    
+                require_once 'includes/funcoes.php' ;
+
+                require_once 'core/conexao_mysql.php' ;
+                    
+                require_once 'core/sql.php' ;
+                    
+                require_once 'core/mysql.php' ;
+
+                if (isset($_SESSION['login'])) 
+                {
+                    $id = (int) $_SESSION['login']['usuario']['id'];
+
+                    $criterio = [
+                        ['id', '=', $id]
+                    ];
+
+                    $retorno = buscar (
+                        'usuario',
+                        ['id', 'nome', 'email'],
+                        $criterio
+                    );
+
+                        $entidade = $retorno[0];
+                    }
+
+            ?>
+
+            <form method="POST" action="core/usuario_repositorio.php">
+
+                <input type="hidden" name="acao" 
+                        value="<?php echo empty($id) ? 'insert' : 'update' ?>">
+
+                <input type="hidden" name="id" 
+                        value="<?php echo $entidade['id'] ?? '' ?>">
+
                 <div class="container-titule-button">
-                        <h2 class="titule"> Cadastre-se       </h2> 
-                        <button id="button" type="submit" > Cadastrar  </button>
+
+                        <h2 class="titule">Cadastre-se</h2> 
+                        
+                        <button id="button" type="submit">Cadastrar</button>
                 </div>
+
                 <br>
-                 <div class="input group">
-                     <div class="input-box">
-                         <label for="primeiro_nome"> Primeiro Nome </label>
-                         <input id="primeiro_nome" type="text" name="lastname" placeholder="Digite seu primeiro nome " required >
-                     </div>
+                
+                <div class="input group">
+                     
+                    <div class="input-box">
+                     
+                        <label for="nome">Nome</label>
 
-                     <div class="input-box">
-                        <label for="sobrenome"> Sobrenome </label>
-                        <input id="sobrenome" type="text" name="lastname" placeholder="Digite seu sobrenome " required>
+                        <input class="form-control" type="text" placeholder="Digite seu nome"
+                            require="required" id="nome" name="nome" 
+                            value="<?php echo $entidade['nome'] ?? '' ?>">
+
                     </div>
 
                     <div class="input-box">
+                        
                         <label for="email"> E-mail </label>
-                        <input id="email" type="text" name="email" placeholder="Digite seu email " required>
+                        
+                        <input class="form-control" type="text" placeholder="Digite seu e-mail"
+                                require="required" id="email" name="email" 
+                                value="<?php echo $entidade['email'] ?? '' ?>">
+                    
                     </div>
 
                     <div class="input-box">
-                        <label for="celular"> Celular </label>
-                        <input id="celular" type="text" name="celular" placeholder="(XX) XXXXX-XXXX " required>
+
+                        <label for="telefone"> Telefone </label>
+
+                        <input class="form-control" type="tel" placeholder="(XX) XXXXX-XXXX "
+                                require="required" id="telefone" name="telefone"
+                                value="<?php echo $entidade['telefone'] ?? '' ?>">
+                    
                     </div>
 
+                    <?php if (!isset($_SESSION['login'])) : ?>
+
                     <div class="input-box">
+                    
                         <label for="senha"> Senha </label>
-                        <input id="senha" type="text" name="pasword" placeholder="Digite sua senha " required>
+                        
+                        <input class="form-control" type="password" placeholder="Digite sua senha"
+                                require="required" id="senha" name="senha">
+                    
                     </div>
-                 </div>
-
-                 <div class="gender-inputs"> 
-                        <div class="gender-title"></div>
-                        <h5> Gêneros</h5>
-                 </div>
-
-                 <div class="gender-group">
-                    <input type="radio"  id="famele"  name="geneder">
-                    <label for="famele"> Feminino </label>
+                 
                 </div>
 
-                <div class="gender-group">
-                    <input type="radio"  id="male"  name="geneder">
-                    <label for="male"> Masculino </label>
+                <div class="gender-inputs" class="gender-group"> 
+                            
+                    <div class="gender-title"></div>
+                            
+                    <h5> Gêneros</h5>
+
+                        <input type="radio"  id="famele"  name="geneder">
+                        
+                        <label for="fem">Feminino</label><br>
+                        
+                        <input type="radio"  id="male"  name="geneder">
+                        
+                        <label for="masc">Masculino</label><br>
+                        
+                        <input type="radio"  id="others"  name="geneder">
+                        
+                        <label for="out">Outros</label>
+                        
+                        <input type="radio"  id="none"  name="geneder">
+                        
+                        <label for="pnd">Prefiro não dizer</label>
+                
                 </div>
 
-                <div class="gender-group">
-                    <input type="radio"  id="others"  name="geneder">
-                    <label for="others"> Outros </label>
-
-
-                <div class="gender-group">
-                    <input type="radio"  id="none"  name="geneder">
-                    <label for="none"> Prefiro não dizer </label>
-                </div>
+                <?php endif; ?>
 
             </form>
         </div>

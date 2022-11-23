@@ -107,30 +107,6 @@
                  
                 </div>
 
-                <div class="gender-inputs" class="gender-group"> 
-                            
-                    <div class="gender-title"></div>
-                            
-                    <h5> Gêneros</h5>
-
-                        <input type="radio"  id="famele"  name="geneder">
-                        
-                        <label for="fem">Feminino</label><br>
-                        
-                        <input type="radio"  id="male"  name="geneder">
-                        
-                        <label for="masc">Masculino</label><br>
-                        
-                        <input type="radio"  id="others"  name="geneder">
-                        
-                        <label for="out">Outros</label>
-                        
-                        <input type="radio"  id="none"  name="geneder">
-                        
-                        <label for="pnd">Prefiro não dizer</label>
-                
-                </div>
-
                 <?php endif; ?>
 
             </form>

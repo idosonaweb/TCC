@@ -2,8 +2,8 @@
 
     session_start();
         
-    require_once '../includes/valida_login.php' ;
-    require_once '../includes/funcoes.php' ;
+    require_once 'includes/valida_login.php' ;
+    require_once 'includes/funcoes.php' ;
     require_once 'conexao_mysql.php' ;
     require_once 'sql.php' ;
     require_once 'mysql.php' ;
@@ -25,12 +25,11 @@
         case 'insert':
             
             $dados = [
-                'titulo_compra'            => $titulo_compra,
-                'descricao_compra'             => $descricao_compra,
-                'data_compra'     => $data_compra,
-                'local_nome'     => $local_nome,
-                'valor_compra'     => $valor_compra,
-                'usuario_id'        => $_SESSION['login']['usuario']['id']
+                'titulo'             => $titulo,
+                'descricao'          => $descricao,
+                'local_nome'         => $local_nome,
+                'valor_compra'       => $valor_compra,
+                'usuario_id'         => $_SESSION['login']['usuario']['id']
             ];
 
             insere('compra', $dados);
@@ -42,16 +41,15 @@
             
             $dados =
             [
-                'titulo_compra'            => $titulo_compra,
-                'descricao_compra'             => $descricao_compra,
-                'data_compra'     => $data_compra,
-                'local_nome'     => $local_nome,
-                'valor_compra'     => $valor_compra,
+                'titulo'            => $titulo,
+                'descricao'         => $descricao,
+                'local_nome'        => $local_nome,
+                'valor_compra'      => $valor_compra,
                 'usuario_id'        => $_SESSION['login']['usuario']['id']
             ];
 
             $criterio = [
-                ['id', '=', $id]
+                ['id_compra', '=', $id]
             ];
 
             atualiza('compra', $dados, $criterio);
@@ -61,10 +59,10 @@
         case 'delete':
             
             $criterio = [
-                ['id', '=', $id]
+                ['id_compra', '=', $id]
             ];
 
-            deleta('post', $criterio);
+            deleta('compra', $criterio);
 
             break;
     }

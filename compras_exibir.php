@@ -57,7 +57,7 @@
                         ];
                     }
 
-                    $compras = buscar (
+                    $compras = buscar(
                         'compra',
                         [
                             'titulo',

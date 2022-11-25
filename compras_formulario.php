@@ -131,7 +131,11 @@
 
                         </div>
 
-                        <div><a>Foto da nota fiscal:</a></div>
+                        <div><a>Foto da nota fiscal:</a>
+                    
+                            <input type = "file" id = "foto" name = "foto" accept = "image/*" />
+
+                        </div>
                         
                         <div class="texto-right">  
                         

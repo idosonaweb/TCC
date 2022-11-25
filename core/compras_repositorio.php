@@ -8,6 +8,24 @@
     require_once 'sql.php' ;
     require_once 'mysql.php' ;
 
+    $foto_Nome = $_FILES['foto']['name'] ;
+
+    $target_dir = "upload/" ;
+
+    $target_file = $target_dir . basename($_FILES['foto']['name']) ;
+
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+    $extensions_arr = array("jpg","jpeg","png","gif");
+
+    if (in_array($imageFileType, $extensions_arr)) 
+    {
+        if (move_uploaded_file($_FILES['foto']['tmp_name'], $target_dir.$foto_Nome)) 
+        {
+            $foto_Blob = addslashes(file_get_contents($target_dir.$foto_Nome)) ;
+        }
+    }
+
     foreach ($_POST as $indice => $dado) 
     {
         $$indice = limparDados($dado) ;

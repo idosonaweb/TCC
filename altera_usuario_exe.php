@@ -1,6 +1,6 @@
 <?php
 
-    include('conexao.php');
+    include('core/conexao_mysql.php');
 
     $foto_Nome = $_FILES ['foto']['name'] ;
 
@@ -21,13 +21,13 @@
     }
 
 
-    $id_usuario = $_POST["id_usuario"];
+    $id_usuario = $_POST['id'];
 
-    $nome = $_POST["nome_usuario"];
+    $nome = $_POST["nome"];
 
-    $email = $_POST["email_usuario"];
+    $email = $_POST["email"];
 
-    $telefone = $_POST["telefone_usuario"];
+    $telefone = $_POST["telefone"];
 
     echo "<h1>Alteração de dados</h1>" ;
     
@@ -36,20 +36,20 @@
     if(isset($foto_Nome))
     {
         $sql = "UPDATE usuario SET
-                nome_usuario ='". $nome ."',
-                email_usuario ='". $email ."',
-                telefone_usuario ='". $telefone . "',
+                nome='". $nome ."',
+                email='". $email ."',
+                telefone='". $telefone . "',
                 foto_blob='".$foto_Blob."',
                 foto_nome='".$foto_Nome."'
-                WHERE id_usuario=".$id_usuario;
+                WHERE id=".$id_usuario;
       }
       else
       {
         $sql = "UPDATE usuario SET
-                  nome_usuario='".$nome."',
-                  email_usuario='".$email."',
-                  telefone_usuario='".$telefone."'
-                WHERE id_usuario=".$id_usuario;
+                nome='".$nome."',
+                email='".$email."',
+                telefone='".$telefone."'
+                WHERE id=".$id_usuario;
       }
       
     $result = mysqli_query($con, $sql);

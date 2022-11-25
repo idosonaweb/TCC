@@ -2,7 +2,7 @@
 
     <head>
 
-        <title>Cadastro lista de compras</title>
+        <title>Purchase Manager</title>
 
         <link rel="stylesheet" href="lib/css/bootstrap.min.css">
 
@@ -10,29 +10,21 @@
 
     <body>
         
-        <div class="container">
+        <div>
 
-            <div class="row">
+            <div>
 
                 <div class="col-md-12">
 
-                    <?php include 'includes/topo.php'; ?>
+                    <?php include 'includes/menu.php'; ?>
 
                 </div>
             
             </div>
 
-            <div class="row" style="min-height: 500px;">
+            <div>
 
                 <div class="col-md-12">
-
-                <br>
-                <a class="nav-link" href="index.php">Voltar para Home</a>
-                <br>
-
-                </div>
-
-                <div class="col-md-10" style="padding-top: 50px ;">
 
                     <?php 
                     
@@ -52,11 +44,11 @@
                             $id = (int)$id;
 
                             $criterio = [
-                                ['id', '=', $id]
+                                ['id_compra', '=', $id]
                             ];
 
                             $retorno = buscar(
-                                'post',
+                                'compra',
                                 ['*'],
                                 $criterio
                             );
@@ -101,6 +93,7 @@
                                         value="<?php echo $data_compra ?>">
                                 </div>
                         </div> 
+                        <br>
                         <div class="form-group">
                                 <label for="local_nome">Estabelecimento:</label>
                                 <textarea class="form-control" type="text"
@@ -117,20 +110,25 @@
                         </div>
                         <div><a>Foto da nota fiscal:</a></div>
                         <div class="texto-right">  
-                            <button class="btn btn-success"
+                            <button class="btn btn-primary"
                                     type="submit">Salvar</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="row">  
-                <div class="col-md-12">
-                        <?php
-                            include 'includes/rodape.php';
-                        ?>
-                </div>
+            <div class="col-md-12">
+
+                <?php
+
+                    include 'includes/rodape.php';
+                
+                ?>
+
             </div>
         </div>
-        <script src="lib/bootstrap-4.2.1-dist/js/boostrap.min.js"></script>   
+    </div>
+
+    <script src="lib/bootstrap-4.2.1-dist/js/boostrap.min.js"></script>   
+    
     </body>
 </html>

@@ -33,12 +33,13 @@ create table mercado
 create table compra
 (
 	id_compra			int				not null auto_increment,
-    titulo_compra       varchar(100)    not null,
-	data_compra 		datetime 		NOT NULL,
-	descricao_compra	varchar(300) 	not null,
+    titulo       		varchar(100)    not null,
+	descricao			varchar(300) 	not null,
 	local_nome          varchar(100)    not null,
 	valor_compra 		varchar(30)			not null,
 	nota_fiscal_foto 	blob 			not null,
+	data_criacao datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    data_postagem datetime NOT NULL,
     primary key(id_compra)
 );
 
@@ -57,6 +58,7 @@ create table listas
 	id_lista			int 			not null auto_increment,
     nome_lista			varchar(100) 	not null,
     data_criacao 		datetime 		NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    data_postagem datetime NOT NULL,
     qtd_produtos   		int   			not null, -- será feito a partir de um script que contará a quantidade de produtos que a lista contém. 
     primary key(id_lista)
 );

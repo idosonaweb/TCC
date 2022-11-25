@@ -74,15 +74,15 @@
 
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 
-            <li><a href="index.php" class="nav-link text-dark px-3 ">Listas</a></li>
+            <li><a href="index.php" class="nav-link text-dark px-3 ">Home</a></li>
             
-            <li><a href="compras_exibir.php" class="nav-link text-dark px-3 ">Compras</a></li>
+            <li><a href="listas_exibir.php" class="nav-link text-dark px-3 ">Listas</a></li>
         
             <li><a href="#" class="nav-link text-dark px-3 ">Produtos</a></li>
         
-            <li><a href="#" class="nav-link text-dark px-3 ">Mercados</a></li>
+            <li><a href="compras_exibir.php" class="nav-link text-dark px-3 ">Compras</a></li>
         
-            <li><a href="#" class="nav-link text-dark px-3 ">Como Usar</a></li>
+            <li><a href="compras_formulario.php" class="nav-link text-dark px-3 ">Adicionar Compra</a></li>
         
             </ul>
 

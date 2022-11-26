@@ -76,7 +76,7 @@
 
             <li><a href="index.php" class="nav-link text-dark px-3 ">Home</a></li>
             
-            <li><a href="listas_exibir.php" class="nav-link text-dark px-3 ">Listas</a></li>
+            <li><a href="listas_formulario.php" class="nav-link text-dark px-3 ">Listas</a></li>
         
             <li><a href="#" class="nav-link text-dark px-3 ">Produtos</a></li>
         

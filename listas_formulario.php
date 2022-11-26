@@ -2,7 +2,7 @@
 
     <head>
 
-        <title>Cadastro lista de compras</title>
+        <title>Purchase Manager</title>
 
         <link rel="stylesheet" href="lib/css/bootstrap.min.css">
 
@@ -10,30 +10,21 @@
 
     <body>
         
-        <div class="container">
+        <div>
 
-            <div class="row">
+            <div>
 
                 <div class="col-md-12">
 
-                    <?php include 'includes/topo.php'; ?>
+                    <?php include 'includes/menu.php'; ?>
 
                 </div>
             
             </div>
 
-            <div class="row" style="min-height: 500px;">
+            <div>
 
                 <div class="col-md-12">
-
-                <br>
-                <a class="nav-link" href="index.php">Voltar para Home</a>
-                <br>
-             <h2> Cadastro de Usuário </h2>
-
-                </div>
-
-                <div class="col-md-10" style="padding-top: 50px ;">
 
                     <?php 
                     
@@ -45,105 +36,113 @@
                     
                         require_once 'core/mysql.php' ;
 
-                        if (isset($_SESSION['login'])) 
-                        {
-                            $id = (int) $_SESSION['login']['usuario']['id'];
+                        foreach($_GET as $indice => $dado){
+                            $$INDICE = limparDados($dado);
+                        }
+
+                        if(!empty($id)){
+                            $id = (int)$id;
 
                             $criterio = [
-                                ['id', '=', $id]
+                                ['id_lista', '=', $id]
                             ];
 
-                            $retorno = buscar (
-                                'usuario',
-                                ['id', 'nome', 'email','telefone'],
+                            $retorno = buscar(
+                                'lista',
+                                ['*'],
                                 $criterio
                             );
 
                             $entidade = $retorno[0];
                         }
-
                     ?>
 
-                    <h2>Usuário</h2>
+                    <h2>Registro de Lista de Compras</h2>
 
-                    <form method="POST" action="core/usuario_repositorio.php">
-
-                        <input type="hidden" name="acao" 
-                                value="<?php echo empty($id) ? 'insert' : 'update' ?>">
-
-                        <input type="hidden" name="id" 
-                                value="<?php echo $entidade['id'] ?? '' ?>">
-
-                        <div class="form-group">
-
-                            <label for="nome">Nome</label>
-
-                            <input class="form-control" type="text" 
-                                require="required" id="nome" name="nome" 
-                                value="<?php echo $entidade['nome'] ?? '' ?>">
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label for="email">E-mail</label>
-
-                            <input class="form-control" type="text" 
-                                require="required" id="email" name="email" 
-                                value="<?php echo $entidade['email'] ?? '' ?>">
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label for="email">Telefone</label>
-
-                            <input class="form-control" type="text" 
-                                require="required" id="telefone" name="telefone" 
-                                value="<?php echo $entidade['telefone'] ?? '' ?>">
-
-                        </div>
-
-                        <?php if (!isset($_SESSION['login'])) : ?>
-
-                        <div class="form-group">
-
-                            <label for="senha">Senha</label>
-
-                            <input class="form-control" type="password" 
-                                require="required" id="senha" name="senha">
-
-                        </div>
-
-                        <?php endif; ?>
-
-                        <div class="text-right">
-
-                            <button class="btn btn-success" 
-                            type="submit">Salvar</button>
-
-                        </div>
-
-                    </form>
-                
-                </div>
-            
-            </div>
-            
-            <div class="row">
-
-                <div class="col-md-12">
-
-                    <?php include 'includes/rodape.php'; ?>
-
-                </div>
+                    <br>
+                    <form method="lista" action="core/listas_repositorio.php">
                         
+                        <input type="hidden" name="acao"
+                            value="<?php echo empty($id) ? 'insert' : 'update' ?>">
+                        
+                        <input type="hidden" name="id"
+                            value="<?php echo $entidade['id_lista'] ?? '' ?>">
+                        
+                        <div class="form-group">
+                                
+                            <label for="nome_lista">Nome da Lista:</label>
+                                
+                            <input class="form-group" type="text"
+                                    require="require" id="nome_lista" name="nome_lista" rows="2"
+                                    value="<?php echo $entidade['nome_lista'] ?? '' ?>">
+                        </div>
+
+                        <div class="form-group">
+
+                                <label for="itens">Itens:</label>
+                                
+                                <textarea class="form-control" type="text"
+                                    require="require" id="itens" name="itens" rows="5">
+                                    <?php echo $entidade['itens'] ?? '' ?>
+                                </textarea>
+                        </div>
+
+                        <div class="form-group">
+
+
+                        <div class="form-group">
+                                
+                            <label for="valor_compra">Quantidade de Itens:</label>
+                            
+                            <textarea class="form-control" type="text"
+                                    require="require" id="qtd_produtos" name="qtd_produtos">
+                                    <?php echo $entidade['qtd_produtos'] ?? '' ?>
+                            </textarea>
+
+                        </div>
+
+                            <label for="texto">Data de realização:</label>
+
+                            <?php 
+                                
+                                $data = (!empty($entidade['data_postagem'])) ?
+                                    explode(' ', $entidade['data_postagem'])[0] : '';
+                            ?>
+
+                            <div class="row">
+                                
+                                <div class="col-md-3">  
+
+                                <input class="form-control" type="date"
+                                        require="required"
+                                        id="data_postagem"
+                                        name="data_postagem"
+                                        value="<?php echo $data ?>">
+                                </div>
+                        </div> 
+                        <br>
+                        
+                        <div class="texto-right">  
+                        
+                            <button class="btn btn-primary"
+                                    type="submit">Salvar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
+            <div class="col-md-12">
 
+                <?php
+
+                    include 'includes/rodape.php';
+                
+                ?>
+
+            </div>
         </div>
+    </div>
 
-        <script src="lib/js/bootstrap.min.js"></script>
-
+    <script src="lib/bootstrap-4.2.1-dist/js/boostrap.min.js"></script>   
+    
     </body>
-
 </html>

@@ -9,8 +9,8 @@
         $$indice = limparDados($dado);
     }
 
-    $posts = buscar(
-        'lista',
+    $listas = buscar(
+        'listas',
         [
             'nome_lista',
             'itens',
@@ -18,20 +18,20 @@
             'qtd_produtos',
             '(select nome
                     from usuario
-                    where usuario.id = lista.usuario_id) as nome'
+                    where usuario.id = lista.id) as nome_lista'
         ],
         [
-            ['id', '=', $post]
+            ['id', '=', $lista]
         ]
 );
-        $post = $posts[0];
-        $data_post = date_create($post['data_postagem']);
-        $data_post = date_format($data_post, 'd/m/Y H:i;s');
+        $listas = $listas[0];
+        $data_post = date_create($listas['data_postagem']);
+        $data_post = date_format($data_postagem, 'd/m/Y H:i;s');
 
 ?>
 <html>
     <head>
-        <title><?php echo $lista['nome_lista']?></title>
+        <title><?php echo $listas['nome_lista']?></title>
         <link rel="stylesheet" href="lib/bootstrap-4.2.1-dist/css/bootstrap.min.css">
     </head>
     <body>
@@ -50,12 +50,12 @@
                 </div>
             <div class="col-md-10" style="padding-top: 50px;"> 
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $lista['nome_lista']?></h5>
+                    <h5 class="card-title"><?php echo $listas['nome_lista']?></h5>
                     <h5 class="card-subtitle mb-2 text-muted">
-                        <?php echo $data_post?> Por <?php echo $lista['nome']?>
+                        <?php echo $data_post?> Por <?php echo $listas['nome_lista']?>
                     </h5>
                     <div class="card-text">
-                        <?php echo html_entity_decode($lista['itens'])?>
+                        <?php echo html_entity_decode($listas['itens'])?>
                         </div>
                     </div>
                 </div>

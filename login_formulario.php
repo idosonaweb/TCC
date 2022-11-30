@@ -50,9 +50,9 @@
 
                 <div class="links">
                     
-                    <a href="tela_cadastro_mercado.html">Cadastre-se como Mercado</a>
+                    <a href="cadastro_mercado.php">Cadastre-se como Mercado</a>
 
-                    <a href="tela_cadastro_usuario.html">Cadastre-se como Usuario</a>
+                    <a href="usuario_formulario.php">Cadastre-se como Usuario</a>
 
                 </div>
 

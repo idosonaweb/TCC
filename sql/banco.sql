@@ -58,7 +58,10 @@ create table listas
 	id_lista			int 			not null auto_increment,
     nome_lista			varchar(100) 	not null,
     data_criacao 		datetime 		NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    data_postagem datetime NOT NULL,
-    qtd_produtos   		int   			not null, -- será feito a partir de um script que contará a quantidade de produtos que a lista contém. 
+    data_postagem       datetime NOT NULL,
+    qtd_produtos   		int   			not null,
+    usuario_id 					int 			NOT NULL ,
     primary key(id_lista)
 );
+
+select  * from  listas;

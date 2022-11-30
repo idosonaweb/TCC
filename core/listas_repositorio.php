@@ -2,29 +2,11 @@
 
     session_start();
         
-    require_once 'includes/valida_login.php' ;
-    require_once 'includes/funcoes.php' ;
+    require_once '../includes/valida_login.php' ;
+    require_once '../includes/funcoes.php' ;
     require_once 'conexao_mysql.php' ;
     require_once 'sql.php' ;
     require_once 'mysql.php' ;
-
-    $foto_Nome = $_FILES['foto']['name'] ;
-
-    $target_dir = "upload/" ;
-
-    $target_file = $target_dir . basename($_FILES['foto']['name']) ;
-
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-    $extensions_arr = array("jpg","jpeg","png","gif");
-
-    if (in_array($imageFileType, $extensions_arr)) 
-    {
-        if (move_uploaded_file($_FILES['foto']['tmp_name'], $target_dir.$foto_Nome)) 
-        {
-            $foto_Blob = addslashes(file_get_contents($target_dir.$foto_Nome)) ;
-        }
-    }
 
     foreach ($_POST as $indice => $dado) 
     {
@@ -44,7 +26,7 @@
             
             $dados = [
                 'nome_lista'             => $nome_lista,
-                'data_criacao'          => $data_cricao,
+                'data_criacao'          => date("Y-m-d"),
                 'data_postagem'         => $data_postagem,
                 'qtd_produtos'       => $qtd_produtos,
                 'usuario_id'         => $_SESSION['login']['usuario']['id']

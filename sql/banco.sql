@@ -39,10 +39,13 @@ create table compra
 	valor_compra 		varchar(30)		not null,
 	nota_fiscal_foto 	blob 			not null,
     foto_nome           varchar(100),
-	data_criacao datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    data_postagem datetime NOT NULL,
+	data_criacao 		datetime 		NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    data_postagem 		datetime 		NOT NULL,
+    usuario_id          int   			NOT NULL,	
     primary key(id_compra)
 );
+
+select * from compra; 
 
 create table produto 
 (

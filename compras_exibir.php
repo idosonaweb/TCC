@@ -51,8 +51,8 @@
                     {
                         $criterio[] = [
                             'AND',
-                            'texto',
-                            'like',
+                            'titulo',
+                            'descricao',
                             "%{$busca}%"
                         ];
                     }

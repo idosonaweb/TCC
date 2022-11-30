@@ -121,7 +121,7 @@
         
             <div class="col">
         
-                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/Breno.png');">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('lib/img/Breno.png');">
                     
                     <div class="d-flex flex-column h-100 p-4 pb-3 text-white text-shadow-1">
             
@@ -144,7 +144,7 @@
 
     <div class="col">
         
-        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/Ellen.png');">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('lib/img/Ellen.png');">
           
             <div class="d-flex flex-column h-100 p-4 pb-3 text-white text-shadow-1">
                
@@ -168,7 +168,7 @@
 
     <div class="col">
 
-        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/Pedro.png');">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('lib/img/Pedro.png');">
             
             <div class="d-flex flex-column h-100 p-4 pb-3 text-white text-shadow-1">
 
@@ -192,7 +192,7 @@
             
     <div class="col">
 
-        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/Pedro.png');">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('lib/img/Pedro.png');">
             
             <div class="d-flex flex-column h-100 p-4 pb-3 text-white text-shadow-1">
 

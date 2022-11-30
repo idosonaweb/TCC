@@ -39,7 +39,7 @@
       
         <a href="/" class="d-flex align-items-center col-md-2 mb-2 mb-md-0 text-dark text-decoration-none">
         
-            <img class=" col-md-4 me-2" width="40" height="45" role="img" src="img/manager.png" aria-label="Bootstrap">
+            <img class=" col-md-4 me-2" width="40" height="45" role="img" src="lib/img/Manager.png" aria-label="Bootstrap">
 
             <span class="fs-4">Purchase Manager</span>
       

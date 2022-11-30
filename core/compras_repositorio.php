@@ -4,15 +4,14 @@
 
     include("../core/conexao_mysql.php");
         
-    require_once 'includes/valida_login.php' ;
-    require_once 'includes/funcoes.php' ;
-    require_once 'conexao_mysql.php' ;
+    require_once '../includes/valida_login.php' ;
+    require_once '../includes/funcoes.php' ;
     require_once 'sql.php' ;
     require_once 'mysql.php' ;
 
     $foto_Nome = $_FILES['foto']['name'] ;
 
-    $target_dir = "../img" ;
+    $target_dir = "../lib/img/" ;
 
     $target_file = $target_dir . basename($_FILES['foto']['name']) ;
 
@@ -49,7 +48,7 @@
                 'descricao'          => $descricao,
                 'local_nome'         => $local_nome,
                 'valor_compra'       => $valor_compra,
-                'foto_blob'          => $foto_Blob,
+                'nota_fiscal_foto'          => $foto_Blob,
                 'foto_nome'          => $foto_Nome,
                 'usuario_id'         => $_SESSION['login']['usuario']['id']
             ];
@@ -67,7 +66,7 @@
                 'descricao'         => $descricao,
                 'local_nome'        => $local_nome,
                 'valor_compra'      => $valor_compra,
-                'foto_blob'          => $foto_Blob,
+                'nota_fiscal_foto'          => $foto_Blob,
                 'foto_nome'          => $foto_Nome,
                 'usuario_id'        => $_SESSION['login']['usuario']['id']
             ];

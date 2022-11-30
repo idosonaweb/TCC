@@ -35,6 +35,7 @@
                     require_once 'core/sql.php' ;
 
                     require_once 'core/mysql.php' ;
+                    
 
                     foreach ($_GET as $indice => $dado) 
                     {
@@ -51,20 +52,20 @@
                     {
                         $criterio[] = [
                             'AND',
-                            'texto',
+                            'nome_lista',
                             'like',
                             "%{$busca}%"
                         ];
                     }
 
-                    $compras = buscar(
-                        'lista',
+                    $listas = buscar(
+                        'listas',
                         [
                             'nome_lista',
                             'data_postagem',
                             'id_lista',
                             '(select nome from usuario 
-                                        where usuario.id = lista.usuario_id) as nome'
+                                        where usuario.id = listas.usuario_id) as nome'
                         ],
 
                         $criterio,
@@ -78,13 +79,16 @@
 
                 <div>
 
+                <li><a href="listas_formulario.php" class="nav-link text-dark px-3 ">Adicionar Lista</a></li>
+
+
                     <div class="list-group">
 
                         <?php
-                        
-                            foreach ($listas as $lista): 
+
+                            foreach ($listas as $listas): 
                             {
-                                $data = date_create($compra['data_postagem']) ;
+                                $data = date_create($listas['data_postagem']) ;
 
                                 $data = date_format($data, 'd/m/Y H:i:s') ;
                             }
@@ -92,11 +96,11 @@
                         ?>
 
                         <a class="list-group-item list-group-item-action"
-                            href="listas_detalhe.php?lista=<?php echo $lista['id_lista'] ?>">
+                            href="listas_detalhe.php?lista=<?php echo $listas['id_lista'] ?>">
                         
-                            <strong><?php echo $post['nome_lista'] ?></strong>
+                            <strong><?php echo $listas['nome_lista'] ?></strong>
 
-                            [<?php echo $lista['nome'] ?>]
+                            [<?php echo $listas['nome_lista'] ?>]
 
                             <span class="badge badge-dark"><?php echo $data ?></span>
                         

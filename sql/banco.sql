@@ -36,8 +36,9 @@ create table compra
     titulo       		varchar(100)    not null,
 	descricao			varchar(300) 	not null,
 	local_nome          varchar(100)    not null,
-	valor_compra 		varchar(30)			not null,
+	valor_compra 		varchar(30)		not null,
 	nota_fiscal_foto 	blob 			not null,
+    foto_nome           varchar(100),
 	data_criacao datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     data_postagem datetime NOT NULL,
     primary key(id_compra)

@@ -94,7 +94,7 @@
                         <a class="list-group-item list-group-item-action"
                             href="compra_detalhe.php?compra=<?php echo $compra['id_compra'] ?>">
                         
-                            <strong><?php echo $post['titulo'] ?></strong>
+                            <strong><?php echo $compra['titulo'] ?></strong>
 
                             [<?php echo $compra['nome'] ?>]
 

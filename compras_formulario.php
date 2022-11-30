@@ -114,7 +114,7 @@
                             <label for="local_nome">Estabelecimento:</label>
                             
                             <textarea class="form-control" type="text"
-                                    require="require" id="local_nome" name="local_nome" >
+                                    require="require" id="local_nome" name="local_nome" rows="2">
                                     <?php echo $entidade['local_nome'] ?? '' ?>
                             </textarea>
 
@@ -125,7 +125,7 @@
                             <label for="valor_compra">Valor:</label>
                             
                             <textarea class="form-control" type="text"
-                                    require="require" id="valor_compra" name="valor_compra">
+                                    require="require" id="valor_compra" name="valor_compra" rows="2">
                                     <?php echo $entidade['valor_compra'] ?? '' ?>
                             </textarea>
 

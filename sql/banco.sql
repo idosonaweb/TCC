@@ -67,5 +67,3 @@ create table listas
     usuario_id 					int 			NOT NULL ,
     primary key(id_lista)
 );
-
-select  * from  listas;

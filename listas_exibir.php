@@ -53,12 +53,12 @@
                         $criterio[] = [
                             'AND',
                             'nome_lista',
-                            'like',
+                            'qtd_produtos',
                             "%{$busca}%"
                         ];
                     }
 
-                    $listas = buscar(
+                    $lista = buscar(
                         'listas',
                         [
                             'nome_lista',
@@ -79,14 +79,13 @@
 
                 <div>
 
-                <li><a href="listas_formulario.php" class="nav-link text-dark px-3 ">Adicionar Lista</a></li>
-
+                <button class="btn btn-primary my-2 my-sm-0"><a href="listas_formulario.php">Adicionar Lista</a></button>
 
                     <div class="list-group">
 
                         <?php
 
-                            foreach ($listas as $listas): 
+                            foreach ($lista as $listas): 
                             {
                                 $data = date_create($listas['data_postagem']) ;
 
@@ -99,8 +98,6 @@
                             href="listas_detalhe.php?lista=<?php echo $listas['id_lista'] ?>">
                         
                             <strong><?php echo $listas['nome_lista'] ?></strong>
-
-                            [<?php echo $listas['nome_lista'] ?>]
 
                             <span class="badge badge-dark"><?php echo $data ?></span>
                         

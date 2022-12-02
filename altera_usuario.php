@@ -2,7 +2,7 @@
 
     include("core/conexao_mysql.php");
 
-    $id_usuario = $_GET['id'];
+    $id_usuario = $_POST['id'];
 
     $sql = "SELECT * FROM usuario where id=" . $id_usuario ;
 

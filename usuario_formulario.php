@@ -11,7 +11,7 @@
     <div class="container">
 
         <div class="form-image">
-            <img src="img/LOGO.png"> 
+            <img src="lib/img/LOGO.png"> 
         </div>
         
         <div class="form">

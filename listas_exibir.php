@@ -78,8 +78,12 @@
                 <br>
 
                 <div>
+                    
+                <button style = background-color:white; class="btn btn-primary my-2 my-sm-0"><a href="listas_formulario.php">Adicionar Lista</a></button>
 
-                <button class="btn btn-primary my-2 my-sm-0"><a href="listas_formulario.php">Adicionar Lista</a></button>
+                <br>
+                <br>
+
 
                     <div class="list-group">
 

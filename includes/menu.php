@@ -82,9 +82,7 @@
         
             <li><a href="compras_exibir.php" class="nav-link text-dark px-3 ">Compras</a></li>
         
-            <li><a href="compras_formulario.php" class="nav-link text-dark px-3 ">Adicionar Compra</a></li>
 
-            <li><a href="listas_formulario.php" class="nav-link text-dark px-3 ">Adicionar Lista</a></li>
 
         
             </ul>

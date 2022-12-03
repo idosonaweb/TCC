@@ -4,7 +4,7 @@
 
     $id_usuario = $_POST['id'];
 
-    $sql = "SELECT * FROM usuario where id=" . $id_usuario ;
+    $sql = "SELECT * FROM usuario where id= ".$id_usuario ;
 
     $result = mysqli_query($con, $sql);
 
@@ -27,7 +27,7 @@
     <div class="container">
 
         <div class="form-image">
-            <img src="img/LOGO.png"> 
+            <img src="lib/img/LOGO.png"> 
         </div>
         
         <div class="form">

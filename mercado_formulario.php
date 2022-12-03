@@ -37,12 +37,12 @@
 
                     $retorno = buscar (
                         'mercado',
-                        ['id_mercado', 'nome', 'email'],
+                        ['id_mercado', 'nome_mercado', 'rua','bairro', 'cidade', 'estado'],
                         $criterio
                     );
 
-                        $entidade = $retorno[0];
-                    }
+                    $entidade = $retorno[0];
+                }
 
             ?>
             

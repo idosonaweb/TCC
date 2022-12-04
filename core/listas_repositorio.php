@@ -28,8 +28,9 @@
                 'nome_lista'             => $nome_lista,
                 'data_criacao'          => date("Y-m-d"),
                 'data_postagem'         => $data_postagem,
+                'itens'                 => $itens,
                 'qtd_produtos'       => $qtd_produtos,
-                'usuario_id'         => $_SESSION['login']['usuario']['id']
+                'usuario_id'         => $_SESSION['login']['usuario']['usuario_id']
             ];
 
             insere('listas', $dados);
@@ -45,7 +46,7 @@
                 'data_criacao'          => $data_cricao,
                 'data_postagem'         => $data_postagem,
                 'qtd_produtos'       => $qtd_produtos,
-                'usuario_id'         => $_SESSION['login']['usuario']['id']
+                'usuario_id'         => $_SESSION['login']['usuario']['usuario_id']
             ];
 
             $criterio = [

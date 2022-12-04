@@ -44,7 +44,7 @@
             ];
 
             $criterio = [
-                ['id', '=', $id]
+                ['usuario_id', '=', $id]
             ];
 
             atualiza('usuario', $dados, $criterio);
@@ -58,7 +58,7 @@
 
             $retorno = buscar(
                 'usuario', 
-                ['id', 'nome', 'email', 'telefone', 'senha'], 
+                ['usuario_id', 'nome', 'email', 'telefone', 'senha'], 
                 $criterio
             );
 
@@ -98,7 +98,7 @@
             ];
 
             $criterio = [
-                ['id', '=', $id]
+                ['usuario_id', '=', $id]
             ];
 
             atualiza('usuario', $dados, $criterio);

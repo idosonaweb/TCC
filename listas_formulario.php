@@ -40,15 +40,15 @@
                             $$INDICE = limparDados($dado);
                         }
 
-                        if(!empty($id)){
-                            $id = (int)$id;
+                        if(!empty($id_lista)){
+                            $id_lista = (int)$id;
 
                             $criterio = [
-                                ['id_lista', '=', $id]
+                                ['id_lista', '=', $id_lista]
                             ];
 
                             $retorno = buscar(
-                                'lista',
+                                'listas',
                                 ['*'],
                                 $criterio
                             );
@@ -65,7 +65,7 @@
                         <input type="hidden" name="acao"
                             value="<?php echo empty($id) ? 'insert' : 'update' ?>">
                         
-                        <input type="hidden" name="id"
+                        <input type="hidden" name="id_lista"
                             value="<?php echo $entidade['id_lista'] ?? '' ?>">
                         
                         <div class="form-group">

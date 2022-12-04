@@ -63,7 +63,9 @@ create table listas
     data_criacao 		datetime 		NOT NULL DEFAULT CURRENT_TIMESTAMP,
     data_postagem       datetime NOT NULL,
     qtd_produtos   		int   			not null,
+    itens				text   not null,	
     usuario_id 					int 			NOT NULL ,
     primary key(id_lista)
 );
 
+select * from listas;

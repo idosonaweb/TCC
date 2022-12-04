@@ -42,10 +42,10 @@
                         $$indice = limparDados($dado) ;
                     }
 
-                    $data_Atual = date('Y-m-d H:i:s') ;
+                    $data = date('Y-m-d H:i:s') ;
 
                     $criterio = [
-                        ['data_postagem', '<=', $data_Atual]
+                        ['data_postagem', '<=', $data]
                     ];
 
                     if (!empty($busca)) 
@@ -64,8 +64,9 @@
                             'nome_lista',
                             'data_postagem',
                             'id_lista',
+                            'itens',
                             '(select nome from usuario 
-                                        where usuario.id = listas.usuario_id) as nome'
+                                        where usuario.usuario_id = listas.id_lista) as nome'
                         ],
 
                         $criterio,

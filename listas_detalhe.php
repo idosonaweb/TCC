@@ -9,28 +9,28 @@
         $$indice = limparDados($dado);
     }
 
-    $lista = buscar(
+    $listas = buscar(
         'listas',
         [
             'nome_lista',
             'data_postagem',
+            'id_lista',
             'itens',
-            '(select nome
-                    from usuario
-                    where usuario_id = listas.usuario_id) as nome'
+            '(select nome from usuario 
+                        where usuario.usuario_id = listas.usuario_id) as nome'
         ],
         [
-            ['id', '=', $lista]
+            ['id_lista', '=', $lista]
         ]
 );
         $lista = $listas[0];
-        $data_post = date_create($lista['data_postagem']);
-        $data_post = date_format($data_post, 'd/m/Y H:i;s');
+        $data = date_create($lista['data_postagem']);
+        $data = date_format($data, 'd/m/Y H:i;s');
 
 ?>
 <html>
     <head>
-        <title><?php echo $lista['nome_lista']?></title>
+        <title><?php echo $listas['nome_lista']?></title>
         <link rel="stylesheet" href="lib/bootstrap-4.2.1-dist/css/bootstrap.min.css">
     </head>
     <body>
@@ -51,7 +51,7 @@
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $lista['nome_lista']?></h5>
                     <h5 class="card-subtitle mb-2 text-muted">
-                        <?php echo $data_post?> Por <?php echo $lista['nome']?>
+                        <?php echo $data?> Por <?php echo $lista['nome']?>
                     </h5>
                     <div class="card-text">
                         <?php echo html_entity_decode($lista['itens'])?>

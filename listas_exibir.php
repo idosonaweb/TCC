@@ -70,7 +70,7 @@
                         ],
                         
                         $criterio,
-                        'nome_lista DESC'
+                        'data_criacao DESC'
 
                     );
                 

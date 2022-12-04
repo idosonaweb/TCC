@@ -1,10 +1,12 @@
 <?php
+    
+    $connection= mysqli_connect('localhost', 'root', ' ' );
 
     include("core/conexao_mysql.php");
 
-    $id_usuario = $_POST['id'];
+    $id_usuario = $_POST['usuario_id'];
 
-    $sql = "SELECT * FROM usuario where id= ".$id_usuario ;
+    $sql = "SELECT * FROM usuario where usuario_id= ".$id_usuario ;
 
     $result = mysqli_query($con, $sql);
 
@@ -22,13 +24,7 @@
 </head>
 <body>
 
-    <?php echo "<img class='center' src='data:image/jpeg;base64,".base64_encode( $row["foto_blob"] )."' align='center' width='150' height='150'/>"; ?>  
-
     <div class="container">
-
-        <div class="form-image">
-            <img src="lib/img/LOGO.png"> 
-        </div>
         
         <div class="form">
 
@@ -69,15 +65,9 @@
                     
                     </div>
 
-                    <div class="input-box">
-                
-                        <input type="file" id="foto" name="foto" accept="image/*" />
-                        
-                    </div>
-                 
                 </div>
 
-                <input name="id" type="hidden" value="<?php echo $row['id']?>">
+                <input name="id" type="hidden" value="<?php echo $row['id_usuario']?>">
 
             </form>
         </div>

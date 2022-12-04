@@ -6,13 +6,13 @@ use tcc ;
 
 CREATE TABLE usuario (
 
-    id int NOT NULL AUTO_INCREMENT,
+    usuario_id int NOT NULL AUTO_INCREMENT,
     nome varchar (50) NOT NULL,
     email varchar (255) NOT NULL,
     telefone varchar (12) NOT NULL,
     senha varchar (60) NOT NULL,
     data_criacao datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (id)
+    PRIMARY KEY (usuario_id)
 );
 
 create table mercado 
@@ -37,7 +37,7 @@ create table compra
 	descricao			varchar(300) 	not null,
 	local_nome          varchar(100)    not null,
 	valor_compra 		varchar(30)		not null,
-	nota_fiscal_foto 	blob 			not null,
+	nota_fiscal_foto 	blob 			,
     foto_nome           varchar(100),
 	data_criacao 		datetime 		NOT NULL DEFAULT CURRENT_TIMESTAMP,
     data_postagem 		datetime 		NOT NULL,
@@ -45,7 +45,6 @@ create table compra
     primary key(id_compra)
 );
 
-select * from compra; 
 
 create table produto 
 (
@@ -67,3 +66,4 @@ create table listas
     usuario_id 					int 			NOT NULL ,
     primary key(id_lista)
 );
+

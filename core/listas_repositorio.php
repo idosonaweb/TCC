@@ -52,7 +52,7 @@
                 ['id_lista', '=', $id]
             ];
 
-            atualiza('lista', $dados, $criterio);
+            atualiza('listas', $dados, $criterio);
             
             break;
 
@@ -62,7 +62,7 @@
                 ['id_lista', '=', $id]
             ];
 
-            deleta('lista', $criterio);
+            deleta('listas', $criterio);
 
             break;
     }

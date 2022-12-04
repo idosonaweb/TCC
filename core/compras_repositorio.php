@@ -9,7 +9,7 @@
     require_once 'sql.php' ;
     require_once 'mysql.php' ;
 
-    $foto_Nome = $_FILES['foto']['name'] ;
+    $foto_nome = $_FILES['foto']['name'] ;
 
     $target_dir = "../lib/img/" ;
 
@@ -21,9 +21,9 @@
 
     if (in_array($imageFileType, $extensions_arr)) 
     {
-        if (move_uploaded_file($_FILES['foto']['tmp_name'], $target_dir.$foto_Nome)) 
+        if (move_uploaded_file($_FILES['foto']['tmp_name'], $target_dir.$foto_nome)) 
         {
-            $foto_Blob = addslashes(file_get_contents($target_dir.$foto_Nome)) ;
+            $nota_fiscal_foto = addslashes(file_get_contents($target_dir.$foto_nome)) ;
         }
     }
 
@@ -48,8 +48,9 @@
                 'descricao'          => $descricao,
                 'local_nome'         => $local_nome,
                 'valor_compra'       => $valor_compra,
-                'nota_fiscal_foto'          => $foto_Blob,
-                'foto_nome'          => $foto_Nome,
+                'nota_fiscal_foto'   => $nota_fiscal_foto,
+                'foto_nome'          => $foto_nome,
+                'data_postagem'      => $data_postagem,
                 'usuario_id'         => $_SESSION['login']['usuario']['id']
             ];
 
@@ -60,15 +61,15 @@
 
         case 'update':
             
-            $dados =
-            [
-                'titulo'            => $titulo,
-                'descricao'         => $descricao,
-                'local_nome'        => $local_nome,
-                'valor_compra'      => $valor_compra,
-                'nota_fiscal_foto'          => $foto_Blob,
-                'foto_nome'          => $foto_Nome,
-                'usuario_id'        => $_SESSION['login']['usuario']['id']
+            $dados = [
+                'titulo'             => $titulo,
+                'descricao'          => $descricao,
+                'local_nome'         => $local_nome,
+                'valor_compra'       => $valor_compra,
+                'nota_fiscal_foto'   => $nota_fiscal_foto,
+                'foto_nome'          => $foto_nome,
+                'data_postagem'      => $data_postagem,
+                'usuario_id'         => $_SESSION['login']['usuario']['id']
             ];
 
             $criterio = [

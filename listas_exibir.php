@@ -66,11 +66,11 @@
                             'id_lista',
                             'itens',
                             '(select nome from usuario 
-                                        where usuario.usuario_id = listas.id_lista) as nome'
+                                        where usuario.usuario_id = listas.usuario_id) as nome'
                         ],
-
+                        
                         $criterio,
-                        'data_postagem DESC'
+                        'nome_lista DESC'
 
                     );
                 

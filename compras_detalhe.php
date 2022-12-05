@@ -16,6 +16,7 @@
             'data_postagem',
             'id_lista',
             'descricao',
+            // 'foto_nome',
             '(select nome from usuario 
                         where usuario.usuario_id = listas.usuario_id) as nome'
         ],
@@ -29,11 +30,27 @@
 
 ?>
 <html>
-    <head>
+    <head>  
         <title><?php echo $listas['nome_lista']?></title>
         <link rel="stylesheet" href="lib/css/bootstrap.min.css">
     </head>
     <body>
+            <!-- <div>
+                <?php
+                    foreach($compra as $compras) : 
+                        $fotos = explode(';', $compras['foto_nome']);
+                ?>
+            </div>
+            <div>
+                <?php foreach($fotos as $foto) : ?>
+                    <?php if ($foto != '') : ?>
+                        <img src='<?php echo"../../upload/".$foto; ?>' style="height: 250px;">
+                    <?php endif; ?>
+                <?php endforeach ?>
+            </div> -->
+            <div>
+                
+            </div>
     
             <div class="row" style="min-height: 500px;">
             <div class="col-md-12">
@@ -62,5 +79,6 @@
            </div> 
         </div>
         <script src="lib/js/bootstrap.min.js"></script>
+        <?php endforeach; ?>
     </body>
 </html>

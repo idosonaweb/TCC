@@ -68,4 +68,4 @@ create table listas
     primary key(id_lista)
 );
 
-select * from listas;
+select * from compra;

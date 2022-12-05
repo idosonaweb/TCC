@@ -37,7 +37,7 @@
                         require_once 'core/mysql.php' ;
 
                         foreach($_GET as $indice => $dado){
-                            $$INDICE = limparDados($dado);
+                            $$indice = limparDados($dado);
                         }
 
                         if(!empty($id)){
@@ -60,12 +60,12 @@
                     <h2>Registro de Compra Realizada</h2>
 
                     <br>
-                    <form method="compra" action="core/compras_repositorio.php">
+                    <form method="post" action="core/compras_repositorio.php" enctype="multipart/form-data">
                         
                         <input type="hidden" name="acao"
                             value="<?php echo empty($id) ? 'insert' : 'update' ?>">
                         
-                        <input type="hidden" name="id"
+                        <input type="hidden" name="id_compra"
                             value="<?php echo $entidade['id_compra'] ?? '' ?>">
                         
                         <div class="form-group">
@@ -133,8 +133,11 @@
 
                         <div><a>Foto da nota fiscal:</a>
                     
-                            <input type = "file" id = "foto" name = "foto" accept = "image/*" />
-
+                        <input  type="file" 
+                                    id="foto" 
+                                    name="foto[]" 
+                                    accept="image/*" 
+                                    required>
                         </div>
                         
                         <div class="texto-right">  

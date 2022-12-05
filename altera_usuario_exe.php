@@ -1,6 +1,6 @@
 <?php
 
-    include('core/conexao_mysql.php');
+    include('../TCC/core/conexao_mysql.php');
 
     $id_usuario = $_POST['usuario_id'];
 

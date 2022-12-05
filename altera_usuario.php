@@ -1,6 +1,6 @@
 <?php
     
-    $connection= mysqli_connect('localhost', 'root', '' );
+    $connection= mysqli_connect('localhost', 'root', 'root' );
 
     include("core/conexao_mysql.php");
 
@@ -28,11 +28,11 @@
         
         <div class="form">
 
-            <form action = "altera_usuario_exe.php" method = "POST" enctype='multipart/form-data'>
+            <form action = "altera_usuario_exe.php" method = "POST">
 
                 <div class="container-titule-button">
 
-                        <h2 class="titule">Cadastre-se</h2> 
+                        <h2 class="titule">Usuario</h2> 
                         
                         <button id="button" type="submit">Cadastrar</button>
                 </div>
@@ -67,7 +67,7 @@
 
                 </div>
 
-                <input name="id" type="hidden" value="<?php echo $row['id_usuario']?>">
+                <input name="id_usuario" type="hidden" value="<?php echo $row['id_usuario']?>">
 
             </form>
         </div>

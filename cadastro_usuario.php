@@ -50,7 +50,7 @@
 
                         if (isset($_SESSION['login'])) 
                         {
-                            $id = (int) $_SESSION['login']['usuario']['id'];
+                            $id = (int) $_SESSION['login']['usuario']['usuario_id'];
 
                             $criterio = [
                                 ['id', '=', $id]
@@ -58,7 +58,7 @@
 
                             $retorno = buscar (
                                 'usuario',
-                                ['id', 'nome', 'email','telefone'],
+                                ['usuario_id', 'nome', 'email','telefone'],
                                 $criterio
                             );
 
@@ -69,13 +69,13 @@
 
                     <h2>Usuário</h2>
 
-                    <form method="POST" action="core/usuario_repositorio.php">
+                    <form method="POST" action="core/usuario_repositorio.php" enctype='multipart/form-data'>
 
                         <input type="hidden" name="acao" 
                                 value="<?php echo empty($id) ? 'insert' : 'update' ?>">
 
-                        <input type="hidden" name="id" 
-                                value="<?php echo $entidade['id'] ?? '' ?>">
+                        <input type="hidden" name="usuario_id" 
+                                value="<?php echo $entidade['usuario_id'] ?? '' ?>">
 
                         <div class="form-group">
 

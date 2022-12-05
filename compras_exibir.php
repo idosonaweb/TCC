@@ -41,10 +41,10 @@
                         $$indice = limparDados($dado) ;
                     }
 
-                    $data_Atual = date('Y-m-d H:i:s') ;
+                    $data = date('Y-m-d H:i:s') ;
 
                     $criterio = [
-                        ['data_postagem', '<=', $data_Atual]
+                        ['data_postagem', '<=', $data]
                     ];
 
                     if (!empty($busca)) 
@@ -52,7 +52,7 @@
                         $criterio[] = [
                             'AND',
                             'titulo',
-                            'descricao',
+                            'local_nome',
                             "%{$busca}%"
                         ];
                     }
@@ -61,7 +61,9 @@
                         'compra',
                         [
                             'titulo',
+                            'descricao',
                             'data_postagem',
+                            'local_nome',
                             'id_compra',
                             '(select nome from usuario 
                                         where usuario.id = compra.usuario_id) as nome'
@@ -78,9 +80,8 @@
 
                 <button style = background-color:white; class="btn btn-primary my-2 my-sm-0"><a href="compras_formulario.php">Adicionar Compra</a></button>
 
-<br>
-<br>
-
+                <br>
+                <br>
 
                 <div>
 
@@ -102,7 +103,7 @@
                         
                             <strong><?php echo $compra['titulo'] ?></strong>
 
-                            [<?php echo $compra['nome'] ?>]
+                            [<?php echo $compra['local_nome'] ?>]
 
                             <span class="badge badge-dark"><?php echo $data ?></span>
                         

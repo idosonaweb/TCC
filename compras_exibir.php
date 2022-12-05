@@ -103,11 +103,9 @@
                         
                             <strong><?php echo $compras['titulo'] ?></strong>
 
-<<<<<<< HEAD
                             [<?php echo $compra['local_nome'] ?>]
-=======
+                            
                             [<?php echo $compras['nome'] ?>]
->>>>>>> 2ce464dc68702e26815b5c578b5b1afc2cafc4fa
 
                             <span class="badge badge-dark"><?php echo $data ?></span>
                         

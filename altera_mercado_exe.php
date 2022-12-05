@@ -1,55 +1,30 @@
 <?php
 
-    include('conexao.php');
+    include('../TCC/core/conexao_mysql.php');
 
-    $foto_Nome = $_FILES ['foto']['name'] ;
+    $id_mercado = $_POST["id_mercado"];
 
-    $target_dir = "upload/" ;
+    $nome_mercado = $_POST["nome_mercado"];
 
-    $target_file = $target_dir . basename($_FILES ["foto"]["name"]) ;
+    $rua = $_POST["rua"];
 
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+    $bairro = $_POST["bairro"];
 
-    $extensions_arr = array("jpg","jpeg","png","gif");
+    $cidade = $_POST["cidade"];
 
-    if (in_array($imageFileType, $extensions_arr)) 
-    {
-        if (move_uploaded_file($_FILES['foto']['tmp_name'], $target_dir.$foto_Nome)) 
-        {
-            $foto_Blob = addslashes(file_get_contents($target_dir.$foto_Nome)) ;
-        }
-    }
+    $estado = $_POST["estado"];
 
-
-    $id_usuario = $_POST["id_usuario"];
-
-    $nome = $_POST["nome_usuario"];
-
-    $email = $_POST["email_usuario"];
-
-    $telefone = $_POST["telefone_usuario"];
-
-    echo "<h1>Alteração de dados</h1>" ;
-    
-    echo "<p>Nome usuário: " . $nome . "</p>" ;
+    $cnpj = $_POST["cnpj"];
 
     if(isset($foto_Nome))
     {
-        $sql = "UPDATE usuario SET
-                nome_usuario ='". $nome ."',
-                email_usuario ='". $email ."',
-                telefone_usuario ='". $telefone . "',
-                foto_blob='".$foto_Blob."',
-                foto_nome='".$foto_Nome."'
-                WHERE id_usuario=".$id_usuario;
-      }
-      else
-      {
-        $sql = "UPDATE usuario SET
-                  nome_usuario='".$nome."',
-                  email_usuario='".$email."',
-                  telefone_usuario='".$telefone."'
-                WHERE id_usuario=".$id_usuario;
+        $sql = "UPDATE mercado SET
+                nome_mercado='". $nome ."',
+                rua='". $rua ."',
+                bairro='". $bairro . "',
+                cidade='".$cidade."',
+                estado='".$estado."'
+                WHERE id_mercado=".$id_mercado;
       }
       
     $result = mysqli_query($con, $sql);

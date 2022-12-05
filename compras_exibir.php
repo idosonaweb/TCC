@@ -58,7 +58,7 @@
                     }
 
                     $compras = buscar(
-                        'compra',
+                        'compras',
                         [
                             'titulo',
                             'descricao',
@@ -66,7 +66,7 @@
                             'local_nome',
                             'id_compra',
                             '(select nome from usuario 
-                                        where usuario.usuario_id = compra.usuario_id) as nome'
+                                        where usuario.usuario_id = compras.usuario_id) as nome'
                         ],
 
                         $criterio,
@@ -99,11 +99,11 @@
                         ?>
 
                         <a class="list-group-item list-group-item-action"
-                            href="compra_detalhe.php?compra=<?php echo $compras['id_compra'] ?>">
+                            href="compras_detalhe.php?compra=<?php echo $compras['id_compra'] ?>">
                         
                             <strong><?php echo $compras['titulo'] ?></strong>
 
-                            [<?php echo $compra['local_nome'] ?>]
+                            [<?php echo $compras['local_nome'] ?>]
                             
                             [<?php echo $compras['nome'] ?>]
 

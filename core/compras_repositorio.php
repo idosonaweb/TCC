@@ -1,10 +1,9 @@
 <?php
 
     session_start();
-
-    include("../core/conexao_mysql.php");
     require_once '../includes/valida_login.php' ;
     require_once '../includes/funcoes.php' ;
+    require_once 'conexao_mysql.php' ;
     require_once 'sql.php' ;
     require_once 'mysql.php' ;
 
@@ -49,7 +48,7 @@
                 'usuario_id'         => $_SESSION['login']['usuario']['usuario_id']
             ];
 
-            insere('compra', $dados);
+            insere('compras', $dados);
 
             break;
         
@@ -71,7 +70,7 @@
                 ['id_compra', '=', $id]
             ];
 
-            atualiza('compra', $dados, $criterio);
+            atualiza('compras', $dados, $criterio);
             
             break;
 
@@ -81,7 +80,7 @@
                 ['id_compra', '=', $id]
             ];
 
-            deleta('compra', $criterio);
+            deleta('compras', $criterio);
 
             break;
     }

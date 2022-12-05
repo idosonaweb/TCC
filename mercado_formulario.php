@@ -11,7 +11,7 @@
         
         <div class="form-image">
         
-            <img src="./img/LOGO.png"> 
+            <img src="../TCC/lib/img/LOGO.png"> 
         
         </div>
         
@@ -56,7 +56,7 @@
                 
                 <div class="container-titule-button">
                 
-                    <h2 class="titule">Cadastre-se</h2> 
+                    <h2 class="titule">Mercado</h2> 
                     
                     <button id="button" type="submit">Cadastrar</button>
                 
@@ -68,10 +68,10 @@
                      
                     <div class="input-box">
                     
-                        <label for="nome">Nome</label>
+                        <label for="nome_mercado">Nome</label>
                         
                         <input class="form-control" type="text" placeholder="Digite o nome do mercado"
-                            require="required" id="nome" name="nome" 
+                            require="required" id="nome_mercado" name="nome_mercado" 
                             value="<?php echo $entidade['nome_mercado'] ?? '' ?>">                     
                     </div>
 

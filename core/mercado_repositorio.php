@@ -23,8 +23,8 @@
     {
         case 'insert':
             $dados = [
-                'nome_mercado' => $nome,
-                'rua' => $email,
+                'nome_mercado' => $nome_mercado,
+                'rua' => $rua,
                 'bairro' => $bairro,
                 'cidade' => $cidade,
                 'estado' => $estado,
@@ -40,8 +40,8 @@
             $id = (int)$id ;
 
             $dados = [
-                'nome_mercado' => $nome,
-                'rua' => $email,
+                'nome_mercado' => $nome_mercado,
+                'rua' => $rua,
                 'bairro' => $bairro,
                 'cidade' => $cidade,
                 'estado' => $estado,
@@ -95,25 +95,15 @@
             
             $id = (int)$id ;
 
-            $valor = (int)$valor ;
-
-            $dados = [
-                'ativo' => $valor 
-            ];
-
             $criterio = [
                 ['id_mercado', '=', $id]
             ];
 
             atualiza('mercado', $dados, $criterio);
 
-            header('Location:  ../mercados.php');
-
             exit;
 
             break;
     }
-
-    header('Location: ../index.php');
 
 ?>

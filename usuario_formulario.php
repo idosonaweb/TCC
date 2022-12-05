@@ -55,7 +55,7 @@
 
                 <div class="container-titule-button">
 
-                        <h2 class="titule">Cadastre-se</h2> 
+                        <h2 class="titule">Usuário</h2> 
                         
                         <button id="button" type="submit">Cadastrar</button>
                 </div>

@@ -10,7 +10,7 @@
 
         $usuario = 'root' ;
 
-        $senha = '' ;
+        $senha = 'root' ;
 
         $conexao = mysqli_connect($servidor, $usuario, $senha, $banco, $port) ;
 

@@ -41,10 +41,10 @@
                         $$indice = limparDados($dado) ;
                     }
 
-                    $data_Atual = date('Y-m-d H:i:s') ;
+                    $data = date('Y-m-d H:i:s') ;
 
                     $criterio = [
-                        ['data_postagem', '<=', $data_Atual]
+                        ['data_postagem', '<=', $data]
                     ];
 
                     if (!empty($busca)) 
@@ -64,7 +64,7 @@
                             'data_postagem',
                             'id_compra',
                             '(select nome from usuario 
-                                        where usuario.id = compra.usuario_id) as nome'
+                                        where usuario.usuario_id = compra.usuario_id) as nome'
                         ],
 
                         $criterio,
@@ -88,9 +88,9 @@
 
                         <?php
                         
-                            foreach ($compras as $compra): 
+                            foreach ($compras as $compras): 
                             {
-                                $data = date_create($compra['data_postagem']) ;
+                                $data = date_create($compras['data_postagem']) ;
 
                                 $data = date_format($data, 'd/m/Y H:i:s') ;
                             }
@@ -98,11 +98,11 @@
                         ?>
 
                         <a class="list-group-item list-group-item-action"
-                            href="compra_detalhe.php?compra=<?php echo $compra['id_compra'] ?>">
+                            href="compra_detalhe.php?compra=<?php echo $compras['id_compra'] ?>">
                         
-                            <strong><?php echo $compra['titulo'] ?></strong>
+                            <strong><?php echo $compras['titulo'] ?></strong>
 
-                            [<?php echo $compra['nome'] ?>]
+                            [<?php echo $compras['nome'] ?>]
 
                             <span class="badge badge-dark"><?php echo $data ?></span>
                         

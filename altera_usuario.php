@@ -1,6 +1,6 @@
 <?php
     
-    $connection= mysqli_connect('localhost', 'root', ' ' );
+    $connection= mysqli_connect('localhost', 'root', '' );
 
     include("core/conexao_mysql.php");
 

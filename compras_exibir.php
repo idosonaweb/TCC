@@ -52,7 +52,7 @@
                         $criterio[] = [
                             'AND',
                             'titulo',
-                            'descricao',
+                            'local_nome',
                             "%{$busca}%"
                         ];
                     }
@@ -61,7 +61,9 @@
                         'compra',
                         [
                             'titulo',
+                            'descricao',
                             'data_postagem',
+                            'local_nome',
                             'id_compra',
                             '(select nome from usuario 
                                         where usuario.usuario_id = compra.usuario_id) as nome'
@@ -78,9 +80,8 @@
 
                 <button style = background-color:white; class="btn btn-primary my-2 my-sm-0"><a href="compras_formulario.php">Adicionar Compra</a></button>
 
-<br>
-<br>
-
+                <br>
+                <br>
 
                 <div>
 
@@ -102,7 +103,11 @@
                         
                             <strong><?php echo $compras['titulo'] ?></strong>
 
+<<<<<<< HEAD
+                            [<?php echo $compra['local_nome'] ?>]
+=======
                             [<?php echo $compras['nome'] ?>]
+>>>>>>> 2ce464dc68702e26815b5c578b5b1afc2cafc4fa
 
                             <span class="badge badge-dark"><?php echo $data ?></span>
                         

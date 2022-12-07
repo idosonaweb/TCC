@@ -9,29 +9,31 @@
         $$indice = limparDados($dado);
     }
 
-    $compra = buscar(
-        'compra',
+    $compras = buscar(
+        'compras',
         [
             'titulo',
-            'data_postagem',
-            'id_lista',
             'descricao',
-            // 'foto_nome',
+            'local_nome',
+            'valor _compra',
+            'foto_nome',
+            'data_postagem',
+            'usuario_id',
             '(select nome from usuario 
-                        where usuario.usuario_id = listas.usuario_id) as nome'
+                        where usuario.usuario_id = compra.usuario_id) as nome'
         ],
         [
-            ['id_lista', '=', $lista]
+            ['id_compra', '=', $compra]
         ]
 );
-        $lista = $listas[0];
-        $data = date_create($lista['data_postagem']);
+        $compra = $compras[0];
+        $data = date_create($compras['data_postagem']);
         $data = date_format($data, 'd/m/Y H:i;s');
 
 ?>
 <html>
     <head>  
-        <title><?php echo $listas['nome_lista']?></title>
+        <title><?php echo $compras['titulo']?></title>
         <link rel="stylesheet" href="lib/css/bootstrap.min.css">
     </head>
     <body>
@@ -60,12 +62,12 @@
 </div>
             <div class="col-md-10" style="padding-top: 50px;"> 
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $lista['nome_lista']?></h5>
+                    <h5 class="card-title"><?php echo $compra['titulo']?></h5>
                     <h5 class="card-subtitle mb-2 text-muted">
-                        <?php echo $data?> Por <?php echo $lista['nome']?>
+                        <?php echo $data?> Por <?php echo $compra['nome']?>
                     </h5>
                     <div class="card-text">
-                        <?php echo html_entity_decode($lista['itens'])?>
+                        <?php echo html_entity_decode($compra['descricao'])?>
                         </div>
                     </div>
                 </div>

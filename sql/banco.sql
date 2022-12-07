@@ -30,7 +30,7 @@ create table mercado
     primary key(id_mercado)
 );
 
-create table compra
+create table compras
 (
 	id_compra			int				not null auto_increment,
     titulo       		varchar(100)    not null,
@@ -68,4 +68,8 @@ create table listas
     primary key(id_lista)
 );
 
+<<<<<<< HEAD
 select * from mercado;
+=======
+select * from compras;
+>>>>>>> 698ba36a491e92ba7a37c25d455ac43ee2826a86

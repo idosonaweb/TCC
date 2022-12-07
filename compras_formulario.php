@@ -48,7 +48,7 @@
                             ];
 
                             $retorno = buscar(
-                                'compra',
+                                'compras',
                                 ['*'],
                                 $criterio
                             );

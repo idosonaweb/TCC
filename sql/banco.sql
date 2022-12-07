@@ -48,7 +48,7 @@ create table compra
 
 create table produto 
 (
-	data_inicial		date 			not null ,
+    id_produto  		int 			not null auto_increment,
 	data_final			date 			not null ,
     valor 				double			not null,
     quantidade   		int 			not null,
@@ -68,4 +68,4 @@ create table listas
     primary key(id_lista)
 );
 
-select * from compra;
+select * from mercado;

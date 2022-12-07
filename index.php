@@ -51,17 +51,17 @@
 
     <div class="row featurette">
       
-        <div class="col-md-10">
+        <div class="col-md-7">
         
-            <h2 class="featurette-heading fw-normal lh-1">Seja bem-vindo ao Purchase Manager!
+            <h2 class="featurette-heading fw-normal lh-1">Bem-vindo ao Purchase Manager!
             
             <p class="lead">A plataforma montada para te ajudar nas compras do mês. Se organize e economize uma graninha conosco!</p>
     
         </div>
             
-        <div class="col-md-2">
-        
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300"  role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/></svg>
+        <div class="col-md-5">
+
+            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>        
 
         </div>
     
@@ -105,14 +105,26 @@
 
         </div>
     
+    </div>
+    
          <hr id="Texto4" class="featurette-divider">
 
     <div class="row featurette">
       
-        <div class="col-md-12">
+        <div class="col-md-7 order-md-2">
         
-            <h2 class="featurette-heading fw-normal lh-1">Como usar? <span class="text-muted">É tudo muito intuitivo! Basta fazer login e começar a se organizar e economizar!</span></h2>
+            <h2 class="featurette-heading fw-normal lh-1">Como usar?<span class="text-muted"></h2>
+                
+            <p class="lead">É tudo muito intuitivo! Basta fazer login e começar a se organizar e economizar!</p>
             
+        </div>
+
+        <div class="col-md-5 order-md-1">
+        
+            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+        </div>
+    
     </div>
 
     <br><br><br>
@@ -224,13 +236,13 @@
 
 </div>
 
+    </main>
+
     <div style="min-height: 200px ;">
 
         <?php include "includes/rodape.php" ?> 
 
     </div>
-
-    </main>
 
     <script src="js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
       

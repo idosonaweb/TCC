@@ -78,7 +78,7 @@
 
                 <br>
 
-                <button style = background-color:white; class="btn btn-primary my-2 my-sm-0"><a href="compras_formulario.php">Adicionar Compra</a></button>
+                <button style = background-color:purple; class="btn btn-primary my-2 my-sm-0"><a href="compras_formulario.php">Adicionar Compra</a></button>
 
                 <br>
                 <br>

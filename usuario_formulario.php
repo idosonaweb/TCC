@@ -28,15 +28,15 @@
 
                 if (isset($_SESSION['login'])) 
                 {
-                    $id = (int) $_SESSION['login']['usuario']['id'];
+                    $id = (int) $_SESSION['login']['usuario']['usuario_id'];
 
                     $criterio = [
-                        ['id', '=', $id]
+                        ['usuario_id', '=', $id]
                     ];
 
                     $retorno = buscar (
                         'usuario',
-                        ['id', 'nome', 'email'],
+                        ['usuario_id', 'nome', 'email'],
                         $criterio
                     );
 

@@ -10,10 +10,6 @@
         
         <meta name="description" content="">
         
-        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-        
-        <meta name="generator" content="Hugo 0.104.2">
-        
         <title>Purchase Manager</title>
 
         <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
@@ -55,17 +51,17 @@
 
     <div class="row featurette">
       
-        <div class="col-md-7">
+        <div class="col-md-10">
         
-            <h2 class="featurette-heading fw-normal lh-1">Primeiro título de purchase. <span class="text-muted">Vai explodir sua mente.</span></h2>
+            <h2 class="featurette-heading fw-normal lh-1">Seja bem-vindo ao Purchase Manager!
             
-            <p class="lead">Alguns ótimos conteúdos de espaço reservado para o primeiro featurette aqui. Imagine alguma prosa emocionante aqui.</p>
+            <p class="lead">A plataforma montada para te ajudar nas compras do mês. Se organize e economize uma graninha conosco!</p>
     
         </div>
             
-        <div class="col-md-5">
+        <div class="col-md-2">
         
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300"  role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/></svg>
 
         </div>
     
@@ -77,9 +73,9 @@
       
         <div class="col-md-7 order-md-2">
         
-            <h2 class="featurette-heading fw-normal lh-1">Ah sim, é tão bom. <span class="text-muted">Veja por si mesmo.</span></h2>
+            <h2 class="featurette-heading fw-normal lh-1"> Como funciona? <span class="text-muted"></span></h2>
             
-            <p class="lead">Outro recurso? É claro. Mais conteúdo de espaço reservado aqui para dar uma ideia de como esse layout funcionaria com algum conteúdo real do mundo real.</p>
+            <p class="lead">O Purchase Manager oferta a seus usuários uma interface que apresenta diversas ferramentas de organização, com o intuito de fazer com que seus usuários possam planejar e registrar suas compras mensais, bem como checar os preços de produtos destaque, garatindo economia e gerenciamento de qualidade.</p>
       
         </div>
       
@@ -97,9 +93,9 @@
       
         <div class="col-md-7">
         
-            <h2 class="featurette-heading fw-normal lh-1">E por último, este. <span class="text-muted">Xeque-mate.</span></h2>
+            <h2 class="featurette-heading fw-normal lh-1">Funções <span class="text-muted"></span></h2>
             
-            <p class="lead">E sim, este é o último bloco de conteúdo representativo de espaço reservado. Novamente, não pretende ser realmente lido, apenas aqui para lhe dar uma visão melhor de como isso ficaria com algum conteúdo real. Seu conteúdo.</p>
+            <p class="lead">As principais funções consistem no registro de listas de compras virtuais, registro de compras realizadas posteriormente com inclusão da nota fiscal e visualização de mercados e produtos de interesse.</p>
         
         </div>
         
@@ -109,6 +105,14 @@
 
         </div>
     
+         <hr id="Texto4" class="featurette-divider">
+
+    <div class="row featurette">
+      
+        <div class="col-md-12">
+        
+            <h2 class="featurette-heading fw-normal lh-1">Como usar? <span class="text-muted">É tudo muito intuitivo! Basta fazer login e começar a se organizar e economizar!</span></h2>
+            
     </div>
 
     <br><br><br>

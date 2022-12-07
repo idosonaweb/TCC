@@ -53,7 +53,7 @@ create table produto
     valor 				double			not null,
     quantidade   		int 			not null,
     marca 				varchar(50)		not null,
-    primary key(data_inicial, data_final)
+    primary key(id_produto, data_final)
 );
 
 create table listas
@@ -68,8 +68,7 @@ create table listas
     primary key(id_lista)
 );
 
-<<<<<<< HEAD
+
 select * from mercado;
-=======
+
 select * from compras;
->>>>>>> 698ba36a491e92ba7a37c25d455ac43ee2826a86

@@ -94,7 +94,7 @@
                             {
                                 $data = date_create($listas['data_postagem']) ;
 
-                                $data = date_format($data, 'd/m/Y H:i:s') ;
+                                $data = date_format($data, 'd/m/Y') ;
                             }
 
                         ?>

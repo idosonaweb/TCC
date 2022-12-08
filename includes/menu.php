@@ -51,11 +51,11 @@
 
             <li><a href="index.php" class="nav-link text-dark px-4 ">Home</a></li>
             
-            <li><a href="#" class="nav-link text-dark px-4 ">O que é</a></li>
+            <li><a href="#Texto2" class="nav-link text-dark px-4 ">O que é</a></li>
         
-            <li><a href="#" class="nav-link text-dark px-4 ">Funções</a></li>
+            <li><a href="#Texto3" class="nav-link text-dark px-4 ">Funções</a></li>
         
-            <li><a href="#" class="nav-link text-dark px-4 ">Como usar</a></li>
+            <li><a href="#Texto4" class="nav-link text-dark px-4 ">Como usar</a></li>
         
         </ul>
 
@@ -76,7 +76,7 @@
               
               <li><a href="listas_exibir.php" class="nav-link text-dark px-3 ">Listas</a></li>
           
-              <li><a href="#" class="nav-link text-dark px-3 ">Produtos</a></li>
+              <li><a href="produtos_exibir.php" class="nav-link text-dark px-3 ">Produtos</a></li>
           
               <li><a href="compras_exibir.php" class="nav-link text-dark px-3 ">Compras</a></li>
         

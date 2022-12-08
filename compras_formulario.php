@@ -37,7 +37,14 @@
                         require_once 'core/mysql.php' ;
 
                         foreach($_GET as $indice => $dado){
+
                             $$indice = limparDados($dado);
+                        }
+
+                        foreach($_POST as $indice => $dado){
+
+                            $$indice = limparDados($dado);
+                        
                         }
 
                         if(!empty($id)){

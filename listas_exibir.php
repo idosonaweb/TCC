@@ -42,7 +42,13 @@
                         $$indice = limparDados($dado) ;
                     }
 
-                    $data = date('Y-m-d H:i:s') ;
+                    foreach($_POST as $indice => $dado){
+
+                        $$indice = limparDados($dado) ;
+                    
+                    }
+
+                    $data = date('Y-m-d') ;
 
                     $criterio = [
                         ['data_postagem', '<=', $data]
@@ -63,14 +69,15 @@
                         [
                             'nome_lista',
                             'data_postagem',
-                            'id_lista',
                             'itens',
+                            'id_lista',
+                            'usuario_id',
                             '(select nome from usuario 
                                         where usuario.usuario_id = listas.usuario_id) as nome'
                         ],
                         
                         $criterio,
-                        'data_criacao DESC'
+                        'data_postagem DESC'
 
                     );
                 

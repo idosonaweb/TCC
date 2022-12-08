@@ -65,6 +65,7 @@ create table listas
     data_postagem       datetime 		NOT NULL,
     qtd_produtos   		int   			not null,
     itens				text  			not null,
+    usuario_id          int   			NOT NULL,	
     primary key(id_lista)
 );
 

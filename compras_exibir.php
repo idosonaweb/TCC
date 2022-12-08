@@ -41,7 +41,13 @@
                         $$indice = limparDados($dado) ;
                     }
 
-                    $data = date('Y-m-d H:i:s') ;
+                    foreach($_POST as $indice => $dado){
+
+                        $$indice = limparDados($dado);
+                    
+                    }
+
+                    $data = date('Y-m-d') ;
 
                     $criterio = [
                         ['data_postagem', '<=', $data]
@@ -57,13 +63,14 @@
                         ];
                     }
 
-                    $compras = buscar(
+                    $compra = buscar(
                         'compras',
                         [
                             'titulo',
                             'descricao',
-                            'data_postagem',
                             'local_nome',
+                            'valor_compra',
+                            'data_postagem',
                             'id_compra',
                             '(select nome from usuario 
                                         where usuario.usuario_id = compras.usuario_id) as nome'
@@ -88,11 +95,11 @@
 
                         <?php
                         
-                            foreach ($compras as $compras): 
+                            foreach ($compra as $compras): 
                             {
                                 $data = date_create($compras['data_postagem']) ;
 
-                                $data = date_format($data, 'd/m/Y H:i:s') ;
+                                $data = date_format($data, 'd/m/Y') ;
                             }
 
                         ?>
@@ -104,7 +111,7 @@
 
                             [<?php echo $compras['local_nome'] ?>]
                             
-                            [<?php echo $compras['nome'] ?>]
+                            [<?php echo $compras['valor_compra'] ?>]
 
                             <span class="badge badge-dark"><?php echo $data ?></span>
                         

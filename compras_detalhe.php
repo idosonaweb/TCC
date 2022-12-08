@@ -11,6 +11,12 @@
         $$indice = limparDados($dado) ;
     }
 
+    foreach($_POST as $indice => $dado){
+
+        $$indice = limparDados($dado) ;
+    
+    }
+
     $compras = buscar(
         'compras',
         [
@@ -30,7 +36,7 @@
 );
         $compra = $compras[0];
         $data = date_create($compras['data_postagem']);
-        $data = date_format($data, 'd/m/Y H:i;s');
+        $data = date_format($data, 'd/m/Y');
 
 ?>
 <html>
@@ -64,12 +70,12 @@
 </div>
             <div class="col-md-10" style="padding-top: 50px;"> 
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $compra['titulo']?></h5>
+                    <h5 class="card-title"><?php echo $compras['titulo']?></h5>
                     <h5 class="card-subtitle mb-2 text-muted">
-                        <?php echo $data?> Por <?php echo $compra['nome']?>
+                        <?php echo $data?> Por <?php echo $compras['local_nome']?>
                     </h5>
                     <div class="card-text">
-                        <?php echo html_entity_decode($compra['descricao'])?>
+                        <?php echo html_entity_decode($compras['descricao'])?>
                         </div>
                     </div>
                 </div>

@@ -12,6 +12,7 @@ CREATE TABLE usuario (
     telefone 		varchar (12) 	NOT NULL,
     senha 			varchar (60) 	NOT NULL,
     data_criacao 	datetime 		NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	ativo 			tinyint NOT NULL DEFAULT '0',
     adm 			tinyint 		NOT NULL DEFAULT '0',
     PRIMARY KEY (usuario_id)
 );
@@ -70,6 +71,6 @@ create table listas
 );
 
 
-select * from mercado;
+select * from usuario;
 
 select * from compras;

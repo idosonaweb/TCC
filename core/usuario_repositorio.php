@@ -58,7 +58,7 @@
 
             $retorno = buscar(
                 'usuario', 
-                ['usuario_id', 'nome', 'email', 'telefone', 'senha'], 
+                ['usuario_id', 'nome', 'email', 'telefone', 'senha', 'adm'], 
                 $criterio
             );
 
@@ -87,19 +87,53 @@
             
             break;
         
-        case 'status':
+            case 'status':
             
-            $id = (int)$id ;
-
-            $criterio = [
-                ['usuario_id', '=', $id]
-            ];
-
-            atualiza('usuario', $dados, $criterio);
-
-            exit;
-
-            break;
+                $id = (int)$id ;
+    
+                $valor = (int)$valor ;
+    
+                $dados =
+                [
+                    'ativo' => $valor 
+                ];
+    
+                $criterio =
+                [
+                    ['usuario_id', '=', $id]
+                ];
+    
+                atualiza('usuario', $dados, $criterio);
+    
+                header('Location:  ../usuarios.php');
+    
+                exit;
+    
+                break;
+    
+            case 'adm':
+                
+                $id = (int)$id ;
+    
+                $valor = (int)$valor ;
+    
+                $dados =
+                [
+                    'adm' => $valor 
+                ];
+    
+                $criterio =
+                [
+                    ['usuario_id', '=', $id]
+                ];
+    
+                atualiza('usuario', $dados, $criterio);
+    
+                header('Location:  ../usuarios.php');
+    
+                exit;
+                
+                break;
     }
 
     header("Location: ../index.php");

@@ -1,6 +1,6 @@
 <?php
 
-    include('../TCC/core/conexao_mysql.php');
+    include('core/conexao_mysql.php');
 
     $id_usuario = $_POST['usuario_id'];
 
@@ -14,23 +14,12 @@
     
     echo "<p>Nome usuário: " . $nome . "</p>" ;
 
-        $sql = "UPDATE usuario SET
+        $dados = "UPDATE usuario SET
                 nome='".$nome."',
                 email='".$email."',
                 telefone='".$telefone."'
-                WHERE usuario_id=".$id_usuario;
+                WHERE usuario_id =".$id_usuario;
       
-    $result = mysqli_query($con, $sql);
-
-    if($result)
-    {
-        echo "Dados alterados com sucesso <br>" ;
-    }
-    else
-    {
-        echo "Erro ao alterar no banco de dados " . mysqli_error($con) . "<br>" ;
-    }
+    $result = mysqli_query($conexao, $dados);
 
 ?>
-
-<a href="index.php">Voltar</a>

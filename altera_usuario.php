@@ -1,14 +1,12 @@
 <?php
     
-    $connection= mysqli_connect('localhost', 'root', '' );
-
     include("core/conexao_mysql.php");
 
     $id_usuario = $_POST['usuario_id'];
 
-    $sql = "SELECT * FROM usuario where usuario_id= ".$id_usuario ;
+    $dados = "SELECT * FROM usuario where usuario_id =". $id_usuario ;
 
-    $result = mysqli_query($con, $sql);
+    $result = mysqli_query($conexao, $dados);
 
     $row = mysqli_fetch_array($result);
 

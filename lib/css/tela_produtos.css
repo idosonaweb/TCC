@@ -12,26 +12,6 @@
 
 }
 
-header {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-}
-
-.header_background  {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(header_index.jpg);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 100vh;
-    box-shadow: 0 0 20px;
-}
-
-nav{
-  
-}
-
 nav ul li {
     font-family: 'Quicksand', sans-serif;
     display: inline-block;

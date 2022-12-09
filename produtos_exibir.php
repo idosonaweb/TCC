@@ -6,7 +6,6 @@
 
         <link rel="stylesheet" href="lib/css/bootstrap.min.css">
         <link rel="stylesheet" href="lib/css/tela_produtos.css">
-        <script src="lib/js/tela_produto.js" defer></script>
 
     </head>
 
@@ -139,6 +138,7 @@
         </div>
 
         <script src="lib/js/bootstrap.min.js"></script>
+        <script src="lib/js/tela_produto.js" defer></script>
 
     </body>
 

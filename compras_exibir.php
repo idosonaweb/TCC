@@ -70,6 +70,7 @@
                             'descricao',
                             'local_nome',
                             'valor_compra',
+                            'foto_nome',
                             'data_postagem',
                             'id_compra',
                             '(select nome from usuario 
@@ -106,6 +107,8 @@
 
                         <a class="list-group-item list-group-item-action"
                             href="compras_detalhe.php?compra=<?php echo $compras['id_compra'] ?>">
+
+                            [<?php echo $compras['foto_nome'] ?>]
                         
                             <strong><?php echo $compras['titulo'] ?></strong>
 

@@ -23,12 +23,12 @@
             'titulo',
             'descricao',
             'local_nome',
-            'valor _compra',
+            'valor_compra',
             'foto_nome',
             'data_postagem',
             'usuario_id',
             '(select nome from usuario 
-                        where usuario.usuario_id = compra.usuario_id) as nome'
+                        where usuario.usuario_id = compras.usuario_id) as nome'
         ],
         [
             ['id_compra', '=', $compra]

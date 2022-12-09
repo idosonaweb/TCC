@@ -25,7 +25,7 @@
 );
         $lista = $listas[0];
         $data = date_create($lista['data_postagem']);
-        $data = date_format($data, 'd/m/Y H:i;s');
+        $data = date_format($data, 'd/m/Y');
 
 ?>
 <html>
@@ -41,7 +41,7 @@
 <?php include 'includes/menu.php'; ?>
 
 </div>
-            <div class="col-md-10" style="padding-top: 50px;"> 
+            <div class="col-md-10"> 
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $lista['nome_lista']?></h5>
                     <h5 class="card-subtitle mb-2 text-muted">

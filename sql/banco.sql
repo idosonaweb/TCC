@@ -71,6 +71,6 @@ create table listas
 );
 
 
-select * from usuario;
+select * from listas;
 
 select * from compras;

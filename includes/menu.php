@@ -81,7 +81,7 @@
               <li><a href="compras_exibir.php" class="nav-link text-dark px-3 ">Compras</a></li>
 
               <?php if ($_SESSION['login']['usuario']['adm']===1) : ?>
-                <li><a href="usuarios.php" class="nav-link text-dark px-3 ">Usuarios</a></li>
+                <li><a href="usuarios.php" class="nav-link text-dark px-3 ">Usuários</a></li>
 
             <?php endif; ?>
         
@@ -98,8 +98,6 @@
           </div>
 
           <?php endif ?>
-
-          
 
         </div>
     

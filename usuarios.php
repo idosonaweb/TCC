@@ -40,7 +40,7 @@
                             $$indice = limparDados($dado);
                         }
 
-                        $data = date('Y-m-d H:i:s');
+                        $data = date('Y-m-d');
 
                         $criterio = [];
 
@@ -82,7 +82,7 @@
                         <?php
                             foreach($result as $entidade):
                                 $data = date_create($entidade['data_criacao']);
-                                $data = date_format($data, 'd/m/Y H:i:s');
+                                $data = date_format($data, 'd/m/Y');
                         ?>
                         <tr>
                             <td><?php echo $entidade['nome'] ?></td>

@@ -36,7 +36,6 @@
 
                     require_once 'core/mysql.php' ;
                     
-
                     foreach ($_GET as $indice => $dado) 
                     {
                         $$indice = limparDados($dado) ;
@@ -86,8 +85,8 @@
                 <br>
 
                 <div>
-                    
-                <button style = background-color:white; class="btn btn-primary my-2 my-sm-0"><a href="listas_formulario.php">Adicionar Lista</a></button>
+                                
+                <a href="listas_formulario.php"><button class="btn btn-primary my-2 my-sm-0">Adicionar Lista</button></a>
 
                 <br>
                 <br>

@@ -37,7 +37,14 @@
                         require_once 'core/mysql.php' ;
 
                         foreach($_GET as $indice => $dado){
+
                             $$indice = limparDados($dado);
+                        }
+
+                        foreach($_POST as $indice => $dado){
+
+                            $$indice = limparDados($dado);
+                        
                         }
 
                         if(!empty($id)){
@@ -60,94 +67,121 @@
                     <h2>Registro de Produtos cadastrados</h2>
 
                     <br>
-                    <form method="post" action="core/produto_repositorio.php" enctype="multipart/form-data">
-                        
+                    <form method="POST" action="core/produto_repositorio.php" enctype="multipart/form-data">
+
                         <input type="hidden" name="acao"
-                            value="<?php echo empty($id) ? 'insert' : 'update' ?>">
+                                value="<?php echo empty($id) ? 'insert' : 'update' ?>">
                         
                         <input type="hidden" name="id_produto"
                             value="<?php echo $entidade['id_produto'] ?? '' ?>">
+
+                        <div class="form-row">
+                            
+                            <div class="form-group col-md-3">
+                            
+                                <label for="nome_produto">Nome</label>
+                            
+                                <input class="form-control" type="text"
+                                    require="require" id="nome_produto" name="nome_produto"
+                                    value="<?php echo $entidade['nome_produto'] ?? '' ?>">
+                            
+                            </div>
+                            
+                        </div>
+
+                        <div class="form-row">
                         
-                        <div class="form-group">
+                            <div class="form-group col-md-3">
+                            
+                                <label for="marca">Marca</label>
+                            
+                                <input class="form-control" type="text"
+                                    require="require" id="marca" name="marca"
+                                    value="<?php echo $entidade['marca'] ?? '' ?>">
+                            
+                            </div>
+                            
+                        </div>
+                            
+                        <div class="form-row">
+                            
+                            <div class="form-group col-md-3">
+                            
+                                <label for="valor">Valor</label>
+                            
+                                <input class="form-control" type="text"
+                                    require="require" id="valor" name="valor"
+                                    value="<?php echo $entidade['valor'] ?? '' ?>">
+                            
+                            </div>
+                            
+                            <div class="form-group col-md-3">
                                 
-                            <label for="titulo_compra">Título da Compra:</label>
-                                
-                            <input class="form-group" type="text"
-                                    require="require" id="titulo" name="titulo" rows="2"
-                                    value="<?php echo $entidade['titulo'] ?? '' ?>">
+                                <label for="quantidade">Quantidade</label>
+                            
+                                <input class="form-control" type="number"
+                                    require="require" id="quantidade" name="quantidade"
+                                    value="<?php echo $entidade['quantidade'] ?? '' ?>">
+                                                                
+                            </div>
+                        
                         </div>
 
-                        <div class="form-group">
-
-                                <label for="descricao">Descrição:</label>
+                        <div class="form-row">
+                            
+                            <div class="form-group col-md-3">
+                            
+                                <label for="nome_mercado">Nome do Mercado</label>
+                            
+                                <input class="form-control" type="text"
+                                    require="require" id="nome_mercado" name="nome_mercado"
+                                    value="<?php echo $entidade['nome_mercado'] ?? '' ?>">
+                            
+                            </div>
+                            
+                            <div class="form-group col-md-3">
                                 
-                                <textarea class="form-control" type="text"
-                                    require="require" id="descricao" name="descricao" rows="5">
-                                    <?php echo $entidade['descricao'] ?? '' ?>
-                                </textarea>
-                        </div>
+                                <label for="date">Data de Validade</label>
+                            
+                                <?php 
+                                    
+                                    $data = (!empty($entidade['data_final'])) ?
+                                        explode(' ', $entidade['data_final'])[0] : '';
+                                ?>
 
-                        <div class="form-group">
+                                <div lass="form-group col-md-3">
 
-                            <label for="texto">Data de realização:</label>
-
-                            <?php 
-                                
-                                $data = (!empty($entidade['data_postagem'])) ?
-                                    explode(' ', $entidade['data_postagem'])[0] : '';
-                            ?>
-
-                            <div class="row">
-                                
-                                <div class="col-md-3">  
-
-                                <input class="form-control" type="date"
+                                    <input class="form-control" type="date"
                                         require="required"
-                                        id="data_postagem"
-                                        name="data_postagem"
+                                        id="data_final"
+                                        name="data_final"
                                         value="<?php echo $data ?>">
-                                </div>
-                        </div> 
-                        <br>
-                        <div class="form-group">
-
-                            <label for="local_nome">Estabelecimento:</label>
+                                </div> 
                             
-                            <textarea class="form-control" type="text"
-                                    require="require" id="local_nome" name="local_nome" rows="2">
-                                    <?php echo $entidade['local_nome'] ?? '' ?>
-                            </textarea>
-
-                        </div>
-
-                        <div class="form-group">
-                                
-                            <label for="valor_compra">Valor:</label>
+                            </div>
                             
-                            <textarea class="form-control" type="text"
-                                    require="require" id="valor_compra" name="valor_compra" rows="2">
-                                    <?php echo $entidade['valor_compra'] ?? '' ?>
-                            </textarea>
-
-                        </div>
-
-                        <div class="form-group">
-                            
-                            <label>Foto da nota fiscal:</label>
-                        
-                            <input  type="file" 
-                                        id="foto" 
-                                        name="foto[]" 
-                                        accept="image/*" 
-                                        required>
                         </div>
                         
-                        <div class="texto-right">  
+                        </div>
+
+                        <div class="input-group mb-3 col-md-6">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="foto">Foto Produto</span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="foto" name="foto[]" accept="image/*" required>
+                                <label class="custom-file-label" for="foto">Escolher arquivo</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">  
                         
                             <button class="btn btn-primary"
                                     type="submit">Salvar</button>
                         </div>
+                        
                     </form>
+                    
                 </div>
             </div>
             <div class="col-md-12">

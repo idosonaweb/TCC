@@ -42,19 +42,21 @@
                         $criterio = [];
 
                         if(!empty($busca)){
-                            $criterio[] = ['nome', 'email', "%{$busca}%"];
+                            $criterio[] = ['nome_mercado', 'email_mercado', "%{$busca}%"];
                         }
 
                         $result = buscar(
-                            'usuario',
+                            'mercado',
                             [
-                                'usuario_id',
-                                'nome',
-                                'email',
-                                'telefone',
-                                'data_criacao',
+                                'id_mercado',
+                                'nome_mercado',
+                                'email_mercado',
+                                'rua',				
+                                'bairro',			
+                                'cidade',				
+                                'estado',
+                                'cnpj',
                                 'ativo',
-                                'adm'
                             ],
                             $criterio,
                             'data_criacao DESC, nome ASC'
@@ -71,7 +73,7 @@
                             <td>Nome</td>
                             <td>E-mail</td>
                             <td>Data cadastro</td>
-                            <td>Administrador</td>
+                            <td>Ativo</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -81,10 +83,10 @@
                                 $data = date_format($data, 'd/m/Y');
                         ?>
                         <tr>
-                            <td><?php echo $entidade['nome'] ?></td>
-                            <td><?php echo $entidade['email'] ?></td>
+                            <td><?php echo $entidade['nome_mercado'] ?></td>
+                            <td><?php echo $entidade['email_mercado'] ?></td>
                             <td><?php echo $data ?></td>
-                            <td><a href='core/usuario_repositorio.php?acao=adm&id=<?php echo $entidade['usuario_id']?> &valor=<?php echo !$entidade['adm']?>'><?php echo ($entidade['adm']==1)  ?  'Rebaixar' : 'Promover'; ?> </a></td>
+                            <td><a href='core/usuario_repositorio.php?acao=status&id=<?php echo $entidade['id_mercado']?> &valor=<?php echo !$entidade['ativo']?>'><?php echo ($entidade['ativo']==1)  ? 'Desativar' : 'Ativar'; ?> </a></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>

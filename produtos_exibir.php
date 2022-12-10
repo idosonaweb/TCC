@@ -99,11 +99,9 @@
 
                 <div>
                     
-                <button style = background-color:white; class="btn btn-primary my-2 my-sm-0"><a href="produtoformulario.php">Adicionar Produto</a></button>
+                <a href="produto_formulario.php"><button class="btn btn-outline-primary my-2 my-sm-0">Adicionar Produto</button></a>
 
-                <br>
-                <br>
-
+                <br><br>
 
                     <div class="list-group">
 

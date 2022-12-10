@@ -136,8 +136,6 @@
                 break;
     }
 
-    $result = mysqli_query($conexao, $dados);
-
     header("Location: ../index.php");
     
 ?>

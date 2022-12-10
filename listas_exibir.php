@@ -86,7 +86,7 @@
 
                 <div>
                                 
-                <a href="listas_formulario.php"><button class="btn btn-primary my-2 my-sm-0">Adicionar Lista</button></a>
+                <a href="listas_formulario.php"><button class="btn btn-outline-primary my-2 my-sm-0">Adicionar Lista</button></a>
 
                 <br>
                 <br>

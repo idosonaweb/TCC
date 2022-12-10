@@ -21,15 +21,12 @@ create table mercado
 	id_mercado			int 			not null auto_increment,
     nome_mercado		varchar(100) 	not null,
     email_mercado		varchar (255) 	NOT NULL,
-    rua					varchar(50) 	not null,
-    bairro				varchar(50) 	not null,
-    cidade				varchar(50) 	not null,
-    estado				varchar(02) 	not null,
+    endereco			varchar(255) 	not null,
     cnpj                varchar(20)     not null,
 	senha_mercado 		varchar (60) 	NOT NULL,
-    foto_blob           blob,
+    foto	            blob,
     foto_nome           varchar(100),
-    ativo 			tinyint NOT NULL DEFAULT '0',
+    ativo 				tinyint NOT NULL DEFAULT '0',
     
     primary key(id_mercado)
 );

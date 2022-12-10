@@ -67,7 +67,7 @@
                     <h2>Registro de Compra Realizada</h2>
 
                     <br>
-                    <form method="POST" action="core/produto_repositorio.php" enctype="multipart/form-data">
+                    <form method="POST" action="core/compras_repositorio.php" enctype="multipart/form-data">
 
                         <input type="hidden" name="acao"
                                 value="<?php echo empty($id) ? 'insert' : 'update' ?>">

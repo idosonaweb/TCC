@@ -26,8 +26,8 @@
     switch($acao){
 
         case 'insert':
-            $quantidade =(int)$quant;
-            $usuario=$_SESSION ['login'] ['usuario'] ['usuarioID'];
+            $quantidade =(int)$quantidade;
+            $usuario=$_SESSION ['login'] ['usuario'] ['usuario_id'];
             $modo = $modoOperacao;
             $dados = [
                 'nome_prod' => $nome_prod,
@@ -38,7 +38,7 @@
                 'estado' => $estado,
                 'cidade' => $cidade,
                 'fk_categoria'=>$fk_categoria,
-                'fk_usuario' => $_SESSION['login'] ['usuario'] ['usuarioID']
+                'fk_usuario' => $_SESSION['login'] ['usuario'] ['usuario_id']
             ];
             insere(
                 'Produto',
@@ -98,7 +98,7 @@
                     'dataValidade' => $dataValidade,
                     'estado' => $estado,
                     'cidade' => $cidade,
-                    'fk_usuario' => $_SESSION['login'] ['usuario'] ['usuarioID']
+                    'fk_usuario' => $_SESSION['login'] ['usuario'] ['usuario_id']
                 ];
 
                 $criterio = [

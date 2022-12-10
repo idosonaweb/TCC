@@ -134,6 +134,15 @@
             </div>
           
         </div>
+        <div class="col-md-12">
+
+            <?php
+
+                include 'includes/rodape.php';
+
+            ?>
+
+        </div>
 
         <script src="lib/js/bootstrap.min.js"></script>
         <script src="lib/js/tela_produto.js" defer></script>

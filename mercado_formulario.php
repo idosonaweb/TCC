@@ -37,7 +37,7 @@
 
                     $retorno = buscar (
                         'mercado',
-                        ['id_mercado', 'nome_mercado', 'rua','bairro', 'cidade', 'estado'],
+                        ['id_mercado', 'nome_mercado', 'email_mercado','endereco', 'cnpj', 'senha_mercado', 'foto', 'foto_nome'],
                         $criterio
                     );
 
@@ -52,7 +52,7 @@
                         value="<?php echo empty($id) ? 'insert' : 'update' ?>">
 
                 <input type="hidden" name="id" 
-                        value="<?php echo $entidade['id_mercado'] ?? '' ?>">
+                        value="<?php echo $entidade['id'] ?? '' ?>">
                 
                 <div class="container-titule-button">
                 
@@ -77,54 +77,51 @@
 
                     <div class="input-box">
                         
-                        <label for="rua">Rua</label>
+                        <label for="rua">Endereço</label>
                         
-                        <input class="form-control" type="text" placeholder="Digite sua rua"
-                                require="required" id="rua" name="rua" 
-                                value="<?php echo $entidade['rua'] ?? '' ?>">                    
+                        <input class="form-control" type="text" placeholder="Digite seu endereco"
+                                require="required" id="endereco" name="endereco" 
+                                value="<?php echo $entidade['endereco'] ?? '' ?>">                    
                     </div>
 
                     <div class="input-box">
-                    
-                        <label for="bairro">Bairro</label>
                         
-                        <input class="form-control" type="text" placeholder="Digite seu bairro"
-                                require="required" id="bairro" name="bairro" 
-                                value="<?php echo $entidade['bairro'] ?? '' ?>">                    
-                    </div>
-
-                    <div class="input-box">
-                    
-                        <label for="cidade">Cidade</label>
+                        <label for="email"> E-mail </label>
                         
-                        <input class="form-control" type="text" placeholder="Digite sua cidade"
-                                require="required" id="cidade" name="cidade" 
-                                value="<?php echo $entidade['cidade'] ?? '' ?>">                    
-                    </div>
-
-                    <div class="input-box">
+                        <input class="form-control" type="text" placeholder="Digite o e-mail"
+                                require="required" id="email_mercado" name="email_mercado" 
+                                value="<?php echo $entidade['email_mercado'] ?? '' ?>">
                     
-                        <label for="estado">Estado</label>
-                        
-                        <input class="form-control" type="text" placeholder="Digite seu estado"
-                                require="required" id="estado" name="estado" 
-                                value="<?php echo $entidade['estado'] ?? '' ?>">                    
                     </div>
 
                     <?php if (!isset($_SESSION['login'])) : ?>
 
                     <div class="input-box">
                     
+                        <label for="senha"> Senha </label>
+                        
+                        <input class="form-control" type="password" placeholder="Digite sua senha"
+                                require="required" id="senha_mercado" name="senha_mercado">
+                    
+                    </div>
+
+                    <div class="input-box">
+                    
                         <label for="cnpj">CNPJ</label>
                         
                         <input class="form-control" type="text" placeholder="Digite seu cnpj"
-                                require="required" id="cnpj" name="cnpj" 
-                                value="<?php echo $entidade['cnpj'] ?? '' ?>">                    
+                                require="required" id="cnpj" name="cnpj" >
+                    </div>
+                    
+                    <?php endif; ?> 
+
+                    <div class="input-box">
+
+                        <label for="foto">Foto Produto</label>
+
+                        <input class="form-control" type="file" require="required" id="foto" name="foto[]" accept="image/*">
                     </div>
                 </div>
-
-                <?php endif; ?>
-
             </form>
         </div>
     </div>

@@ -91,12 +91,12 @@
 
                         <div class="form-row">
                         
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-6">
 
                                 <label for="descricao">Descrição</label>
                                 
                                 <textarea class="form-control" type="text"
-                                    require="require" id="descricao" name="descricao" rows="5">
+                                    require="require" id="descricao" name="descricao" rows="3">
                                     <?php echo $entidade['descricao'] ?? '' ?>
                                 </textarea>
                             
@@ -186,7 +186,7 @@
         </div>
     </div>
 
-    <script src="lib/bootstrap-4.2.1-dist/js/boostrap.min.js"></script>   
+    <script src="lib/js/boostrap.min.js"></script>   
     
     </body>
 </html>

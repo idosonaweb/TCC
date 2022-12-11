@@ -68,7 +68,7 @@
             <?php endif ?>
             
 
-            <?php if (isset($_SESSION['login'])) :  ?>
+            <?php if (isset($_SESSION['login']['usuario'])) :  ?>
 
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 
@@ -94,6 +94,36 @@
               <a href="usuario_detalhe_exe.php" class="btn btn-link btn-sm" role="button"> Config Usuário </a>
 
               <a href="core/usuario_repositorio.php?acao=logout" class="btn btn-link btn-sm" role="button"> Sair </a>
+
+          </div>
+
+          <?php endif ?>
+
+          <?php if (isset($_SESSION['login']['mercado'])) :  ?>
+
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+
+            <li><a href="index.php" class="nav-link text-dark px-3 ">Home</a></li>
+
+            <?php if ($_SESSION['login']['mercado']['ativo']===1) : ?>
+
+              <li><a href="produtos_exibir.php" class="nav-link text-dark px-3 ">Produtos</a></li>
+
+              <li><a href="produtos_exibir.php" class="nav-link text-dark px-3 ">Meus Produtos</a></li>
+
+            <?php endif; ?>
+
+            <li><a href="index.php" class="nav-link text-dark px-3 ">Sou Mercado</a></li>
+
+          </ul>
+
+          <div class="text-right">
+
+            Seja Bem-vindo, <?php echo $_SESSION['login']['mercado']['nome_mercado'] ?>!
+
+            <a href="altera_usuario.php" class="btn btn-link btn-sm" role="button"> Config Mercado </a>
+
+            <a href="core/usuario_repositorio.php?acao=logout" class="btn btn-link btn-sm" role="button"> Sair </a>
 
           </div>
 

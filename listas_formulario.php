@@ -142,7 +142,13 @@
         </div>
     </div>
 
-    <script src="lib/bootstrap-4.2.1-dist/js/boostrap.min.js"></script>   
+    <script src="lib/bootstrap-4.2.1-dist/js/boostrap.min.js"></script>  
+    
+    <?php
+
+    header("Location: ../listas_exibir.php");
+                
+                ?>
     
     </body>
 </html>

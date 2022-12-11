@@ -53,7 +53,6 @@
                                 'email',
                                 'telefone',
                                 'data_criacao',
-                                'ativo',
                                 'adm'
                             ],
                             $criterio,

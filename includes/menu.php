@@ -81,7 +81,7 @@
               <li><a href="compras_exibir.php" class="nav-link text-dark px-3 ">Compras</a></li>
 
               <?php if ($_SESSION['login']['usuario']['adm']===1) : ?>
-                <li><a href="admnistrar.php" class="nav-link text-dark px-3 ">Admnistrar</a></li>
+                <li><a href="administrar.php" class="nav-link text-dark px-3 ">Administrar</a></li>
 
             <?php endif; ?>
         
@@ -91,7 +91,7 @@
 
               Seja Bem-vindo, <?php echo $_SESSION['login']['usuario']['nome'] ?>!
 
-              <a href="altera_usuario.php" class="btn btn-link btn-sm" role="button"> Config Usuário </a>
+              <a href="usuario_detalhe_exe.php" class="btn btn-link btn-sm" role="button"> Config Usuário </a>
 
               <a href="core/usuario_repositorio.php?acao=logout" class="btn btn-link btn-sm" role="button"> Sair </a>
 

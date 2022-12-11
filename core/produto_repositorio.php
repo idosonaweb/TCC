@@ -27,18 +27,33 @@
 
         case 'insert':
             $quantidade =(int)$quantidade;
-            $usuario=$_SESSION ['login'] ['usuario'] ['usuario_id'];
-            $modo = $modoOperacao;
+            $usuario=$_SESSION ['login'] ['mercado'] ['id_mercado'];
+            $fotos_name = array();
+            $fotos = array_filter($_FILES['foto']['name']); 
+            $total_count = count($_FILES['foto']['name']);
+
+            for( $i=0 ; $i < $total_count ; $i++ ) {      
+                $tmpFilePath = $_FILES['foto']['tmp_name'][$i];
+                if ($tmpFilePath != ""){
+                    $foto_name = $_FILES['foto']['name'][$i];
+                    $path_parts = pathinfo($foto_name);
+                    $imageFileType = strtolower(pathinfo($foto_name, PATHINFO_EXTENSION));
+                    $foto_name = $path_parts['filename'].time().".".$imageFileType;
+                    $newFilePath = "../upload/" . $foto_name;
+                    if(move_uploaded_file($tmpFilePath, $newFilePath)) {
+                        $fotos_name[] = $foto_name;
+                    }
+                }
+            }
             $dados = [
-                'nome_prod' => $nome_prod,
-                'descricao' => $descricao,
-                'quant' => $quant,
-                'modoOperacao' => $modoOperacao,
-                'dataValidade' => $dataValidade,
-                'estado' => $estado,
-                'cidade' => $cidade,
-                'fk_categoria'=>$fk_categoria,
-                'fk_usuario' => $_SESSION['login'] ['usuario'] ['usuario_id']
+                'nome_produto' => $nome_produto,
+                'data_final' => $data,
+                'quantidade' => $quantidade,
+                'valor' => $valor,
+                'marca' =>  $marca,
+                'foto_nome' => implode(";", $foto_nome),
+                'nome_mercado' => $nome_mercado,
+                'fk_mercado' => $_SESSION['login'] ['mercado'] ['id_mercado']
             ];
             insere(
                 'Produto',
@@ -91,18 +106,18 @@
             case 'update':
 
                 $dados = [
-                    'nome_prod' => $nome_prod,
-                    'descricao' => $descricao,
-                    'quant' => $quant,
-                    'modoOperacao' => $modoOperacao,
-                    'dataValidade' => $dataValidade,
-                    'estado' => $estado,
-                    'cidade' => $cidade,
-                    'fk_usuario' => $_SESSION['login'] ['usuario'] ['usuario_id']
+                'nome_produto' => $nome_produto,
+                'data_final' => $data,
+                'quantidade' => $quantidade,
+                'valor' => $valor,
+                'marca' =>  $marca,
+                'foto_nome' => implode(";", $foto_nome),
+                'nome_mercado' => $nome_mercado,
+                'fk_mercado' => $_SESSION['login'] ['mercado'] ['id_mercado']
                 ];
 
                 $criterio = [
-                    ['id', '=', $id]
+                    ['id_produto', '=', $id]
                 ];
         
                 atualiza(
@@ -117,7 +132,7 @@
                 //caso seja para deletar dados
                 //função sql.php
                     $criterio = [
-                        ['id', '=', $id]
+                        ['id_produto', '=', $id]
                     ];
             
                     deleta(

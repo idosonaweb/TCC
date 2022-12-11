@@ -76,8 +76,8 @@
                         ];
                     }
 
-                    $lista = buscar(
-                        'listas',
+                    $produtos = buscar(
+                        'produto',
                         [
                             'nome_lista',
                             'data_postagem',
@@ -107,9 +107,9 @@
 
                         <?php
 
-                            foreach ($lista as $listas): 
+                            foreach ($produtos as $produto): 
                             {
-                                $data = date_create($listas['data_postagem']) ;
+                                $data = date_create($produto['data_postagem']) ;
 
                                 $data = date_format($data, 'd/m/Y') ;
                             }
@@ -117,9 +117,9 @@
                         ?>
 
                         <a class="list-group-item list-group-item-action"
-                            href="listas_detalhe.php?lista=<?php echo $listas['id_lista'] ?>">
+                            href="listas_detalhe.php?lista=<?php echo $produto['id_lista'] ?>">
                         
-                            <strong><?php echo $listas['nome_lista'] ?></strong>
+                            <strong><?php echo $produto['nome_lista'] ?></strong>
 
                             <span class="badge badge-dark"><?php echo $data ?></span>
                         

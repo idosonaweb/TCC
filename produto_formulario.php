@@ -107,7 +107,7 @@
                             
                             <div class="form-group col-md-3">
                             
-                                <label for="valor">Valor</label>
+                                <label for="valor">Valor (R$)</label>
                             
                                 <input class="form-control" type="text"
                                     require="require" id="valor" name="valor"

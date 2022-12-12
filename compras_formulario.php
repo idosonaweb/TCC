@@ -5,6 +5,7 @@
         <title>Purchase Manager</title>
 
         <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+        <link rel="stylesheet" href="lib/css/formulario_compras.css">
 
     </head>
 
@@ -17,6 +18,7 @@
                 <div class="col-md-12">
 
                     <?php include 'includes/menu.php'; ?>
+                   
 
                 </div>
             
@@ -64,7 +66,8 @@
                         }
                     ?>
 
-                    <h2>Registro de Compra Realizada</h2>
+            
+                    <h2 class="h2">Registro de Compra Realizada</h2>
 
                     <br>
                     <form method="POST" action="core/compras_repositorio.php" enctype="multipart/form-data">
@@ -126,7 +129,7 @@
                                         explode(' ', $entidade['data_postagem'])[0] : '';
                                 ?>
 
-                                <div lass="form-group col-md-3">
+                                <div class="form-group col-md-3">
 
                                     <input class="form-control" type="date"
                                         require="required"
@@ -154,23 +157,23 @@
                         </div>
                         
                         </div>
-
-                        <div class="input-group mb-3 col-md-6">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="foto">Nota Fiscal</span>
+                        <div align="center">
+                            <div class="input-group mb-3 col-md-6">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="foto">Nota Fiscal</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="foto" name="foto[]" accept="image/*" required>
+                                    <label class="custom-file-label" for="foto">Escolher arquivo</label>
+                                </div>
                             </div>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="foto" name="foto[]" accept="image/*" required>
-                                <label class="custom-file-label" for="foto">Escolher arquivo</label>
+                            
+                            <div class="col-md-6">  
+                            
+                                <button class="btn btn-primary"
+                                        type="submit">Salvar</button>
                             </div>
                         </div>
-                        
-                        <div class="col-md-6">  
-                        
-                            <button class="btn btn-primary"
-                                    type="submit">Salvar</button>
-                        </div>
-                        
                     </form>
                 </div>
             </div>

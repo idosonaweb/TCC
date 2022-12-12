@@ -28,16 +28,3 @@
     display: flex;
     height: 45px;
 }
-
-
-.input-group-text{
-
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 38px;
-    font-size: 25px;
-
-
-}

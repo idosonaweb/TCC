@@ -62,7 +62,7 @@
                         $criterio[] = [
                             'AND',
                             'nome_produto',
-                            'quantidade',
+                            'like',
                             "%{$busca}%"
                         ];
                     }

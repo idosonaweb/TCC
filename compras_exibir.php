@@ -60,7 +60,7 @@
                         $criterio[] = [
                             'AND',
                             'titulo',
-                            'local_nome',
+                            'like',
                             "%{$busca}%"
                         ];
                     }
@@ -80,7 +80,7 @@
                         ],
 
                         $criterio,
-                        'data_postagem DESC'
+                        'titulo DESC'
 
                     );
                 

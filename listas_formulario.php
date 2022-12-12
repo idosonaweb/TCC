@@ -5,7 +5,7 @@
         <title>Purchase Manager</title>
 
         <link rel="stylesheet" href="lib/css/bootstrap.min.css">
-        <link rel="stylesheet" href="lib/css/lista_formulario.css">
+        <link rel="stylesheet" href="lib/css/listas_formulario.css">
 
     </head>
 
@@ -165,12 +165,6 @@
     </div>
 
     <script src="lib/bootstrap-4.2.1-dist/js/boostrap.min.js"></script>  
-    
-    <?php
-
-    header("Location: ../listas_exibir.php");
-                
-                ?>
     
     </body>
 </html>

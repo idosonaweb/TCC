@@ -4,6 +4,7 @@
 
         <title>Purchase Manager</title>
 
+        <link rel="stylesheet" href="lib/css/produto_formulario.css">
         <link rel="stylesheet" href="lib/css/bootstrap.min.css">
 
     </head>
@@ -64,7 +65,7 @@
                         }
                     ?>
 
-                    <h2>Registro de Produtos cadastrados</h2>
+                    <h2 class="h2">Registro de Produto</h2>
 
                     <br>
                     <form method="POST" action="core/produto_repositorio.php" enctype="multipart/form-data">
@@ -86,10 +87,6 @@
                                     value="<?php echo $entidade['nome_produto'] ?? '' ?>">
                             
                             </div>
-                            
-                        </div>
-
-                        <div class="form-row">
                         
                             <div class="form-group col-md-3">
                             
@@ -164,15 +161,16 @@
                         
                         </div>
 
-                        <div class="input-group mb-3 col-md-6">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="foto">Foto Produto</span>
+                        <div align="center">
+                            <div class="input-group mb-3 col-md-6">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="foto">Foto Produto</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="foto" name="foto[]" accept="image/*" required>
+                                    <label class="custom-file-label" for="foto">Escolher arquivo</label>
+                                </div>
                             </div>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="foto" name="foto[]" accept="image/*" required>
-                                <label class="custom-file-label" for="foto">Escolher arquivo</label>
-                            </div>
-                        </div>
                         
                         <div class="col-md-6">  
                         

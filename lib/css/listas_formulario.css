@@ -5,7 +5,6 @@
 }
 
 .h2{
-    font-family: "Lucida Console", "Courier New", monospace;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +14,6 @@
 }
 
 .form-row{
-    font-family: Georgia, 'Times New Roman', Times, serif;
     display: flex;
     justify-content: center;
     align-items: center;

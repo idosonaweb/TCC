@@ -129,7 +129,7 @@
                                         explode(' ', $entidade['data_postagem'])[0] : '';
                                 ?>
 
-                                <div class="form-group col-md-3">
+                                <div lass="form-group col-md-3">
 
                                     <input class="form-control" type="date"
                                         require="required"

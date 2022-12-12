@@ -14,20 +14,20 @@
 
     foreach($_POST as $indice => $dado){
 
-        $$indice = $dado;
+        $$indice = limparDados($dado);
 
     }
 
     foreach($_GET as $indice => $dado){
 
-        $$indice = $dado;
+        $$indice = limparDados($dado);
     }
 
-    switch($acao){
+    $id = (int)$id_produto ;
 
+    switch ($acao) 
+    {
         case 'insert':
-            $quantidade =(int)$quantidade;
-            $usuario=$_SESSION ['login'] ['mercado'] ['id_mercado'];
             $fotos_name = array();
             $fotos = array_filter($_FILES['foto']['name']); 
             $total_count = count($_FILES['foto']['name']);
@@ -45,104 +45,54 @@
                     }
                 }
             }
-            $dados = [
-                'nome_produto' => $nome_produto,
-                'data_final' => $data,
-                'quantidade' => $quantidade,
-                'valor' => $valor,
-                'marca' =>  $marca,
-                'foto_nome' => implode(";", $foto_nome),
-                'nome_mercado' => $nome_mercado,
-                'fk_mercado' => $_SESSION['login'] ['mercado'] ['id_mercado']
-            ];
-            insere(
-                'Produto',
-                $dados
-            );
-            $criterio = [];
-            $id = buscar(
-                    'Produto',
-                    ['produtoID'],
-                    $criterio,
-                    'produtoID DESC LIMIT 1'
-            );
-            $idProd=$id[0]['produtoID'];
 
-            function enviarImagem($name, $tmp_name,$idProd){
-                
-                $pasta = 'ImagensProdutos/';
-                $nomeImagem = $name;
-                $novoNomeImagem = uniqid();
-                $extensao = strtolower(pathinfo($nomeImagem, PATHINFO_EXTENSION));
-                
-                if(move_uploaded_file( $tmp_name, $pasta.$novoNomeImagem.'.'.$extensao)){
-                    $imagem_arq ='core/'.$pasta.$novoNomeImagem.'.'.$extensao;
-            
-                    $dados = [
-                        'Imagem_arq' => $imagem_arq,
-                        'fk_produto'=> $idProd
-                    ];
-                    insere(
-                        'Imagem',
-                        $dados,
-                        ''
-                    );
-                return true;
-            }
-                else{
-                    return false;
-                }
-            }
-            
-            if (isset($_FILES['imagens'])){
-                $imagens = $_FILES['imagens'];
-                //array imagens = recebe as imagens
-                foreach($imagens['name'] as $index => $img) {
-                    $imagens_arqs  = enviarImagem( $imagens['name'][$index], $imagens["tmp_name"][$index],$idProd);
-                }
-            }
+            $dados = [
+                'nome_produto'             => $nome_produto,
+                'data_final'               => $data_final,
+                'valor'                    => $valor,
+                'quantidade'               => $quantidade,
+                'marca'                    => $marca,
+                'foto_nome'                => implode(";", $fotos_name),
+                'nome_mercado'             => $nome_mercado,
+                'id_mercado'               => $_SESSION['login']['mercado']['id_mercado']
+            ];
+
+            insere('produto', $dados);
 
             break;
-            case 'update':
-
-                $dados = [
-                'nome_produto' => $nome_produto,
-                'data_final' => $data,
-                'quantidade' => $quantidade,
-                'valor' => $valor,
-                'marca' =>  $marca,
-                'foto_nome' => implode(";", $foto_nome),
-                'nome_mercado' => $nome_mercado,
-                'fk_mercado' => $_SESSION['login'] ['mercado'] ['id_mercado']
-                ];
-
-                $criterio = [
-                    ['id_produto', '=', $id]
-                ];
         
-                atualiza(
-                    'Produto',
-                    $dados,
-                    $criterio
-                );
-        
-                break;
 
-                case 'delete':
-                //caso seja para deletar dados
-                //função sql.php
-                    $criterio = [
-                        ['id_produto', '=', $id]
-                    ];
+        case 'update':
             
-                    deleta(
-                        'Produto',
-                        $criterio
-                    );
-            
-                    break;
+            $dados = [
+                'nome_produto'             => $nome_produto,
+                'data_final'               => $data_final,
+                'valor'                    => $valor,
+                'quantidade'               => $quantidade,
+                'marca'                    => $marca,
+                'foto_nome'                => implode(";", $fotos_name),
+                'nome_mercado'             => $nome_mercado,
+                'id_mercado'               => $_SESSION['login']['mercado']['id_mercado']
+            ];
 
-        }
+            $criterio = [
+                ['id_mercado', '=', $id]
+            ];
+
+            atualiza('produto', $dados, $criterio);
+            
+            break;
+
+        case 'delete':
+            
+            $criterio = [
+                ['id_mercado', '=', $id]
+            ];
+
+            deleta('produto', $criterio);
+
+            break;
+    }
 
     header('Location: ../index.php');  
 

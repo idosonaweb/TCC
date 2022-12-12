@@ -46,19 +46,19 @@
     </head>
     <body>
 
-    
             <div class="col-md-12" style="min-height: 100px;">
 
             <?php include 'includes/menu.php'; ?>
 
-            <div class="col-md-10" style="padding-top: 50px;"> 
+            <div class="col-md-10"> 
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $compras['titulo']?></h5>
+                <img src="upload/<?php echo $compra['foto_nome'] ?>" height="300px">
+                    <h5 class="card-title"><?php echo $compra['titulo']?></h5>
                     <h5 class="card-subtitle mb-2 text-muted">
-                        <?php echo $data?> Por <?php echo $compras['local_nome']?>
+                        <?php echo $data?> Por <?php echo $compra['local_nome']?>
                     </h5>
                     <div class="card-text">
-                        <?php echo html_entity_decode($compras['descricao'])?>
+                        <?php echo html_entity_decode($compra['descricao'])?>
                         </div>
                     </div>
                 </div>

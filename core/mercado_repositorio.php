@@ -18,7 +18,7 @@
     {
         $$indice = limparDados($dado) ;
     }
-
+    
     switch ($acao) 
     {
         case 'insert':
@@ -56,12 +56,12 @@
 
         case 'login':
             $criterio = [
-                ['cnpj', '=', $cnpj],
+                ['id_mercado', '=', $id]
             ];
 
             $retorno = buscar(
                 'mercado', 
-                ['id_mercado', 'nome_mercado', 'rua', 'bairro', 'cidade', 'estado'], 
+                ['id_mercado', 'nome_mercado', 'email_mercado','endereco', 'cnpj', 'senha_mercado', 'foto', 'foto_nome'], 
                 $criterio
             );
 
@@ -107,21 +107,29 @@
             
             break;
         
-        case 'status':
+            case 'status':
             
-            $id = (int)$id ;
-
-            $criterio = [
-                ['id_mercado', '=', $id]
-            ];
-
-            atualiza('mercado', $dados, $criterio);
-
-            header('Location:  ../index.php');
-
-            exit;
-
-            break;
+                $id = (int)$id ;
+    
+                $valor = (int)$valor ;
+    
+                $dados =
+                [
+                    'ativo' => $valor 
+                ];
+    
+                $criterio =
+                [
+                    ['id_mercado', '=', $id]
+                ];
+    
+                atualiza('mercado', $dados, $criterio);
+    
+                header('Location:  ../mercados.php');
+    
+                exit;
+    
+                break;
     }
 
 ?>

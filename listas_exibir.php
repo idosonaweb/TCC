@@ -20,6 +20,8 @@
 
             <div class="col-md-12">
 
+            <section class="form-inline">
+
                 <?php
 
                     include 'includes/busca.php' ;
@@ -87,6 +89,8 @@
                 <div>
                                 
                 <a href="listas_formulario.php"><button class="btn btn-outline-primary my-2 my-sm-0">Adicionar Lista</button></a>
+
+                </section>
 
                 <br>
                 <br>

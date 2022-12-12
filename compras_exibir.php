@@ -20,6 +20,8 @@
 
             <div class="col-md-12">
 
+                <section class="form-inline">
+
                 <?php
 
                     include 'includes/busca.php' ;
@@ -88,6 +90,8 @@
 
                 <a href="compras_formulario.php"><button type="button" class="btn btn-outline-primary me-2">Adicionar Compra</button></a>
 
+                </section>
+
                 <br><br>
 
                 <div>
@@ -107,16 +111,12 @@
 
                         <a class="list-group-item list-group-item-action"
                             href="compras_detalhe.php?compra=<?php echo $compras['id_compra'] ?>">
-
-                            [<?php echo $compras['foto_nome'] ?>]
-                        
+                                                    
                             <strong><?php echo $compras['titulo'] ?></strong>
 
-                            [<?php echo $compras['local_nome'] ?>]
+                            - <?php echo $compras['local_nome'] ?>
                             
-                            [<?php echo $compras['valor_compra'] ?>]
-
-                            <span class="badge badge-dark"><?php echo $data ?></span>
+                            - R$<?php echo $compras['valor_compra'] ?>
                         
                         </a>
 

@@ -37,7 +37,13 @@
                         require_once 'core/mysql.php' ;
 
                         foreach($_GET as $indice => $dado){
+
                             $$INDICE = limparDados($dado);
+                        }
+
+                        foreach($_POST as $indice => $dado){
+
+                            $$indice = limparDados($dado) ;
                         }
 
                         if(!empty($id_lista)){
@@ -60,7 +66,7 @@
                     <h2>Registro de Lista de Compras</h2>
 
                     <br>
-                    <form method="lista" action="core/listas_repositorio.php">
+                    <form method="POST" action="core/listas_repositorio.php">
                         
                         <input type="hidden" name="acao"
                             value="<?php echo empty($id) ? 'insert' : 'update' ?>">
@@ -92,7 +98,7 @@
 
                         <div class="form-group">
                                 
-                            <label for="valor_compra">Quantidade de Itens:</label>
+                            <label for="valor_compra">Quantidade de Produtos:</label>
                             
                             <textarea class="form-control" type="text"
                                     require="require" id="qtd_produtos" name="qtd_produtos">

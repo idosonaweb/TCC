@@ -19,18 +19,9 @@
 
             </div>
 
-            <div class="container-slider">
-              <button id="prev-button"><img src="lib/img/seta_s.png" alt="prev-button"></button>
-              <div class="container-images">
-                <img src="lib/img/Cotonete.jpg" alt="girl" class="slider on">
-                <img src="lib/img/escova.jpg" alt="girl" class="slider">
-                <img src="lib/img/shampoo.jpg" alt="ok" class="slider">
-                <img src="lib/img/banana.jpg" alt="ok" class="slider">
-              </div>
-              <button id="next-button"><img src="lib/img/seta_s.png" alt="next-button"></button>
-            </div>
-
             <div class="col-md-12">
+
+                <section class="form-inline">
 
                 <?php
 
@@ -63,15 +54,15 @@
                     $data = date('Y-m-d') ;
 
                     $criterio = [
-                        ['data_postagem', '<=', $data]
+                        ['data_final', '<=', $data]
                     ];
 
                     if (!empty($busca)) 
                     {
                         $criterio[] = [
                             'AND',
-                            'nome_lista',
-                            'qtd_produtos',
+                            'nome_produto',
+                            'quantidade',
                             "%{$busca}%"
                         ];
                     }
@@ -79,17 +70,21 @@
                     $produtos = buscar(
                         'produto',
                         [
-                            'nome_lista',
-                            'data_postagem',
-                            'itens',
-                            'id_lista',
-                            'usuario_id',
-                            '(select nome from usuario 
-                                        where usuario.usuario_id = listas.usuario_id) as nome'
+                            'nome_produto',
+                            'data_final',
+                            'valor',
+                            'quantidade',
+                            'marca',
+                            'foto_nome',
+                            'nome_mercado',
+                            'id_produto',
+                            'id_mercado',
+                            '(select nome_mercado from mercado 
+                                        where mercado.id_mercado = produto.id_mercado) as nome_mercado'
                         ],
                         
                         $criterio,
-                        'data_postagem DESC'
+                        'data_final DESC'
 
                     );
                 
@@ -98,8 +93,29 @@
                 <br>
 
                 <div>
+
+                <?php if (isset($_SESSION['login']['mercado'])) :  ?>
                     
-                <a href="produto_formulario.php"><button class="btn btn-outline-primary my-2 my-sm-0">Adicionar Produto</button></a>
+                    <?php if ($_SESSION['login']['mercado']['ativo']===1) : ?>
+
+                        <a href="produto_formulario.php"><button class="btn btn-outline-primary my-2 my-sm-0">Adicionar Produto</button></a>
+
+                    <?php endif; ?>
+
+                <?php endif; ?>
+
+                </section>
+
+                <div class="container-slider">
+                <button id="prev-button"><img src="lib/img/seta_s.png" alt="prev-button"></button>
+                <div class="container-images">
+                    <img src="lib/img/Cotonete.jpg" alt="girl" class="slider on">
+                    <img src="lib/img/escova.jpg" alt="girl" class="slider">
+                    <img src="lib/img/shampoo.jpg" alt="ok" class="slider">
+                    <img src="lib/img/banana.jpg" alt="ok" class="slider">
+                </div>
+                <button id="next-button"><img src="lib/img/seta_s.png" alt="next-button"></button>
+                </div>
 
                 <br><br>
 
@@ -109,7 +125,7 @@
 
                             foreach ($produtos as $produto): 
                             {
-                                $data = date_create($produto['data_postagem']) ;
+                                $data = date_create($produto['data_final']) ;
 
                                 $data = date_format($data, 'd/m/Y') ;
                             }
@@ -117,11 +133,9 @@
                         ?>
 
                         <a class="list-group-item list-group-item-action"
-                            href="listas_detalhe.php?lista=<?php echo $produto['id_lista'] ?>">
+                            href="produtp_detalhe.php?lista=<?php echo $produto['id_produto'] ?>">
                         
-                            <strong><?php echo $produto['nome_lista'] ?></strong>
-
-                            <span class="badge badge-dark"><?php echo $data ?></span>
+                            <strong><?php echo $produto['nome_produto'] ?></strong>
                         
                         </a>
 

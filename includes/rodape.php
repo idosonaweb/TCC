@@ -16,7 +16,7 @@
                 
             </ul>
                 
-            <p class="text-center text-muted">&copy; 2022 Company, Inc</p>
+            <p class="text-center text-muted">&copy; 2022. Todos os direitos reservados</p>
         
         </footer>
 

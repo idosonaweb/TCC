@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php 
 
     require_once 'includes/funcoes.php';
@@ -26,6 +25,7 @@
             'valor_compra',
             'foto_nome',
             'data_postagem',
+            'id_compra',
             'usuario_id',
             '(select nome from usuario 
                         where usuario.usuario_id = compras.usuario_id) as nome'
@@ -35,39 +35,22 @@
         ]
 );
         $compra = $compras[0];
-        $data = date_create($compras['data_postagem']);
+        $data = date_create($compra['data_postagem']);
         $data = date_format($data, 'd/m/Y');
 
 ?>
 <html>
     <head>  
-        <title><?php echo $compras['titulo']?></title>
+    <title>Purchase Manager</title>
         <link rel="stylesheet" href="lib/css/bootstrap.min.css">
     </head>
     <body>
-            <!-- <div>
-                <?php
-                    foreach($compra as $compras) : 
-                        $fotos = explode(';', $compras['foto_nome']);
-                ?>
-            </div>
-            <div>
-                <?php foreach($fotos as $foto) : ?>
-                    <?php if ($foto != '') : ?>
-                        <img src='<?php echo"../../upload/".$foto; ?>' style="height: 250px;">
-                    <?php endif; ?>
-                <?php endforeach ?>
-            </div> -->
-            <div>
-                
-            </div>
+
     
-            <div class="row" style="min-height: 500px;">
-            <div class="col-md-12">
+            <div class="col-md-12" style="min-height: 100px;">
 
-<?php include 'includes/menu.php'; ?>
+            <?php include 'includes/menu.php'; ?>
 
-</div>
             <div class="col-md-10" style="padding-top: 50px;"> 
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $compras['titulo']?></h5>
@@ -80,15 +63,14 @@
                     </div>
                 </div>
             </div>
-           <div class="row">
-                <div class="col-md-12">
-                    <?php 
-                        include 'includes/rodape.php';
-                        ?>
-                </div>
+           <div class="col-md-12">
+                <?php
+
+                    include 'includes/rodape.php';
+                
+                ?>
            </div> 
         </div>
         <script src="lib/js/bootstrap.min.js"></script>
-        <?php endforeach; ?>
     </body>
 </html>

@@ -18,9 +18,8 @@
 
     <link rel="stylesheet" href="lib/css/style.css">
 
-    <link href="lib/css/features.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/css/administrar.css">
 
-    <link href="lib/css/carousel.css" rel="stylesheet">
 </head>
     <body>
         <div class="row" style="min-height: 500px;">

@@ -18,13 +18,10 @@
 
     <link rel="stylesheet" href="lib/css/style.css">
 
-    <link href="lib/css/features.css" rel="stylesheet">
-
-    <link href="lib/css/carousel.css" rel="stylesheet">
-
 </head>
     <body>
-        <div class="row" style="min-height: 500px;">
+        
+        <div class="row" style="min-height: 100px;">
             <div class="col-md-10" style="padding-top: 50px;">
                 <?php include 'includes/busca.php'; ?>
                 <?php
@@ -37,12 +34,16 @@
                             $$indice = limparDados($dado);
                         }
 
+                        foreach($_POST as $indice => $dado){
+                            $$indice = limparDados($dado);
+                        }
+
                         $data = date('Y-m-d');
 
                         $criterio = [];
 
                         if(!empty($busca)){
-                            $criterio[] = ['nome', 'email', "%{$busca}%"];
+                            $criterio[] = ['nome', 'like', "%{$busca}%"];
                         }
 
                         $result = buscar(
@@ -51,8 +52,8 @@
                                 'usuario_id',
                                 'nome',
                                 'email',
-                                'telefone',
                                 'data_criacao',
+                                'telefone',
                                 'adm'
                             ],
                             $criterio,
@@ -71,6 +72,7 @@
                             <td>E-mail</td>
                             <td>Data cadastro</td>
                             <td>Administrador</td>
+                            <td>Excluir</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -84,15 +86,16 @@
                             <td><?php echo $entidade['email'] ?></td>
                             <td><?php echo $data ?></td>
                             <td><a href='core/usuario_repositorio.php?acao=adm&id=<?php echo $entidade['usuario_id']?> &valor=<?php echo !$entidade['adm']?>'><?php echo ($entidade['adm']==1)  ?  'Rebaixar' : 'Promover'; ?> </a></td>
-                            <td><a href='excluir.php?usuario_id=".$row['usuario_id].>Excluir</a></td>
+                            <td><a href='excluir.php?usuario_id=".$entidade['usuario_id].>Excluir</a></td>
                         </tr>
-                        <?php endforeach; ?>
+
+                        <?php endforeach ; ?>
                     </tbody>
                 </table>
+
             </div>
         </div>
     </div>
         <script src="js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
     </body>
 </html>

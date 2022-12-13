@@ -50,8 +50,6 @@
 
                 <div class="links">
                     
-                    <a href="mercado_formulario.php">Cadastre-se como Mercado</a>
-
                     <a href="usuario_formulario.php">Cadastre-se como Usuario</a>
 
                 </div>

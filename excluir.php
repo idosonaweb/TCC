@@ -1,22 +1,12 @@
 <?php
-    include('conexao_mysql.php');
+	header("Location: ../administrar.php");
+	
+    include('core/conexao_mysql.php');
 
-    $id_usuario = $_GET['usuario_id'];
+    $usuario_id = $_GET ['usuario_id'];
 
     $sql = 'DELETE FROM usuario WHERE usuario_id='.$usuario_id;
 
-    echo "<h1> Exclusão de Usuário </h1>";
+	$result = mysqli_query($conexao, $sql);
 
-	$result = mysqli_query($con, $sql);
-
-	if($result)
-
-		echo "Registro excluído com sucesso<br><br>";
-
-	else
-
-		echo "Erro ao tentar excluir usuário: ".mysqli_error($con)."<br>";
-  
 ?>
-
-<a href='administrar.php'></a>

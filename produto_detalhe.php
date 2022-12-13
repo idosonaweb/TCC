@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php 
 
     require_once 'includes/funcoes.php';
@@ -17,65 +16,52 @@
     
     }
 
-    $compras = buscar(
-        'compras',
+    $produto = buscar(
+        'produto',
         [
-            'titulo',
-            'descricao',
-            'local_nome',
-            'valor_compra',
+            'nome_produto',
+            'data_final',
+            'valor',
+            'quantidade',
+            'marca',
             'foto_nome',
-            'data_postagem',
+            'nome_mercado',
+            'id_produto',
             'usuario_id',
             '(select nome from usuario 
-                        where usuario.usuario_id = compras.usuario_id) as nome'
+                        where usuario.usuario_id = produto.usuario_id) as nome'
         ],
         [
-            ['id_compra', '=', $compra]
+            ['id_produto', '=', $produtos]
         ]
 );
-        $compra = $compras[0];
-        $data = date_create($compras['data_postagem']);
+        $produtos = $produto[0];
+        $data = date_create($produtos['data_final']);
         $data = date_format($data, 'd/m/Y');
 
 ?>
 <html>
     <head>  
-        <title><?php echo $compras['titulo']?></title>
+        <title><?php echo $produtos['nome_produto']?></title>
         <link rel="stylesheet" href="lib/css/bootstrap.min.css">
     </head>
     <body>
-            <!-- <div>
-                <?php
-                    foreach($compra as $compras) : 
-                        $fotos = explode(';', $compras['foto_nome']);
-                ?>
-            </div>
-            <div>
-                <?php foreach($fotos as $foto) : ?>
-                    <?php if ($foto != '') : ?>
-                        <img src='<?php echo"../../upload/".$foto; ?>' style="height: 250px;">
-                    <?php endif; ?>
-                <?php endforeach ?>
-            </div> -->
-            <div>
-                
-            </div>
     
-            <div class="row" style="min-height: 500px;">
-            <div class="col-md-12">
+        <div class="row" style="min-height: 100px;">
+        <div class="col-md-12">
 
-<?php include 'includes/menu.php'; ?>
+            <?php include 'includes/menu.php'; ?>
 
-</div>
+        </div>
             <div class="col-md-10" style="padding-top: 50px;"> 
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $compras['titulo']?></h5>
+                <img src="upload/<?php echo $produtos['foto_nome'] ?>" height="300px">
+                    <h5 class="card-title"><?php echo $produtos['nome_produto']?> - R$ <?php echo $produtos['valor']?></h5>
                     <h5 class="card-subtitle mb-2 text-muted">
-                        <?php echo $data?> Por <?php echo $compras['local_nome']?>
+                        Mercado <?php echo $produtos['nome_mercado']?>
                     </h5>
                     <div class="card-text">
-                        <?php echo html_entity_decode($compras['descricao'])?>
+                        Marca <?php echo html_entity_decode($produtos['marca'])?>
                         </div>
                     </div>
                 </div>
@@ -89,6 +75,5 @@
            </div> 
         </div>
         <script src="lib/js/bootstrap.min.js"></script>
-        <?php endforeach; ?>
     </body>
 </html>

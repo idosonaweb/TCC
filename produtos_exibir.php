@@ -5,7 +5,7 @@
         <title>Purchase Manager</title>
 
         <link rel="stylesheet" href="lib/css/bootstrap.min.css">
-        <link rel="stylesheet" href="lib/css/tela_produtos.css">
+        <link rel="stylesheet" href="lib/css/album.css">
 
     </head>
 
@@ -107,40 +107,45 @@
 
                 </section>
 
-                <div class="container-slider">
-                <button id="prev-button"><img src="lib/img/seta_s.png" alt="prev-button"></button>
-                <div class="container-images">
-                    <img src="lib/img/Cotonete.jpg" alt="girl" class="slider on">
-                    <img src="lib/img/escova.jpg" alt="girl" class="slider">
-                    <img src="lib/img/shampoo.jpg" alt="ok" class="slider">
-                    <img src="lib/img/banana.jpg" alt="ok" class="slider">
-                </div>
-                <button id="next-button"><img src="lib/img/seta_s.png" alt="next-button"></button>
-                </div>
-
                 <br><br>
 
-                    <div class="list-group">
-
-                        <?php
-
-                            foreach ($produtos as $produto): 
-                            {
-                                $data = date_create($produto['data_final']) ;
-
-                                $data = date_format($data, 'd/m/Y') ;
-                            }
-
-                        ?>
-
-                        <a class="list-group-item list-group-item-action"
-                            href="produtp_detalhe.php?lista=<?php echo $produto['id_produto'] ?>">
+                    <div class="album py-5">
                         
-                            <strong><?php echo $produto['nome_produto'] ?></strong>
-                        
-                        </a>
+                        <div class="container">
 
-                        <?php endforeach; ?>
+                            <div class="row">
+
+                            <?php
+
+                                foreach ($produtos as $produto): 
+                                {
+                                    $data = date_create($produto['data_final']) ;
+
+                                    $data = date_format($data, 'd/m/Y') ;
+                                }
+
+                            ?>
+
+                            <div align='center' class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <img class="card-img-top" src="upload/<?php echo $produto['foto_nome'] ?>">
+                                    <div class="card-body">
+                                        <strong><p class="card-text"><?php echo $produto['nome_produto'] ?> - R$<?php echo $produto['valor'] ?> </p></strong> 
+                                        <p class="card-text"><?php echo $produto['nome_mercado'] ?></p>
+                                        <div class="justify-content-between align-items-center">
+                                            <a href="produto_detalhe.php?produtos=<?php echo $produto['id_produto'] ?>">
+                                                <button type="button" class="btn btn-sm btn-outline-primary">Ver mais</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <?php endforeach; ?>
+
+                            </div>
+                        </div>
+                    </div>
 
                     </div>
 

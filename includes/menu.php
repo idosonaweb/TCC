@@ -31,7 +31,7 @@
   </symbol>
 </svg>
 
-<main>
+<main class="bg-light">
   
   <div>
     

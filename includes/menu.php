@@ -91,8 +91,6 @@
 
               Seja Bem-vindo, <?php echo $_SESSION['login']['usuario']['nome'] ?>!
 
-              <a href="../usuario_detalhe.php?usuario=<?php echo $usuarios['usuario_id'] ?>" class="btn btn-link btn-sm" role="button" > Config Usuário </a>
-
               <a href="core/usuario_repositorio.php?acao=logout" class="btn btn-link btn-sm" role="button"> Sair </a>
 
           </div>
@@ -112,20 +110,10 @@
               <li><a href="produtos_exibir.php" class="nav-link text-dark px-3 ">Meus Produtos</a></li>
 
             <?php endif; ?>
-
-            <li><a href="index.php" class="nav-link text-dark px-3 ">Sou Mercado</a></li>
-
+            
           </ul>
 
-          <div class="text-right">
-
-            Seja Bem-vindo, <?php echo $_SESSION['login']['mercado']['nome_mercado'] ?>!
-
-            <a href="altera_usuario.php" class="btn btn-link btn-sm" role="button"> Config Mercado </a>
-
-            <a href="core/usuario_repositorio.php?acao=logout" class="btn btn-link btn-sm" role="button"> Sair </a>
-
-          </div>
+         
 
           <?php endif ?>
 

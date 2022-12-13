@@ -22,7 +22,7 @@
     <body>
         
         <div class="row" style="min-height: 100px;">
-            <div class="col-md-10" style="padding-top: 50px;">
+            <div class="col-md-10" style="padding-top: 20px;">
                 <?php include 'includes/busca.php'; ?>
                 <?php
                         require_once 'includes/funcoes.php';
@@ -72,7 +72,6 @@
                             <td>E-mail</td>
                             <td>Data cadastro</td>
                             <td>Administrador</td>
-                            <td>Excluir</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -86,7 +85,6 @@
                             <td><?php echo $entidade['email'] ?></td>
                             <td><?php echo $data ?></td>
                             <td><a href='core/usuario_repositorio.php?acao=adm&id=<?php echo $entidade['usuario_id']?> &valor=<?php echo !$entidade['adm']?>'><?php echo ($entidade['adm']==1)  ?  'Rebaixar' : 'Promover'; ?> </a></td>
-                            <td><a href='excluir.php?usuario_id=".$entidade'[usuario_id].>Excluir</a></td>
                         </tr>
 
                         <?php endforeach ; ?>

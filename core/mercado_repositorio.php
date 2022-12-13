@@ -8,12 +8,7 @@
     require_once 'mysql.php' ;
 
     $salt = '$exemplosaltifsp' ;
-
-    foreach ($_POST as $indice => $dado) 
-    {
-        $$indice = limparDados($dado) ;
-    }
-
+    
     foreach ($_GET as $indice => $dado) 
     {
         $$indice = limparDados($dado) ;
@@ -26,7 +21,7 @@
                 'nome_mercado' => $nome_mercado,
                 'email_mercado' => $email_mercado,
                 'endereco' => $endereco,
-                'senha_mercado' => $senha_mercado,
+                'senha_mercado' => crypt($senha_mercado, $salt),
                 'foto_nome' => $foto_nome,
                 'cnpj' => crypt($cnpj, $salt)
             ];
@@ -37,7 +32,7 @@
 
         case 'update':
             
-            $id = (int)$id ;
+            $id_mercado = (int)$id_mercado ;
 
             $dados = [
                 'nome_mercado' => $nome_mercado,
@@ -47,7 +42,7 @@
             ];
 
             $criterio = [
-                ['id_mercado', '=', $id]
+                ['id_mercado', '=', $id_mercado]
             ];
 
             atualiza('mercado', $dados, $criterio);
@@ -56,12 +51,12 @@
 
         case 'login':
             $criterio = [
-                ['id_mercado', '=', $id]
+                ['id_mercado', '=', $id_mercado]
             ];
 
             $retorno = buscar(
                 'mercado', 
-                ['id_mercado', 'nome_mercado', 'email_mercado','endereco', 'cnpj', 'senha_mercado', 'foto', 'foto_nome'], 
+                ['id_mercado', 'nome_mercado', 'email_mercado','endereco', 'cnpj', 'senha_mercado', 'foto_nome', 'ativo'], 
                 $criterio
             );
 
@@ -109,7 +104,7 @@
         
             case 'status':
             
-                $id = (int)$id ;
+                $id_mercado = (int)$id_mercado ;
     
                 $valor = (int)$valor ;
     
@@ -120,7 +115,7 @@
     
                 $criterio =
                 [
-                    ['id_mercado', '=', $id]
+                    ['id_mercado', '=', $id_mercado]
                 ];
     
                 atualiza('mercado', $dados, $criterio);

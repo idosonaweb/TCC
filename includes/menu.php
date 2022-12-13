@@ -91,7 +91,7 @@
 
               Seja Bem-vindo, <?php echo $_SESSION['login']['usuario']['nome'] ?>!
 
-              <a class="btn btn-link btn-sm" role="button" href="usuario_detalhe.php?usuarios=<?php echo $usuario['usuario_id'] ?>"> Config Usuário </a>
+              <a href="../usuario_detalhe.php?usuario=<?php echo $usuarios['usuario_id'] ?>" class="btn btn-link btn-sm" role="button" > Config Usuário </a>
 
               <a href="core/usuario_repositorio.php?acao=logout" class="btn btn-link btn-sm" role="button"> Sair </a>
 

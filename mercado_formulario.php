@@ -29,10 +29,10 @@
 
                 if (isset($_SESSION['login'])) 
                 {
-                    $id = (int) $_SESSION['login']['mercado']['id_mercado'];
+                    $id_mercado = (int) $_SESSION['login']['mercado']['id_mercado'];
 
                     $criterio = [
-                        ['id_mercado', '=', $id]
+                        ['id_mercado', '=', $id_mercado]
                     ];
 
                     $retorno = buscar (
@@ -49,10 +49,10 @@
             <form method="POST" action="core/mercado_repositorio.php">
 
                 <input type="hidden" name="acao" 
-                        value="<?php echo empty($id) ? 'insert' : 'update' ?>">
+                        value="<?php echo empty($id_mercado) ? 'insert' : 'update' ?>">
 
-                <input type="hidden" name="id" 
-                        value="<?php echo $entidade['id'] ?? '' ?>">
+                <input type="hidden" name="id_mercado" 
+                        value="<?php echo $entidade['id_mercado'] ?? '' ?>">
                 
                 <div class="container-titule-button">
                 

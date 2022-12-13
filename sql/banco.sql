@@ -53,7 +53,7 @@ create table produto
     marca 				varchar(50)		not null,
     foto_nome           varchar(100),
 	nome_mercado		varchar(100) 	not null,
-	id_mercado          int   			NOT NULL,	
+	usuario_id          int   			NOT NULL,	
     primary key(id_produto)
 );
 

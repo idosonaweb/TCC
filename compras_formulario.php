@@ -80,9 +80,9 @@
 
                         <div class="form-row">
                             
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-6">
 
-                                    <label for="titulo_compra">Título da Compra</label>
+                                    <label for="titulo_compra">Título da Compra:</label>
                                 
                                 <input class="form-control" type="text"
                                         require="require" id="titulo" name="titulo"
@@ -96,7 +96,7 @@
                         
                             <div class="form-group col-md-6">
 
-                                <label for="descricao">Descrição</label>
+                                <label for="descricao">Descrição:</label>
                                 
                                 <textarea class="form-control" type="text"
                                     require="require" id="descricao" name="descricao" rows="3">
@@ -111,7 +111,7 @@
                             
                             <div class="form-group col-md-3">
                             
-                                <label for="local_nome">Estabelecimento</label>
+                                <label for="local_nome">Estabelecimento:</label>
                             
                                 <input class="form-control" type="text"
                                     require="require" id="local_nome" name="local_nome"
@@ -121,7 +121,7 @@
                             
                             <div class="form-group col-md-3">
                                 
-                                <label for="date">Data de Realização</label>
+                                <label for="date">Data de Realização:</label>
                             
                                 <?php 
                                     
@@ -129,7 +129,7 @@
                                         explode(' ', $entidade['data_postagem'])[0] : '';
                                 ?>
 
-                                <div lass="form-group col-md-3">
+                                <div lass="form-group col-md-6">
 
                                     <input class="form-control" type="date"
                                         require="required"
@@ -144,9 +144,9 @@
 
                         <div class="form-row">
                             
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-6">
                             
-                                <label for="valor_compra">Valor</label>
+                                <label for="valor_compra">Valor:</label>
                             
                                 <input class="form-control" type="text"
                                     require="require" id="valor_compra" name="valor_compra"
@@ -157,6 +157,9 @@
                         </div>
                         
                         </div>
+
+                        <br>
+
                         <div align="center">
                             <div class="input-group mb-3 col-md-6">
                                 <div class="input-group-prepend">
@@ -168,6 +171,8 @@
                                 </div>
                             </div>
                             
+                            <br>
+
                             <div class="col-md-6">  
                             
                                 <button class="btn btn-primary"

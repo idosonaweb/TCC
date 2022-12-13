@@ -61,6 +61,7 @@
                     {
                         $criterio[] = [
                             'AND',
+                            'nome_mercado',
                             'nome_produto',
                             'like',
                             "%{$busca}%"
@@ -78,9 +79,9 @@
                             'foto_nome',
                             'nome_mercado',
                             'id_produto',
-                            'id_mercado',
-                            '(select nome_mercado from mercado 
-                                        where mercado.id_mercado = produto.id_mercado) as nome_mercado'
+                            'usuario_id',
+                            '(select nome from usuario 
+                                        where usuario.usuario_id = produto.usuario_id) as nome'
                         ],
                         
                         $criterio,
@@ -94,9 +95,9 @@
 
                 <div>
 
-                <?php if (isset($_SESSION['login']['mercado'])) :  ?>
+                <?php if (isset($_SESSION['login']['usuario'])) :  ?>
                     
-                    <?php if ($_SESSION['login']['mercado']['ativo']===1) : ?>
+                    <?php if ($_SESSION['login']['usuario']['adm']===1) : ?>
 
                         <a href="produto_formulario.php"><button class="btn btn-outline-primary my-2 my-sm-0">Adicionar Produto</button></a>
 

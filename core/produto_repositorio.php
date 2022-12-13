@@ -54,7 +54,7 @@
                 'marca'                    => $marca,
                 'foto_nome'                => implode(";", $fotos_name),
                 'nome_mercado'             => $nome_mercado,
-                'id_mercado'               => $_SESSION['login']['mercado']['id_mercado']
+                'usuario_id'               => $_SESSION['login']['usuario']['usuario_id']
             ];
 
             insere('produto', $dados);
@@ -72,11 +72,11 @@
                 'marca'                    => $marca,
                 'foto_nome'                => implode(";", $fotos_name),
                 'nome_mercado'             => $nome_mercado,
-                'id_mercado'               => $_SESSION['login']['mercado']['id_mercado']
+                'usuario_id'               => $_SESSION['login']['usuario']['usuario_id']
             ];
 
             $criterio = [
-                ['id_mercado', '=', $id]
+                ['usuario_id', '=', $id]
             ];
 
             atualiza('produto', $dados, $criterio);
@@ -86,7 +86,7 @@
         case 'delete':
             
             $criterio = [
-                ['id_mercado', '=', $id]
+                ['usuario_id', '=', $id]
             ];
 
             deleta('produto', $criterio);

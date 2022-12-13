@@ -109,9 +109,9 @@
     
          <hr id="Texto4" class="featurette-divider">
 
-    <div class="row featurette">
+    <div align='center'>
       
-        <div class="col-md-7 order-md-2">
+        <div class="col-md-7">
         
             <h2 class="featurette-heading fw-normal lh-1">Como usar?<span class="text-muted"></h2>
                 
@@ -119,10 +119,12 @@
             
         </div>
 
-        <div class="col-md-5 order-md-1">
-        
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+        <br>
 
+        <div class="col-md-6">  
+                            
+            <a href="usuario_formulario.php"><button class="btn btn-primary" type="submit">Cadastrar-se</button></a>
+        
         </div>
     
     </div>
@@ -208,7 +210,7 @@
             
     <div class="col">
 
-        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('lib/img/Joao.png');">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('lib/img/Pedro.png');">
             
             <div class="d-flex flex-column h-100 p-4 pb-3 text-white text-shadow-1">
 

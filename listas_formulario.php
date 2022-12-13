@@ -77,11 +77,11 @@
                         
                         <div class="form-row">
                             
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-6">
 
-                            <label for="nome_lista">Nome da Lista</label>
+                            <label for="nome_lista">Nome da Lista:</label>
                                 
-                            <input class="form-group" type="text"
+                            <input class="form-control" type="text"
                                     require="require" id="nome_lista" name="nome_lista" rows="2"
                                     value="<?php echo $entidade['nome_lista'] ?? '' ?>">
 
@@ -121,7 +121,7 @@
 
                         <div class="form-row">
 
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-6">
                                 
                                 <label for="date">Data de Realização</label>
                             

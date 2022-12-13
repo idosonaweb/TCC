@@ -1,12 +1,18 @@
 <?php
-	header("Location: ../administrar.php");
-	
-    include('core/conexao_mysql.php');
+    session_start();
+    require("core/conexao_mysql.php");
 
-    $usuario_id = $_GET ['usuario_id'];
+    $conexao = new $conexao();
+    $conexao = $conexao->conecta();
 
-    $sql = 'DELETE FROM usuario WHERE usuario_id='.$usuario_id;
+    if(isset($_POST["usuario_id"]) && isset($_SESSION["usuario"]) && $_SESSION["usuario"][1] == 1){
+        $query = $conexao->prepare("DELETE FROM usuario WHERE usuario_id = ?");
 
-	$result = mysqli_query($conexao, $sql);
-
-?>
+        if($query->execute(array($_POST["usuario_id"]))){
+            echo json_encode(array("erro" => 0));
+        }else{
+            echo json_encode(array("erro" => 1));    
+        }
+    }else{
+        echo json_encode(array("erro" => 1));
+    }

@@ -10,6 +10,7 @@ CREATE TABLE usuario (
     nome 			varchar (50) 	NOT NULL,
     email 			varchar (255) 	NOT NULL,
     telefone 		varchar (12) 	NOT NULL,
+    data_criacao    date,    
     senha 			varchar (60) 	NOT NULL,
     adm 			tinyint 		NOT NULL DEFAULT '0',
     PRIMARY KEY (usuario_id)

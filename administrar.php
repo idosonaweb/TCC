@@ -38,7 +38,7 @@
                 </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade active show" id="usuarios" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="tab-pane fade active show" id="usuario" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <p>
                     <?php
                         include 'usuarios.php';

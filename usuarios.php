@@ -84,6 +84,7 @@
                             <td><?php echo $entidade['email'] ?></td>
                             <td><?php echo $data ?></td>
                             <td><a href='core/usuario_repositorio.php?acao=adm&id=<?php echo $entidade['usuario_id']?> &valor=<?php echo !$entidade['adm']?>'><?php echo ($entidade['adm']==1)  ?  'Rebaixar' : 'Promover'; ?> </a></td>
+                            <td><a href='excluir.php?usuario_id=".$row['usuario_id].>Excluir</a></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>

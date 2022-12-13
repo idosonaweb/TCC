@@ -115,7 +115,7 @@
         
             <h2 class="featurette-heading fw-normal lh-1">Como usar?<span class="text-muted"></h2>
                 
-            <p class="lead">É tudo muito intuitivo! Basta fazer login e começar a se organizar e economizar!</p>
+            <p class="lead">É tudo muito intuitivo! Basta fazer login, registrar suas listas e compras nos nossos menus e acessá-las de onde quiser! Você pode comparar seus gastos nas últimas compras e fazer um balanço de quanto quer gastar montando sua lista previamente, além de poder checar o valor de produtos notáveis, na aba produtos. Tá esperando o que?</p>
             
         </div>
 

@@ -42,7 +42,7 @@
 ?>
 <html>
     <head>  
-        <title><?php echo $produtos['nome_produto']?></title>
+        <title>Purchase Manager</title>
         <link rel="stylesheet" href="lib/css/bootstrap.min.css">
     </head>
     <body>
@@ -54,15 +54,14 @@
 
         </div>
             <div class="col-md-10" style="padding-top: 50px;"> 
-                <div class="card-body">
+                <div align='center' class="card-body">
                 <img src="upload/<?php echo $produtos['foto_nome'] ?>" height="300px">
                     <h5 class="card-title"><?php echo $produtos['nome_produto']?> - R$ <?php echo $produtos['valor']?></h5>
                     <h5 class="card-subtitle mb-2 text-muted">
                         Mercado <?php echo $produtos['nome_mercado']?>
                     </h5>
-                    <div class="card-text">
-                        Marca <?php echo html_entity_decode($produtos['marca'])?>
-                        </div>
+                    <div class="card-text"> Marca <?php echo html_entity_decode($produtos['marca'])?> - <?php echo $produtos['quantidade']?> unidades</div>
+                    <div class="card-text"> Data de Validade: <?php echo $data ?> </div>
                     </div>
                 </div>
             </div>

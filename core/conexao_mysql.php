@@ -6,7 +6,7 @@
 
         $banco = 'tcc' ;
 
-        $port = 3306 ;
+        $port = 3307 ;
 
         $usuario = 'root' ;
 

@@ -136,13 +136,13 @@
                                             <a href="produto_detalhe.php?produtos=<?php echo $produto['id_produto'] ?>">
                                                 <button type="button" class="btn btn-sm btn-outline-primary">Ver mais</button>
                                             </a>
+
+                                            <?php endforeach; ?>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <?php endforeach; ?>
-
                             </div>
                         </div>
                     </div>

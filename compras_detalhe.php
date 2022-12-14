@@ -53,6 +53,8 @@
             <div class="col-md-10"> 
                 <div class="card-body">
                 <img src="upload/<?php echo $compra['foto_nome'] ?>" height="300px">
+                <br>
+                <br>
                     <h5 class="card-title"><?php echo $compra['titulo']?></h5>
                     <h5 class="card-subtitle mb-2 text-muted">
                         <?php echo $data?> Por <?php echo $compra['local_nome']?>

@@ -71,6 +71,7 @@
                             'nome_lista',
                             'data_postagem',
                             'itens',
+                            'qtd_produtos',
                             'id_lista',
                             'usuario_id',
                             '(select nome from usuario 
@@ -114,7 +115,7 @@
                         
                             <strong><?php echo $listas['nome_lista'] ?></strong>
 
-                            <span class="badge badge-dark"><?php echo $data ?></span>
+                            - <strong><?php echo $listas['nome'] ?></strong>
                         
                         </a>
 

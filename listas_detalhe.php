@@ -21,6 +21,7 @@
             'nome_lista',
             'data_postagem',
             'id_lista',
+            'qtd_produtos',
             'itens',
             '(select nome from usuario 
                         where usuario.usuario_id = listas.usuario_id) as nome'
@@ -41,7 +42,7 @@
     </head>
     <body>
     
-            <div class="col-md-12" style="min-height: 100px;">
+            <div class="col-md-12" style="min-height: 100px; ">
 
                 <?php include 'includes/menu.php'; ?>
 
@@ -53,6 +54,9 @@
                         </h5>
                         <div class="card-text">
                             <?php echo html_entity_decode($lista['itens'])?>
+                        </div>
+                        <div class="card-text">
+                            Quantidade Total: <?php echo html_entity_decode($lista['qtd_produtos'])?>
                         </div>
                     </div>
                 </div>

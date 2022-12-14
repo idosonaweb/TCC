@@ -61,6 +61,7 @@
                     {
                         $criterio[] = [
                             'AND',
+                            'nome_mercado',
                             'nome_produto',
                             'like',
                             "%{$busca}%"
@@ -139,7 +140,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <?php endforeach; ?>
 
                             </div>

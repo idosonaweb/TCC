@@ -20,8 +20,12 @@
 
 </head>
     <body>
-        
-        <div class="row" style="min-height: 100px;">
+    <div class="row" style="min-height: 100px;">
+        <div class="col-md-12">
+            <?php include 'includes/menu.php'; ?>
+        </div>
+    </div>
+        <div class="row" style="min-height: 100px; justify-content: center;">
             <div class="col-md-10" style="padding-top: 20px;">
                 <?php include 'includes/busca.php'; ?>
                 <?php
@@ -64,7 +68,7 @@
 
                         <br>
 
-                    <table class="table table-bordered table-hover table-striped
+                    <table align="center" class="table table-bordered table-hover table-striped
                         table-responsive{-sm|-md|-lg|-xl}">
                     <thead>
                         <tr>

@@ -46,7 +46,7 @@
                 <?php include 'includes/menu.php'; ?>
 
                 <div class="col-md-10"> 
-                    <div class="card-body">
+                    <div align='center' class="card-body">
                         <h5 class="card-title"><?php echo $lista['nome_lista']?></h5>
                         <h5 class="card-subtitle mb-2 text-muted">
                             <?php echo $data?> Por <?php echo $lista['nome']?>
@@ -57,13 +57,6 @@
                     </div>
                 </div>
             </div>
-           <div class="row">
-                <div class="col-md-12">
-                    <?php 
-                        include 'includes/rodape.php';
-                        ?>
-                </div>
-           </div> 
         </div>
         <script src="lib/js/bootstrap.min.js"></script>
     </body>

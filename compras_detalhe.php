@@ -68,13 +68,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12">
-                <?php
-
-                    include 'includes/rodape.php';
-                
-                ?>
-           </div> 
         </div>
         <script src="lib/js/bootstrap.min.js"></script>
     </body>

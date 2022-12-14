@@ -88,7 +88,7 @@
 
                 <div>
                                 
-                <a href="listas_formulario.php"><button class="btn btn-outline-primary my-2 my-sm-0">Adicionar Lista</button></a>
+                <a href="listas_formulario.php"><button class="btn btn-outline-primary">Adicionar Lista</button></a>
 
                 </section>
 
@@ -112,7 +112,7 @@
                         <a class="list-group-item list-group-item-action"
                             href="listas_detalhe.php?lista=<?php echo $listas['id_lista'] ?>">
                         
-                            <strong><?php echo $listas['nome_lista'] ?></strong>
+                            <strong><?php echo $listas['nome'] ?></strong>
 
                             <span class="badge badge-dark"><?php echo $data ?></span>
                         

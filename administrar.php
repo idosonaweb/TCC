@@ -27,19 +27,13 @@
                 <?php include 'includes/menu.php'; ?>
             </div>
         </div>
-        <div class="bd-example bd-example-tabs">
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <button class="btn btn-outline-primary my-2 my-sm-0">Usuarios</button></a>
-            </ul>
-            <div class="tab-content" id="pills-tabContent">
-                <p>
-                    <?php
-                        include 'usuarios.php';
-                    ?>
-                </p>
-                </div>
-                
-            </div>
+        <div class="tab-content" id="pills-tabContent">
+            <p>
+                <?php
+                    include 'usuarios.php';
+                ?>
+            </p>
+        </div>        
         </div>
         </div>
         <br>

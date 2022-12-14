@@ -111,7 +111,7 @@
                                 
                             <label for="qtd_produtos">Quantidade de Produtos:</label>
                             
-                            <input class="form-control" type="text"
+                            <input class="form-control" type="number"
                                     require="require" id="qtd_produtos" name="qtd_produtos" 
                                     value="<?php echo $entidade['qtd_produtos'] ?? '' ?>">
 

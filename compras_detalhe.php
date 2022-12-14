@@ -51,21 +51,24 @@
             <?php include 'includes/menu.php'; ?>
 
             <div class="col-md-10"> 
-                <div class="card-body">
+                <div align='center' class="card-body">
                 <img src="upload/<?php echo $compra['foto_nome'] ?>" height="300px">
                 <br>
                 <br>
                     <h5 class="card-title"><?php echo $compra['titulo']?></h5>
                     <h5 class="card-subtitle mb-2 text-muted">
-                        <?php echo $data?> Por <?php echo $compra['local_nome']?>
+                        <?php echo $data?> no <?php echo $compra['local_nome']?>
                     </h5>
                     <div class="card-text">
                         <?php echo html_entity_decode($compra['descricao'])?>
-                        </div>
+                    </div>
+                    <div class="card-text">
+                        Valor da Compra: R$ <?php echo html_entity_decode($compra['valor_compra'])?>
                     </div>
                 </div>
             </div>
-           <div class="col-md-12">
+        </div>
+        <div class="col-md-12">
                 <?php
 
                     include 'includes/rodape.php';

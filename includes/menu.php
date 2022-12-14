@@ -51,7 +51,7 @@
 
             <li><a href="index.php" class="nav-link text-dark px-4 ">Home</a></li>
             
-            <li><a href="#Texto2" class="nav-link text-dark px-4 ">O que é</a></li>
+            <li><a href="#Texto2" class="nav-link text-dark px-4 ">Como funciona</a></li>
         
             <li><a href="#Texto3" class="nav-link text-dark px-4 ">Funções</a></li>
         

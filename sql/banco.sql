@@ -64,7 +64,7 @@ create table listas
     nome_lista			varchar(100) 	not null,
     data_postagem       datetime 		NOT NULL,
     qtd_produtos   		int   			not null,
-    itens				text  			not null,
+    itens				varchar(100)  	not null,
     usuario_id          int   			NOT NULL,	
     primary key(id_lista)
 );
@@ -72,4 +72,4 @@ create table listas
 
 select * from usuario;
 
-select * from compras;
+select * from listas;
